@@ -1,4 +1,4 @@
-# Run Locally 🏠
+# 🏠 Run Locally 
 
     1 - Install a PostgreSQL or MySQL locally
     2 - Open 'frontend/src/config/localhost.js'
@@ -17,7 +17,7 @@
     7 - The app will be available at https://localhost:3000.
 
 
-#  Setup Docker 🐳
+#  🐳 Setup Docker 
     1 - Install Docker locally (https://www.docker.com/)
     2 - Open 'frontend/src/config/production.js'
     2.1 - Set your custom configs
@@ -31,7 +31,7 @@
     This command will DROP ALL THE DATABASE TABLES. Make sure you are running it pointing to the correct database.
     6 - The app will be available at https://localhost:8080.
 
-# Stack 🥞
+# 🥞 Stack 
     React - https://reactjs.org/
     Redux - https://redux.js.org/
     Material-UI - https://material-ui.com/
