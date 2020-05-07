@@ -11,6 +11,13 @@ const permissions = Permissions.values;
 
 const privateRoutes = [
   {
+    path: '/PayrollSum',
+    loader: () => import('view/PayrollSum/view/PayrollSumPage'),
+    menu: true,
+    permissionRequired: permissions.uomRead,
+    exact: true,
+  },
+  {
     path: '/',
     icon: <HomeIcon />,
     label: i18n('home.menu'),
@@ -632,6 +639,7 @@ const privateRoutes = [
     permissionRequired: permissions.uomRead,
     exact: true,
   },
+
 ];
 
 const publicRoutes = [

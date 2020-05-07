@@ -7,27 +7,27 @@ module.exports = {
    * PostgreSQL configuration for Sequelize.
    * More info: https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection
    */
-  database: {
-    username: 'postgres',
-    dialect: 'postgres',
-    password: '',
-    database: 'development',
-    host: 'localhost',
-    logging: console.log,
-  },
-
-  /**
-   * MySQL configuration for Sequelize.
-   * More info: https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection
-   */
   // database: {
-  //   username: 'root',
-  //   dialect: 'mysql',
+  //   username: 'postgres',
+  //   dialect: 'postgres',
   //   password: '',
   //   database: 'development',
   //   host: 'localhost',
   //   logging: console.log,
   // },
+
+  /**
+   * MySQL configuration for Sequelize.
+   * More info: https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection
+   */
+  database: {
+    username: 'root',
+    dialect: 'mysql',
+    password: 'Password.1',
+    database: 'development',
+    host: 'localhost',
+    logging: console.log,
+  },
 
   /**
    * Secret used to Sign the JWT (Authentication) tokens.
