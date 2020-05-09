@@ -1,5 +1,5 @@
 const os = require('os');
-
+const dotenv = require('dotenv').config();
 module.exports = {
   env: 'localhost',
 
@@ -23,7 +23,7 @@ module.exports = {
   database: {
     username: 'root',
     dialect: 'mysql',
-    password: process.env.LOCAL_DB_PASS || '1q2w3e4r5t6y',
+    password: process.env.LOCAL_DB_PASS,
     database: 'development',
     host: 'localhost',
     logging: console.log,
