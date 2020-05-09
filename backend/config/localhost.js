@@ -23,7 +23,7 @@ module.exports = {
   database: {
     username: 'root',
     dialect: 'mysql',
-    password: 'Password.1',
+    password: process.env.LOCAL_DB_PASS || '1q2w3e4r5t6y',
     database: 'development',
     host: 'localhost',
     logging: console.log,
@@ -64,8 +64,5 @@ module.exports = {
    * When this email is set, all requests will automatically authenticate using this email.
    * Useful for testing purposes.
    */
-  userAutoAuthenticatedEmailForTests:
-    null,
-
-
+  userAutoAuthenticatedEmailForTests: null,
 };
