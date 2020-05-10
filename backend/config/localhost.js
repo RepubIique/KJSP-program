@@ -1,5 +1,5 @@
 const os = require('os');
-
+const dotenv = require('dotenv').config();
 module.exports = {
   env: 'localhost',
 
@@ -21,10 +21,10 @@ module.exports = {
    * More info: https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection
    */
   database: {
-    username: 'root',
+    username: process.env.USERNAME,
     dialect: 'mysql',
-    password: 'Password.1',
-    database: 'development',
+    password: process.env.LOCAL_DB_PASS,
+    database: process.env.DATABASE,
     host: 'localhost',
     logging: console.log,
   },
@@ -64,8 +64,5 @@ module.exports = {
    * When this email is set, all requests will automatically authenticate using this email.
    * Useful for testing purposes.
    */
-  userAutoAuthenticatedEmailForTests:
-    null,
-
-
+  userAutoAuthenticatedEmailForTests: null,
 };
