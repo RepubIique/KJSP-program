@@ -7,10 +7,15 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { Card } from '@material-ui/core';
+import tableData from '../Data/PayrollSumData'
 
+
+console.log(tableData.getData());
 const useStyles = makeStyles({
-
+  table: {
+    // minWidth: 650,
+    margin: 'dense'
+  },
 });
 
 function createData(name, calories, fat, carbs, protein) {
@@ -18,89 +23,56 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('', 159, 6.0, 24, 4.0),
-  createData('', 237, 9.0, 37, 4.3),
-  createData('', 262, 16.0, 24, 6.0),
-  createData('', 305, 3.7, 67, 4.3),
-  createData('', 356, 16.0, 49, 3.9),
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function SimpleTable() {
+export default function DenseTable() {
   const classes = useStyles();
 
   return (
-<>
-    <Card>
-    <label for="cars">Division:</label>
-
-<select id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
-<label for="cars">Month:</label>
-
-<select id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
-<label for="cars">Year:</label>
-
-<select id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
-    </Card>
-
-    <br></br>
     <TableContainer component={Paper}>
-          <Table className={classes.table} size="small" aria-label="a dense table">
-        <TableHead >
+      <Table className={classes.table} size="small" aria-label="a dense table" >
+        <TableHead>
           <TableRow >
-            <TableCell  style={{'font-size': '11px'}}>ID No.</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>NAME</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>WORKING HRS</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>GENERAL</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>FFB HARVESTING</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>PRUNING</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>FIELD MAINTENANCE</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>PEST & DISEASE</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>MANURING</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>PLANTING/SUPPLYING</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>BUILDING CONSTRUCTION</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>INFRA MAINTENANCE</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>NURSERY</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>TRANSPORTATION</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>CASH DENO</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>GROSS WAGES</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>DEDUCTION</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>NET PAYABLE</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>VERIFIED</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>% of deduct wages</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>Achievement of Min. wages (%)</TableCell>
-            <TableCell  style={{'font-size': '11px'}}>Working Hour (%)</TableCell>
+            <TableCell>ID</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Hours</TableCell>
+            <TableCell>General</TableCell>
+            <TableCell>FFB Harv.</TableCell>
+            <TableCell>Pruning</TableCell>
+            <TableCell>Field Maint.</TableCell>
+            <TableCell>Pest & Disease</TableCell>
+            <TableCell>Manuring</TableCell>
+            <TableCell>Plant/Supply</TableCell>
+            <TableCell>Building Const.</TableCell>
+            <TableCell>Infust. Maint.</TableCell>
+            <TableCell>Nursery</TableCell>
+            <TableCell>Transport</TableCell>
+            <TableCell>Cash Deno</TableCell>
+            <TableCell>Gross Wages</TableCell>
+            <TableCell>Deduction</TableCell>
+            <TableCell>Net Payable</TableCell>
+            <TableCell>Verified</TableCell>
+            <TableCell>% of deduct wages</TableCell>
+            <TableCell>Achievement of Min. wages (%)</TableCell>
+            <TableCell>Working Hour (%)</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell  style={{'font-size': '11px'}}>{row.calories}</TableCell>
-              <TableCell  style={{'font-size': '11px'}}>{row.fat}</TableCell>
-              <TableCell  style={{'font-size': '11px'}}>{row.carbs}</TableCell>
-              <TableCell  style={{'font-size': '11px'}}>{row.protein}</TableCell>
+               <TableCell >{row.calories}</TableCell>
+              <TableCell >{row.fat}</TableCell>
+              <TableCell >{row.carbs}</TableCell>
+              <TableCell >{row.protein}</TableCell> 
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
-    </>
   );
 }
