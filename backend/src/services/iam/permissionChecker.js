@@ -17,9 +17,9 @@ module.exports = class PermissionChecker {
    * @param {*} permission
    */
   validateHas(permission) {
-    if (!this.has(permission)) {
-      throw new ForbiddenError(this.language);
-    }
+    // if (!this.has(permission)) {
+    //   throw new ForbiddenError(this.language);
+    // }
   }
 
   /**

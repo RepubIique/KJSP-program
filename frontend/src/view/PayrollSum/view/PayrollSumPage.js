@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import tableData from '../Data/PayrollSumData'
 
 
-console.log(tableData.getData());
+tableData.getData()
 const useStyles = makeStyles({
   table: {
     // minWidth: 650,

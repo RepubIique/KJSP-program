@@ -51,6 +51,7 @@ require('./mill')(routes);
 require('./designation')(routes);
 require('./blocks')(routes);
 require('./uom')(routes);
+require('./payrollsum')(routes);
 
 // Add the routes to the /api endpoint
 app.use('/api', routes);

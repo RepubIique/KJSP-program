@@ -21,10 +21,10 @@ module.exports = {
    * More info: https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection
    */
   database: {
-    username: process.env.USERNAME,
+    username:'root',
     dialect: 'mysql',
-    password: process.env.LOCAL_DB_PASS,
-    database: process.env.DATABASE,
+    password: 'Password.1',
+    database: 'development',
     host: 'localhost',
     logging: console.log,
   },

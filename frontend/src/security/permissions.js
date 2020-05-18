@@ -4,6 +4,53 @@ const roles = Roles.values;
 class Permissions {
   static get values() {
     return {
+
+      payrollsumEdit: {
+        id: 'payrollsumEdit',
+        allowedRoles: [
+          roles.owner,
+          roles.payrollsumSecurityReviewer,
+          roles.editor,
+        ],
+        allowedStorageFolders: ['user'],
+      },
+      payrollsumCreate: {
+        id: 'payrollsumCreate',
+        allowedRoles: [
+          roles.owner,
+          roles.payrollsumSecurityReviewer,
+          roles.editor,
+        ],
+      },
+      payrollsumImport: {
+        id: 'payrollsumImport',
+        allowedRoles: [
+          roles.owner,
+          roles.payrollsumSecurityReviewer,
+          roles.editor,
+        ],
+      },
+      payrollsumRead: {
+        id: 'payrollsumRead',
+        allowedRoles: [
+          roles.owner,
+          roles.payrollsumSecurityReviewer,
+          roles.editor,
+          roles.viewer,
+        ],
+      },
+      payrollsumUserAutocomplete: {
+        id: 'payrollsumUserAutocomplete',
+        allowedRoles: [
+          roles.owner,
+          roles.editor,
+          roles.viewer,
+
+
+        ],
+      },
+
+      
       iamEdit: {
         id: 'iamEdit',
         allowedRoles: [
