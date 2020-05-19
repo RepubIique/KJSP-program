@@ -1,7 +1,7 @@
 {
   "projects": {
-    "development": "ksj-webapp",
-    "production": "ksj-webapp",
+    "development": "kjs-webapp",
+    "production": "kjs-webapp",
     "default": "kjs-webapp"
   }
 }

@@ -6,12 +6,13 @@ module.exports = {
    * More info: https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection
    */
   database: {
-    username: 'postgres',
-    dialect: 'postgres',
-    password: '',
-    database: 'development',
-    host: 'localhost',
+    username: 'root',
+    dialect: 'mysql',
+    password: 'password.1',
+    database: 'production',
+    host: '/cloudsql/kjs-sql',
     logging: console.log,
+    migrationHost: '35.198.204.157',
   },
 
   /**

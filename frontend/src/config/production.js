@@ -10,7 +10,7 @@ const firebaseConfig = {
 };
 
 // Cloud Functions
-const backendUrl = `https://us-central1-${firebaseConfig.projectId}.cloudfunctions.net/api/api`;
+const backendUrl = `https://asia-east2-${firebaseConfig.projectId}.cloudfunctions.net/api/api`;
 
 // App Engine
 // const backendUrl = `<insert app engine url here>`;
