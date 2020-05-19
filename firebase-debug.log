@@ -1,0 +1,399 @@
+[debug] [2020-05-19T16:01:14.637Z] ----------------------------------------------------------------------
+[debug] [2020-05-19T16:01:14.639Z] Command:       /usr/local/Cellar/node/13.8.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-05-19T16:01:14.639Z] CLI Version:   8.3.0
+[debug] [2020-05-19T16:01:14.639Z] Platform:      darwin
+[debug] [2020-05-19T16:01:14.639Z] Node Version:  v13.8.0
+[debug] [2020-05-19T16:01:14.641Z] Time:          Wed May 20 2020 00:01:14 GMT+0800 (Australian Western Standard Time)
+[debug] [2020-05-19T16:01:14.641Z] ----------------------------------------------------------------------
+[debug] [2020-05-19T16:01:14.641Z] 
+[debug] [2020-05-19T16:01:14.648Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-19T16:01:14.648Z] > authorizing via signed-in user
+[debug] [2020-05-19T16:01:14.648Z] [iam] checking project kjs-webapp for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2020-05-19T16:01:14.651Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/kjs-webapp:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2020-05-19T16:01:16.256Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:16 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1165","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:01:16.257Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/kjs-webapp/serviceAccounts/kjs-webapp@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-05-19T16:01:17.103Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:16 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:01:17.104Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/kjs-webapp  
+ 
+[debug] [2020-05-19T16:01:17.912Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:17 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions.
+Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[info] 
+[info] === Deploying to 'kjs-webapp'...
+[info] 
+[info] i  deploying database, storage, functions, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2020-05-19T16:01:21.890Z] >>> HTTP REQUEST PUT https://kjs-webapp.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2020-05-19T16:01:23.080Z] <<< HTTP RESPONSE 200 {"server":"nginx","date":"Tue, 19 May 2020 16:01:22 GMT","content-type":"application/json; charset=utf-8","content-length":"15","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[info] ✔  database: rules syntax for database kjs-webapp is valid 
+[debug] [2020-05-19T16:01:23.081Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/kjs-webapp  
+ 
+[debug] [2020-05-19T16:01:25.131Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:25 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2020-05-19T16:01:25.133Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kjs-webapp:test  
+ {"source":{"files":[{"name":"storage.rules","content":"service firebase.storage {\n  match /b/{bucket}/o {\n    match /{allPaths=**} {\n      allow read, write: if request.auth!=null;\n    }\n  }\n}\n"}]}}
+[debug] [2020-05-19T16:01:27.078Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:26 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  [W] undefined:undefined - Ruleset uses old version (version [1]). Please update to the latest version (version [2]). 
+[info] ✔  firebase.storage: rules file storage.rules compiled successfully 
+[debug] [2020-05-19T16:01:27.080Z] > [functions] package.json contents: {
+  "name": "app-backend",
+  "description": "Backend",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "nodemon ./server.js",
+    "logs": "firebase functions:log",
+    "test": "nodemon --exec 'cross-env NODE_ENV=test mocha ./src/**/*.test.js --exit || exit 1'",
+    "predeploy:development": "firebase use development && firebase functions:config:set env.value=\"development\"",
+    "deploy:development": "firebase deploy --only functions",
+    "deploy:appengine:development": "gcloud app deploy app-engine.development.yaml --project <insert project id here>",
+    "db:reset:development": "cross-env MIGRATION_ENV=development node ./migrations/reset",
+    "db:reset:localhost": "cross-env MIGRATION_ENV=localhost node ./migrations/reset",
+    "db:reset:production": "cross-env MIGRATION_ENV=production node ./migrations/reset",
+    "predeploy:production": "firebase use production && firebase functions:config:set env.value=\"production\"",
+    "deploy:production": "firebase deploy --only functions",
+    "deploy:appengine:production": "gcloud app deploy app-engine.production.yaml --project <insert project id here>"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "lodash": "4.17.15",
+    "moment": "2.24.0",
+    "nodemailer": "6.3.1",
+    "mysql2": "2.0.0",
+    "pg": "7.12.1",
+    "pg-hstore": "2.3.3",
+    "sequelize": "5.21.2",
+    "sqlite": "3.0.3",
+    "helmet": "3.21.2",
+    "firebase-admin": "8.7.0",
+    "firebase-functions": "3.3.0"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "private": true,
+  "devDependencies": {
+    "cross-env": "6.0.3",
+    "firebase-functions-test": "0.1.7",
+    "mocha": "6.2.2",
+    "node-mocks-http": "1.8.0",
+    "nodemon": "1.19.4",
+    "sequelize-cli": "5.5.1"
+  }
+}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2020-05-19T16:01:28.644Z] [functions] runtime dependency check dates: warning: 2020-05-21T00:00:00.000Z error: 2020-06-23T00:00:00.000Z
+[debug] [2020-05-19T16:01:28.644Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/kjs-webapp/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2020-05-19T16:01:28.645Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/kjs-webapp/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2020-05-19T16:01:30.371Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:01:30.451Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2020-05-19T16:01:30.452Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/kjs-webapp/adminSdkConfig  
+ 
+[debug] [2020-05-19T16:01:30.976Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:01:30.977Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/kjs-webapp/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-05-19T16:01:33.341Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:33 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:01:33.342Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/kjs-webapp/releases?pageSize=10&pageToken=  
+ 
+[debug] [2020-05-19T16:01:35.042Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:34 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:01:35.043Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/kjs-webapp/rulesets/ff0e1b92-1b96-479e-8533-75730676a80e  
+ 
+[debug] [2020-05-19T16:01:36.744Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  storage: uploading rules storage.rules... 
+[debug] [2020-05-19T16:01:36.744Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kjs-webapp/rulesets  
+ {"source":{"files":[{"name":"storage.rules","content":"service firebase.storage {\n  match /b/{bucket}/o {\n    match /{allPaths=**} {\n      allow read, write: if request.auth!=null;\n    }\n  }\n}\n"}]}}
+[debug] [2020-05-19T16:01:38.481Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:01:38.481Z] [rules] created ruleset projects/kjs-webapp/rulesets/e6432743-5506-4fe0-9184-9bdd6b31076f
+[info] i  functions: preparing backend directory for uploading... 
+[debug] [2020-05-19T16:01:38.483Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/kjs-webapp/configs  
+ 
+[debug] [2020-05-19T16:01:39.246Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:01:39 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  functions: packaged backend (245.07 KB) for uploading 
+[debug] [2020-05-19T16:01:40.357Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/kjs-webapp/locations/-/functions  
+ 
+[debug] [2020-05-19T16:01:41.253Z] <<< HTTP RESPONSE 403 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Tue, 19 May 2020 16:01:41 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:01:41.253Z] <<< HTTP RESPONSE BODY {"error":{"code":403,"message":"Cloud Functions API has not been used in project 441205368561 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console API activation","url":"https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561"}]}]}}
+[debug] [2020-05-19T16:01:41.254Z] [functions] failed to list functions for kjs-webapp
+[debug] [2020-05-19T16:01:41.254Z] [functions] HTTP Error: 403, Cloud Functions API has not been used in project 441205368561 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+[debug] [2020-05-19T16:01:41.669Z] 
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-05-19T16:06:22.343Z] ----------------------------------------------------------------------
+[debug] [2020-05-19T16:06:22.345Z] Command:       /usr/local/Cellar/node/13.8.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-05-19T16:06:22.345Z] CLI Version:   8.3.0
+[debug] [2020-05-19T16:06:22.345Z] Platform:      darwin
+[debug] [2020-05-19T16:06:22.346Z] Node Version:  v13.8.0
+[debug] [2020-05-19T16:06:22.347Z] Time:          Wed May 20 2020 00:06:22 GMT+0800 (Australian Western Standard Time)
+[debug] [2020-05-19T16:06:22.347Z] ----------------------------------------------------------------------
+[debug] [2020-05-19T16:06:22.347Z] 
+[debug] [2020-05-19T16:06:22.356Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-19T16:06:22.357Z] > authorizing via signed-in user
+[debug] [2020-05-19T16:06:22.357Z] [iam] checking project kjs-webapp for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2020-05-19T16:06:22.360Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/kjs-webapp:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2020-05-19T16:06:23.960Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:23 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1170","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:06:23.961Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/kjs-webapp/serviceAccounts/kjs-webapp@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-05-19T16:06:24.627Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:24 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:06:24.628Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/kjs-webapp  
+ 
+[debug] [2020-05-19T16:06:25.244Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:25 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions.
+Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[info] 
+[info] === Deploying to 'kjs-webapp'...
+[info] 
+[info] i  deploying database, storage, functions, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2020-05-19T16:06:28.644Z] >>> HTTP REQUEST PUT https://kjs-webapp.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2020-05-19T16:06:29.631Z] <<< HTTP RESPONSE 200 {"server":"nginx","date":"Tue, 19 May 2020 16:06:29 GMT","content-type":"application/json; charset=utf-8","content-length":"15","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[info] ✔  database: rules syntax for database kjs-webapp is valid 
+[debug] [2020-05-19T16:06:29.633Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/kjs-webapp  
+ 
+[debug] [2020-05-19T16:06:31.536Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:31 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2020-05-19T16:06:31.538Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kjs-webapp:test  
+ {"source":{"files":[{"name":"storage.rules","content":"service firebase.storage {\n  match /b/{bucket}/o {\n    match /{allPaths=**} {\n      allow read, write: if request.auth!=null;\n    }\n  }\n}\n"}]}}
+[debug] [2020-05-19T16:06:32.335Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  [W] undefined:undefined - Ruleset uses old version (version [1]). Please update to the latest version (version [2]). 
+[info] ✔  firebase.storage: rules file storage.rules compiled successfully 
+[debug] [2020-05-19T16:06:32.338Z] > [functions] package.json contents: {
+  "name": "app-backend",
+  "description": "Backend",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "nodemon ./server.js",
+    "logs": "firebase functions:log",
+    "test": "nodemon --exec 'cross-env NODE_ENV=test mocha ./src/**/*.test.js --exit || exit 1'",
+    "predeploy:development": "firebase use development && firebase functions:config:set env.value=\"development\"",
+    "deploy:development": "firebase deploy --only functions",
+    "deploy:appengine:development": "gcloud app deploy app-engine.development.yaml --project <insert project id here>",
+    "db:reset:development": "cross-env MIGRATION_ENV=development node ./migrations/reset",
+    "db:reset:localhost": "cross-env MIGRATION_ENV=localhost node ./migrations/reset",
+    "db:reset:production": "cross-env MIGRATION_ENV=production node ./migrations/reset",
+    "predeploy:production": "firebase use production && firebase functions:config:set env.value=\"production\"",
+    "deploy:production": "firebase deploy --only functions",
+    "deploy:appengine:production": "gcloud app deploy app-engine.production.yaml --project <insert project id here>"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "lodash": "4.17.15",
+    "moment": "2.24.0",
+    "nodemailer": "6.3.1",
+    "mysql2": "2.0.0",
+    "pg": "7.12.1",
+    "pg-hstore": "2.3.3",
+    "sequelize": "5.21.2",
+    "sqlite": "3.0.3",
+    "helmet": "3.21.2",
+    "firebase-admin": "8.7.0",
+    "firebase-functions": "3.3.0"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "private": true,
+  "devDependencies": {
+    "cross-env": "6.0.3",
+    "firebase-functions-test": "0.1.7",
+    "mocha": "6.2.2",
+    "node-mocks-http": "1.8.0",
+    "nodemon": "1.19.4",
+    "sequelize-cli": "5.5.1"
+  }
+}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2020-05-19T16:06:33.925Z] [functions] runtime dependency check dates: warning: 2020-05-21T00:00:00.000Z error: 2020-06-23T00:00:00.000Z
+[debug] [2020-05-19T16:06:33.925Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/kjs-webapp/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2020-05-19T16:06:33.925Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/kjs-webapp/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2020-05-19T16:06:35.508Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:35 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:06:35.593Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:35 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2020-05-19T16:06:35.595Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/kjs-webapp/adminSdkConfig  
+ 
+[debug] [2020-05-19T16:06:36.093Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:06:36.095Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/kjs-webapp/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-05-19T16:06:37.962Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:37 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:06:37.964Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/kjs-webapp/releases?pageSize=10&pageToken=  
+ 
+[debug] [2020-05-19T16:06:39.637Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:39 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:06:39.638Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/kjs-webapp/rulesets/ff0e1b92-1b96-479e-8533-75730676a80e  
+ 
+[debug] [2020-05-19T16:06:41.288Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:41 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  storage: uploading rules storage.rules... 
+[debug] [2020-05-19T16:06:41.289Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kjs-webapp/rulesets  
+ {"source":{"files":[{"name":"storage.rules","content":"service firebase.storage {\n  match /b/{bucket}/o {\n    match /{allPaths=**} {\n      allow read, write: if request.auth!=null;\n    }\n  }\n}\n"}]}}
+[debug] [2020-05-19T16:06:42.040Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:41 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:06:42.041Z] [rules] created ruleset projects/kjs-webapp/rulesets/6fc27fc5-8521-4b39-bcc7-edab1d6d61b0
+[info] i  functions: preparing backend directory for uploading... 
+[debug] [2020-05-19T16:06:42.042Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/kjs-webapp/configs  
+ 
+[debug] [2020-05-19T16:06:42.688Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:06:42 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  functions: packaged backend (245.07 KB) for uploading 
+[debug] [2020-05-19T16:06:43.769Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/kjs-webapp/locations/-/functions  
+ 
+[debug] [2020-05-19T16:06:44.496Z] <<< HTTP RESPONSE 403 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Tue, 19 May 2020 16:06:44 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:06:44.496Z] <<< HTTP RESPONSE BODY {"error":{"code":403,"message":"Cloud Functions API has not been used in project 441205368561 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console API activation","url":"https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561"}]}]}}
+[debug] [2020-05-19T16:06:44.497Z] [functions] failed to list functions for kjs-webapp
+[debug] [2020-05-19T16:06:44.497Z] [functions] HTTP Error: 403, Cloud Functions API has not been used in project 441205368561 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+[debug] [2020-05-19T16:06:44.883Z] 
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-05-19T16:07:12.569Z] ----------------------------------------------------------------------
+[debug] [2020-05-19T16:07:12.571Z] Command:       /usr/local/Cellar/node/13.8.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-05-19T16:07:12.572Z] CLI Version:   8.3.0
+[debug] [2020-05-19T16:07:12.572Z] Platform:      darwin
+[debug] [2020-05-19T16:07:12.572Z] Node Version:  v13.8.0
+[debug] [2020-05-19T16:07:12.573Z] Time:          Wed May 20 2020 00:07:12 GMT+0800 (Australian Western Standard Time)
+[debug] [2020-05-19T16:07:12.573Z] ----------------------------------------------------------------------
+[debug] [2020-05-19T16:07:12.574Z] 
+[debug] [2020-05-19T16:07:12.584Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-19T16:07:12.585Z] > authorizing via signed-in user
+[debug] [2020-05-19T16:07:12.585Z] [iam] checking project kjs-webapp for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2020-05-19T16:07:12.588Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/kjs-webapp:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2020-05-19T16:07:14.081Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:13 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1173","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:07:14.083Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/kjs-webapp/serviceAccounts/kjs-webapp@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-05-19T16:07:15.580Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:15 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:07:15.581Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/kjs-webapp  
+ 
+[debug] [2020-05-19T16:07:16.218Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:16 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions.
+Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[info] 
+[info] === Deploying to 'kjs-webapp'...
+[info] 
+[info] i  deploying database, storage, functions, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2020-05-19T16:07:19.165Z] >>> HTTP REQUEST PUT https://kjs-webapp.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2020-05-19T16:07:20.126Z] <<< HTTP RESPONSE 200 {"server":"nginx","date":"Tue, 19 May 2020 16:07:20 GMT","content-type":"application/json; charset=utf-8","content-length":"15","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[info] ✔  database: rules syntax for database kjs-webapp is valid 
+[debug] [2020-05-19T16:07:20.127Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/kjs-webapp  
+ 
+[debug] [2020-05-19T16:07:22.079Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:21 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2020-05-19T16:07:22.081Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kjs-webapp:test  
+ {"source":{"files":[{"name":"storage.rules","content":"service firebase.storage {\n  match /b/{bucket}/o {\n    match /{allPaths=**} {\n      allow read, write: if request.auth!=null;\n    }\n  }\n}\n"}]}}
+[debug] [2020-05-19T16:07:23.829Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:23 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  [W] undefined:undefined - Ruleset uses old version (version [1]). Please update to the latest version (version [2]). 
+[info] ✔  firebase.storage: rules file storage.rules compiled successfully 
+[debug] [2020-05-19T16:07:23.831Z] > [functions] package.json contents: {
+  "name": "app-backend",
+  "description": "Backend",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "nodemon ./server.js",
+    "logs": "firebase functions:log",
+    "test": "nodemon --exec 'cross-env NODE_ENV=test mocha ./src/**/*.test.js --exit || exit 1'",
+    "predeploy:development": "firebase use development && firebase functions:config:set env.value=\"development\"",
+    "deploy:development": "firebase deploy --only functions",
+    "deploy:appengine:development": "gcloud app deploy app-engine.development.yaml --project <insert project id here>",
+    "db:reset:development": "cross-env MIGRATION_ENV=development node ./migrations/reset",
+    "db:reset:localhost": "cross-env MIGRATION_ENV=localhost node ./migrations/reset",
+    "db:reset:production": "cross-env MIGRATION_ENV=production node ./migrations/reset",
+    "predeploy:production": "firebase use production && firebase functions:config:set env.value=\"production\"",
+    "deploy:production": "firebase deploy --only functions",
+    "deploy:appengine:production": "gcloud app deploy app-engine.production.yaml --project <insert project id here>"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "lodash": "4.17.15",
+    "moment": "2.24.0",
+    "nodemailer": "6.3.1",
+    "mysql2": "2.0.0",
+    "pg": "7.12.1",
+    "pg-hstore": "2.3.3",
+    "sequelize": "5.21.2",
+    "sqlite": "3.0.3",
+    "helmet": "3.21.2",
+    "firebase-admin": "8.7.0",
+    "firebase-functions": "3.3.0"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "private": true,
+  "devDependencies": {
+    "cross-env": "6.0.3",
+    "firebase-functions-test": "0.1.7",
+    "mocha": "6.2.2",
+    "node-mocks-http": "1.8.0",
+    "nodemon": "1.19.4",
+    "sequelize-cli": "5.5.1"
+  }
+}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2020-05-19T16:07:25.707Z] [functions] runtime dependency check dates: warning: 2020-05-21T00:00:00.000Z error: 2020-06-23T00:00:00.000Z
+[debug] [2020-05-19T16:07:25.708Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/kjs-webapp/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2020-05-19T16:07:25.709Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/kjs-webapp/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2020-05-19T16:07:27.282Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:27 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:07:27.371Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:27 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2020-05-19T16:07:27.373Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/kjs-webapp/adminSdkConfig  
+ 
+[debug] [2020-05-19T16:07:27.871Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:27 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:07:27.873Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/kjs-webapp/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-05-19T16:07:29.715Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:29 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:07:29.716Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/kjs-webapp/releases?pageSize=10&pageToken=  
+ 
+[debug] [2020-05-19T16:07:31.413Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:31 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:07:31.414Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/kjs-webapp/rulesets/ff0e1b92-1b96-479e-8533-75730676a80e  
+ 
+[debug] [2020-05-19T16:07:33.053Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  storage: uploading rules storage.rules... 
+[debug] [2020-05-19T16:07:33.054Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kjs-webapp/rulesets  
+ {"source":{"files":[{"name":"storage.rules","content":"service firebase.storage {\n  match /b/{bucket}/o {\n    match /{allPaths=**} {\n      allow read, write: if request.auth!=null;\n    }\n  }\n}\n"}]}}
+[debug] [2020-05-19T16:07:34.775Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:34 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:07:34.775Z] [rules] created ruleset projects/kjs-webapp/rulesets/173c5f99-8637-4417-a0a8-52c78d96c60c
+[info] i  functions: preparing backend directory for uploading... 
+[debug] [2020-05-19T16:07:34.776Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/kjs-webapp/configs  
+ 
+[debug] [2020-05-19T16:07:35.392Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:07:35 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  functions: packaged backend (245.07 KB) for uploading 
+[debug] [2020-05-19T16:07:36.837Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/kjs-webapp/locations/-/functions  
+ 
+[debug] [2020-05-19T16:07:37.543Z] <<< HTTP RESPONSE 403 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Tue, 19 May 2020 16:07:37 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:07:37.543Z] <<< HTTP RESPONSE BODY {"error":{"code":403,"message":"Cloud Functions API has not been used in project 441205368561 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console API activation","url":"https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561"}]}]}}
+[debug] [2020-05-19T16:07:37.544Z] [functions] failed to list functions for kjs-webapp
+[debug] [2020-05-19T16:07:37.544Z] [functions] HTTP Error: 403, Cloud Functions API has not been used in project 441205368561 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+[debug] [2020-05-19T16:07:37.969Z] 
+[error] 
+[error] Error: An unexpected error has occurred.

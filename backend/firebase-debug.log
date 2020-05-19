@@ -1,0 +1,102 @@
+[debug] [2020-05-19T16:14:48.506Z] ----------------------------------------------------------------------
+[debug] [2020-05-19T16:14:48.508Z] Command:       /usr/local/Cellar/node/13.8.0/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2020-05-19T16:14:48.508Z] CLI Version:   8.3.0
+[debug] [2020-05-19T16:14:48.508Z] Platform:      darwin
+[debug] [2020-05-19T16:14:48.508Z] Node Version:  v13.8.0
+[debug] [2020-05-19T16:14:48.509Z] Time:          Wed May 20 2020 00:14:48 GMT+0800 (Australian Western Standard Time)
+[debug] [2020-05-19T16:14:48.509Z] ----------------------------------------------------------------------
+[debug] [2020-05-19T16:14:48.509Z] 
+[debug] [2020-05-19T16:14:48.517Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-19T16:14:48.518Z] > authorizing via signed-in user
+[debug] [2020-05-19T16:14:48.518Z] [iam] checking project kjs-webapp for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2020-05-19T16:14:48.521Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/kjs-webapp:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2020-05-19T16:14:50.006Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:14:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1203","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:14:50.007Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/kjs-webapp/serviceAccounts/kjs-webapp@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-05-19T16:14:50.490Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:14:50 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions.
+Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[info] 
+[info] === Deploying to 'kjs-webapp'...
+[info] 
+[info] i  deploying functions 
+[debug] [2020-05-19T16:14:52.697Z] > [functions] package.json contents: {
+  "name": "app-backend",
+  "description": "Backend",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "nodemon ./server.js",
+    "logs": "firebase functions:log",
+    "test": "nodemon --exec 'cross-env NODE_ENV=test mocha ./src/**/*.test.js --exit || exit 1'",
+    "predeploy:development": "firebase use development && firebase functions:config:set env.value=\"development\"",
+    "deploy:development": "firebase deploy --only functions",
+    "deploy:appengine:development": "gcloud app deploy app-engine.development.yaml --project <insert project id here>",
+    "db:reset:development": "cross-env MIGRATION_ENV=development node ./migrations/reset",
+    "db:reset:localhost": "cross-env MIGRATION_ENV=localhost node ./migrations/reset",
+    "db:reset:production": "cross-env MIGRATION_ENV=production node ./migrations/reset",
+    "predeploy:production": "firebase use production && firebase functions:config:set env.value=\"production\"",
+    "deploy:production": "firebase deploy --only functions",
+    "deploy:appengine:production": "gcloud app deploy app-engine.production.yaml --project <insert project id here>"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "lodash": "4.17.15",
+    "moment": "2.24.0",
+    "nodemailer": "6.3.1",
+    "mysql2": "2.0.0",
+    "pg": "7.12.1",
+    "pg-hstore": "2.3.3",
+    "sequelize": "5.21.2",
+    "sqlite": "3.0.3",
+    "helmet": "3.21.2",
+    "firebase-admin": "8.7.0",
+    "firebase-functions": "3.3.0"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "private": true,
+  "devDependencies": {
+    "cross-env": "6.0.3",
+    "firebase-functions-test": "0.1.7",
+    "mocha": "6.2.2",
+    "node-mocks-http": "1.8.0",
+    "nodemon": "1.19.4",
+    "sequelize-cli": "5.5.1"
+  }
+}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2020-05-19T16:14:54.287Z] [functions] runtime dependency check dates: warning: 2020-05-21T00:00:00.000Z error: 2020-06-23T00:00:00.000Z
+[debug] [2020-05-19T16:14:54.287Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/kjs-webapp/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2020-05-19T16:14:54.288Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/kjs-webapp/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2020-05-19T16:14:55.834Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:14:55 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:14:55.923Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:14:55 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2020-05-19T16:14:55.923Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/kjs-webapp/adminSdkConfig  
+ 
+[debug] [2020-05-19T16:14:56.523Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:14:56 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  functions: preparing backend directory for uploading... 
+[debug] [2020-05-19T16:14:56.525Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/kjs-webapp/configs  
+ 
+[debug] [2020-05-19T16:14:57.176Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:14:56 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:14:57.178Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/kjs-webapp/configs/env/variables  
+ 
+[debug] [2020-05-19T16:14:57.722Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:14:57 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:14:57.722Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/kjs-webapp/configs/env/variables/value  
+ 
+[debug] [2020-05-19T16:14:58.259Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 19 May 2020 16:14:58 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  functions: packaged backend (245.09 KB) for uploading 
+[debug] [2020-05-19T16:14:59.433Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/kjs-webapp/locations/-/functions  
+ 
+[debug] [2020-05-19T16:14:59.874Z] <<< HTTP RESPONSE 403 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Tue, 19 May 2020 16:14:59 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-19T16:14:59.874Z] <<< HTTP RESPONSE BODY {"error":{"code":403,"message":"Cloud Functions API has not been used in project 441205368561 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console API activation","url":"https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561"}]}]}}
+[debug] [2020-05-19T16:14:59.875Z] [functions] failed to list functions for kjs-webapp
+[debug] [2020-05-19T16:14:59.875Z] [functions] HTTP Error: 403, Cloud Functions API has not been used in project 441205368561 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=441205368561 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+[debug] [2020-05-19T16:15:00.249Z] 
+[error] 
+[error] Error: An unexpected error has occurred.
