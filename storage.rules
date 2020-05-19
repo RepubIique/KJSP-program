@@ -1,22 +1,7 @@
 service firebase.storage {
   match /b/{bucket}/o {
-    match /user {
-      match /avatars/iam/{allPaths=**} {
-        allow write: if request.resource.size < 10 * 1024 * 1024 && request.resource.contentType.matches('image/.*') && request.auth.token['user'];
-        allow read: if request.auth.token['user'];
-      }
-
-      match /avatars/profile/{userId}/{allPaths=**} {
-        allow write: if request.resource.size < 10 * 1024 * 1024 && request.resource.contentType.matches('image/.*') && request.auth.uid == userId;
-        allow read: if request.auth.uid == userId;
-      }
-    }
-
-    match /workerRegistration {
-      match /image/{allPaths=**} {
-        allow write: if request.resource.size < 50000000 && request.resource.contentType.matches('image/.*') && request.auth.token['workerRegistration'];
-        allow read: if request.auth.token['workerRegistration'];
-      }
+    match /{allPaths=**} {
+      allow read, write: if request.auth!=null;
     }
   }
 }

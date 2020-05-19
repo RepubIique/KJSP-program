@@ -1,6 +1,7 @@
 {
   "projects": {
-    "development": "<insert project id here>",
-    "production": "<insert project id here>"
+    "development": "ksj-webapp",
+    "production": "ksj-webapp",
+    "default": "kjs-webapp"
   }
 }

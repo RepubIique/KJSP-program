@@ -5,27 +5,28 @@ module.exports = {
    * PostgreSQL configuration for Sequelize.
    * More info: https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection
    */
-  database: {
-    username: 'postgres',
-    dialect: 'postgres',
-    password: '',
-    database: 'development',
-    host: 'localhost',
-    logging: console.log,
-  },
+  // database: {
+  //   username: 'postgres',
+  //   dialect: 'postgres',
+  //   password: 'password.1',
+  //   database: 'development',
+  //   host: 'localhost',
+  //   logging: console.log,
+  // },
 
   /**
    * MySQL configuration for Sequelize.
    * More info: https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection
    */
-  // database: {
-  //   username: 'root',
-  //   dialect: 'mysql',
-  //   password: '',
-  //   database: 'development',
-  //   host: 'localhost',
-  //   logging: console.log,
-  // },
+  database: {
+    username: 'root',
+    dialect: 'mysql',
+    password: 'password.1',
+    database: 'development',
+    host: '/cloudsql/kjs-sql',
+    logging: console.log,
+    migrationHost: '35.198.204.157',
+  },
 
   /**
    * Configuration to allow email sending used on:
@@ -45,14 +46,12 @@ module.exports = {
   /**
    * Client URL used when sending emails.
    */
-  clientUrl: 'https://<insert project id here>.firebaseapp.com',
+  clientUrl:
+    'https://<insert project id here>.firebaseapp.com',
 
   /**
    * When this email is set, all requests will automatically authenticate using this email.
    * Useful for testing purposes.
    */
-  userAutoAuthenticatedEmailForTests:
-    null,
-
-
+  userAutoAuthenticatedEmailForTests: null,
 };
