@@ -23,7 +23,7 @@ module.exports = {
     dialect: 'mysql',
     password: 'password.1',
     database: 'development',
-    host: '/cloudsql/kjs-sql',
+    host: '35.198.204.157',
     logging: console.log,
     migrationHost: '35.198.204.157',
   },
