@@ -1,3 +1,4 @@
 import authInitializer from 'modules/auth/authInitializer';
+import firebaseInitializer from 'modules/shared/firebase/firebaseInitializer';
 
-export default [authInitializer];
+export default [firebaseInitializer, authInitializer];

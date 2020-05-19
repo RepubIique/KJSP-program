@@ -20,7 +20,6 @@ import InputNumberRangeFormItem from 'view/shared/form/items/InputNumberRangeFor
 import SelectFormItem from 'view/shared/form/items/SelectFormItem';
 import WorkerRegistrationAutocompleteFormItem from 'view/workerRegistration/autocomplete/WorkerRegistrationAutocompleteFormItem';
 import WorkcodeAutocompleteFormItem from 'view/workcode/autocomplete/WorkcodeAutocompleteFormItem';
-import UomAutocompleteFormItem from 'view/uom/autocomplete/UomAutocompleteFormItem';
 import BlocksAutocompleteFormItem from 'view/blocks/autocomplete/BlocksAutocompleteFormItem';
 import WeekAutocompleteFormItem from 'view/week/autocomplete/WeekAutocompleteFormItem';
 
@@ -32,7 +31,6 @@ const schema = new FormFilterSchema([
   fields.workcode,
   fields.noRange,
   fields.quantityRange,
-  fields.uom,
   fields.block,
   fields.month,
   fields.week,
@@ -109,12 +107,6 @@ class CheckrollListFilter extends Component {
                     <InputRangeFormItem
                       name={fields.quantityRange.name}
                       label={fields.quantityRange.label}
-                    />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
-                    <UomAutocompleteFormItem
-                      name={fields.uom.name}
-                      label={fields.uom.label}
                     />
                   </Grid>
                   <Grid item lg={6} xs={12}>

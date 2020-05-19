@@ -41,7 +41,10 @@ module.exports = function(sequelize, DataTypes) {
   );
 
   workcode.associate = (models) => {
-
+    models.workcode.belongsTo(models.uom, {
+      as: 'uom',
+      constraints: false,
+    });
 
 
 

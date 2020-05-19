@@ -2,6 +2,7 @@ const SequelizeRepository = require('../../database/repositories/sequelizeReposi
 const UserRepository = require('../../database/repositories/userRepository');
 const assert = require('assert');
 const ValidationError = require('../../errors/validationError');
+const AuthFirebaseService = require('../../auth/authFirebaseService');
 
 /**
  * Handles changing the status (enabled/disabeld) of the Users.
@@ -32,6 +33,8 @@ module.exports = class IamStatusChanger {
       );
       throw error;
     }
+
+    await this._changeAtAuthentication();
   }
 
   get _ids() {
@@ -65,6 +68,22 @@ module.exports = class IamStatusChanger {
           currentUser: this.currentUser,
         },
       );
+    }
+  }
+
+  async _changeAtAuthentication() {
+    for (const user of this.users) {
+      if (user.authenticationUid) {
+        if (user.disabled) {
+          await AuthFirebaseService.enable(
+            user.authenticationUid,
+          );
+        } else {
+          await AuthFirebaseService.disable(
+            user.authenticationUid,
+          );
+        }
+      }
     }
   }
 

@@ -62,11 +62,6 @@ module.exports = function(sequelize, DataTypes) {
       constraints: false,
     });
 
-    models.checkroll.belongsTo(models.uom, {
-      as: 'uom',
-      constraints: false,
-    });
-
     models.checkroll.belongsTo(models.blocks, {
       as: 'block',
       constraints: false,

@@ -49,7 +49,9 @@ class WorkcodeRepository {
       },
     );
 
-
+    await record.setUom(data.uom || null, {
+      transaction,
+    });
 
 
 
@@ -103,7 +105,9 @@ class WorkcodeRepository {
     );
 
 
-
+    await record.setUom(data.uom || null, {
+      transaction,
+    });
 
 
 
@@ -156,7 +160,10 @@ class WorkcodeRepository {
     );
 
     const include = [
-
+      {
+        model: models.uom,
+        as: 'uom',
+      },
     ];
 
     const record = await models.workcode.findByPk(id, {
@@ -213,7 +220,10 @@ class WorkcodeRepository {
   ) {
     let where = {};
     let include = [
-
+      {
+        model: models.uom,
+        as: 'uom',
+      },
     ];
 
     if (filter) {
@@ -290,6 +300,15 @@ class WorkcodeRepository {
             },
           };
         }
+      }
+
+      if (filter.uom) {
+        where = {
+          ...where,
+          ['uomId']: SequelizeFilterUtils.uuid(
+            filter.uom,
+          ),
+        };
       }
 
       if (filter.createdAtRange) {

@@ -24,4 +24,5 @@ export default [
   fields.bankAccountNo,
   fields.socsoNo,
   fields.subdivision,
+  fields.image,
 ];

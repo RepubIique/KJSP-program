@@ -124,7 +124,15 @@ module.exports = function(sequelize, DataTypes) {
       constraints: false,
     });
 
-
+    models.workerRegistration.hasMany(models.file, {
+      as: 'image',
+      foreignKey: 'belongsToId',
+      constraints: false,
+      scope: {
+        belongsTo: models.workerRegistration.getTableName(),
+        belongsToColumn: 'image',
+      },
+    });
 
     models.workerRegistration.belongsTo(models.user, {
       as: 'createdBy',

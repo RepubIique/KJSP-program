@@ -1,5 +1,3 @@
-const os = require('os');
-
 module.exports = {
   env: 'test',
 
@@ -12,17 +10,6 @@ module.exports = {
     storage: ':memory:',
     logging: false,
   },
-
-  /**
-   * Secret used to Sign the JWT (Authentication) tokens.
-   */
-  authJwtSecret: '<place a generated random value here>',
-
-  /**
-   * Directory where uploaded files are saved.
-   * Default to temp.
-   */
-  uploadDir: os.tmpdir(),
 
   /**
    * Configuration to allow email sending used on:

@@ -4,9 +4,9 @@ import auth from 'modules/auth/authReducers';
 import iam from 'modules/iam/iamReducers';
 import auditLog from 'modules/auditLog/auditLogReducers';
 import settings from 'modules/settings/settingsReducers';
+import workerRegistration from 'modules/workerRegistration/workerRegistrationReducers';
 import attendance from 'modules/attendance/attendanceReducers';
 import deduction from 'modules/deduction/deductionReducers';
-import workerRegistration from 'modules/workerRegistration/workerRegistrationReducers';
 import workDone from 'modules/workDone/workDoneReducers';
 import ffb from 'modules/ffb/ffbReducers';
 import checkroll from 'modules/checkroll/checkrollReducers';
@@ -28,9 +28,9 @@ export default (history) =>
     iam,
     auditLog,
     settings,
+    workerRegistration,
     attendance,
     deduction,
-    workerRegistration,
     workDone,
     ffb,
     checkroll,

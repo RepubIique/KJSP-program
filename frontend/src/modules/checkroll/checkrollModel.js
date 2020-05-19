@@ -23,7 +23,6 @@ const fields = {
   workcode: new RelationToOneField('workcode', label('workcode'), {}),
   no: new IntegerField('no', label('no'), {}),
   quantity: new DecimalField('quantity', label('quantity'), {}),
-  uom: new RelationToOneField('uom', label('uom'), {}),
   block: new RelationToOneField('block', label('block'), {}),
   month: new EnumeratorField('month', label('month'), [
     { id: 'January', label: enumeratorLabel('month', 'January') },

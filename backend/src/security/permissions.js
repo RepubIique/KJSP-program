@@ -7,51 +7,6 @@ const roles = Roles.values;
 class Permissions {
   static get values() {
     return {
-      payrollsumEdit: {
-        id: 'payrollsumEdit',
-        allowedRoles: [
-          roles.owner,
-          roles.payrollsumSecurityReviewer,
-          roles.editor,
-        ],
-        allowedStorageFolders: ['user'],
-      },
-      payrollsumCreate: {
-        id: 'payrollsumCreate',
-        allowedRoles: [
-          roles.owner,
-          roles.payrollsumSecurityReviewer,
-          roles.editor,
-        ],
-      },
-      payrollsumImport: {
-        id: 'payrollsumImport',
-        allowedRoles: [
-          roles.owner,
-          roles.payrollsumSecurityReviewer,
-          roles.editor,
-        ],
-      },
-      payrollsumRead: {
-        id: 'payrollsumRead',
-        allowedRoles: [
-          roles.owner,
-          roles.payrollsumSecurityReviewer,
-          roles.editor,
-          roles.viewer,
-        ],
-      },
-      payrollsumUserAutocomplete: {
-        id: 'payrollsumUserAutocomplete',
-        allowedRoles: [
-          roles.owner,
-          roles.editor,
-          roles.viewer,
-
-
-        ],
-      },
-      
       iamEdit: {
         id: 'iamEdit',
         allowedRoles: [
@@ -104,6 +59,76 @@ class Permissions {
         id: 'settingsEdit',
         allowedRoles: [roles.owner],
       },
+      workerRegistrationImport: {
+        id: 'workerRegistrationImport',
+        allowedRoles: [
+          roles.owner,
+          roles.editor,
+          roles.entityEditor,
+          roles.workerRegistrationEditor,
+        ],
+      },
+      workerRegistrationCreate: {
+        id: 'workerRegistrationCreate',
+        allowedRoles: [
+          roles.owner,
+          roles.editor,
+          roles.entityEditor,
+          roles.workerRegistrationEditor,
+        ],
+        allowedStorageFolders: ['workerRegistration'],
+      },
+      workerRegistrationEdit: {
+        id: 'workerRegistrationEdit',
+        allowedRoles: [
+          roles.owner,
+          roles.editor,
+          roles.entityEditor,
+          roles.workerRegistrationEditor,
+        ],
+        allowedStorageFolders: ['workerRegistration'],
+      },
+      workerRegistrationDestroy: {
+        id: 'workerRegistrationDestroy',
+        allowedRoles: [
+          roles.owner,
+          roles.editor,
+          roles.entityEditor,
+          roles.workerRegistrationEditor,
+        ],
+        allowedStorageFolders: ['workerRegistration'],
+      },
+      workerRegistrationRead: {
+        id: 'workerRegistrationRead',
+        allowedRoles: [
+          roles.owner,
+          roles.editor,
+          roles.viewer,
+          roles.entityEditor,
+          roles.workerRegistrationEditor,
+          roles.workerRegistrationViewer,
+        ],
+      },
+      workerRegistrationAutocomplete: {
+        id: 'workerRegistrationAutocomplete',
+        allowedRoles: [
+          roles.owner,
+          roles.editor,
+          roles.viewer,
+          roles.entityEditor,
+          roles.workerRegistrationEditor,
+          roles.workerRegistrationViewer,
+          roles.attendanceEditor,
+          roles.attendanceViewer,
+          roles.deductionEditor,
+          roles.deductionViewer,
+          roles.workDoneEditor,
+          roles.workDoneViewer,
+          roles.checkrollEditor,
+          roles.checkrollViewer,
+        ],
+      },
+
       attendanceImport: {
         id: 'attendanceImport',
         allowedRoles: [
@@ -227,76 +252,6 @@ class Permissions {
           roles.deductionEditor,
           roles.deductionViewer,
 
-        ],
-      },
-
-      workerRegistrationImport: {
-        id: 'workerRegistrationImport',
-        allowedRoles: [
-          roles.owner,
-          roles.editor,
-          roles.entityEditor,
-          roles.workerRegistrationEditor,
-        ],
-      },
-      workerRegistrationCreate: {
-        id: 'workerRegistrationCreate',
-        allowedRoles: [
-          roles.owner,
-          roles.editor,
-          roles.entityEditor,
-          roles.workerRegistrationEditor,
-        ],
-        allowedStorageFolders: ['workerRegistration'],
-      },
-      workerRegistrationEdit: {
-        id: 'workerRegistrationEdit',
-        allowedRoles: [
-          roles.owner,
-          roles.editor,
-          roles.entityEditor,
-          roles.workerRegistrationEditor,
-        ],
-        allowedStorageFolders: ['workerRegistration'],
-      },
-      workerRegistrationDestroy: {
-        id: 'workerRegistrationDestroy',
-        allowedRoles: [
-          roles.owner,
-          roles.editor,
-          roles.entityEditor,
-          roles.workerRegistrationEditor,
-        ],
-        allowedStorageFolders: ['workerRegistration'],
-      },
-      workerRegistrationRead: {
-        id: 'workerRegistrationRead',
-        allowedRoles: [
-          roles.owner,
-          roles.editor,
-          roles.viewer,
-          roles.entityEditor,
-          roles.workerRegistrationEditor,
-          roles.workerRegistrationViewer,
-        ],
-      },
-      workerRegistrationAutocomplete: {
-        id: 'workerRegistrationAutocomplete',
-        allowedRoles: [
-          roles.owner,
-          roles.editor,
-          roles.viewer,
-          roles.entityEditor,
-          roles.workerRegistrationEditor,
-          roles.workerRegistrationViewer,
-          roles.attendanceEditor,
-          roles.attendanceViewer,
-          roles.deductionEditor,
-          roles.deductionViewer,
-          roles.workDoneEditor,
-          roles.workDoneViewer,
-          roles.checkrollEditor,
-          roles.checkrollViewer,
         ],
       },
 
@@ -548,10 +503,10 @@ class Permissions {
           roles.entityEditor,
           roles.subdivisionEditor,
           roles.subdivisionViewer,
-          roles.attendanceEditor,
-          roles.attendanceViewer,
           roles.workerRegistrationEditor,
           roles.workerRegistrationViewer,
+          roles.attendanceEditor,
+          roles.attendanceViewer,
           roles.ffbEditor,
           roles.ffbViewer,
         ],
@@ -1008,8 +963,8 @@ class Permissions {
           roles.entityEditor,
           roles.uomEditor,
           roles.uomViewer,
-          roles.checkrollEditor,
-          roles.checkrollViewer,
+          roles.workcodeEditor,
+          roles.workcodeViewer,
         ],
       },
     };

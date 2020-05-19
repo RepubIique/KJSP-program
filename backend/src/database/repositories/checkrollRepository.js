@@ -54,9 +54,6 @@ class CheckrollRepository {
     await record.setWorkcode(data.workcode || null, {
       transaction,
     });
-    await record.setUom(data.uom || null, {
-      transaction,
-    });
     await record.setBlock(data.block || null, {
       transaction,
     });
@@ -119,9 +116,6 @@ class CheckrollRepository {
       transaction,
     });
     await record.setWorkcode(data.workcode || null, {
-      transaction,
-    });
-    await record.setUom(data.uom || null, {
       transaction,
     });
     await record.setBlock(data.block || null, {
@@ -189,10 +183,6 @@ class CheckrollRepository {
       {
         model: models.workcode,
         as: 'workcode',
-      },
-      {
-        model: models.uom,
-        as: 'uom',
       },
       {
         model: models.blocks,
@@ -265,10 +255,6 @@ class CheckrollRepository {
       {
         model: models.workcode,
         as: 'workcode',
-      },
-      {
-        model: models.uom,
-        as: 'uom',
       },
       {
         model: models.blocks,
@@ -352,15 +338,6 @@ class CheckrollRepository {
             },
           };
         }
-      }
-
-      if (filter.uom) {
-        where = {
-          ...where,
-          ['uomId']: SequelizeFilterUtils.uuid(
-            filter.uom,
-          ),
-        };
       }
 
       if (filter.block) {

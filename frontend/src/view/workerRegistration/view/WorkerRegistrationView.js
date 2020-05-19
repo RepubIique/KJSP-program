@@ -2,6 +2,7 @@ import model from 'modules/workerRegistration/workerRegistrationModel';
 import React, { Component } from 'react';
 import Spinner from 'view/shared/Spinner';
 import TextViewItem from 'view/shared/view/TextViewItem';
+import ImagesViewItem from 'view/shared/view/ImagesViewItem';
 import DesignationViewItem from 'view/designation/view/DesignationViewItem';
 import SubdivisionViewItem from 'view/subdivision/view/SubdivisionViewItem';
 
@@ -121,6 +122,11 @@ class WorkerRegistrationView extends Component {
         <SubdivisionViewItem
           label={fields.subdivision.label}
           value={fields.subdivision.forView(record.subdivision)}
+        />
+
+        <ImagesViewItem
+          label={fields.image.label}
+          value={fields.image.forView(record.image)}
         />
 
         <TextViewItem

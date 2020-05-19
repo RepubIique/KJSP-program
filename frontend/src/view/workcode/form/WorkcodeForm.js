@@ -13,6 +13,7 @@ import FormWrapper, {
 } from 'view/shared/styles/FormWrapper';
 import ViewFormItem from 'view/shared/form/items/ViewFormItem';
 import InputFormItem from 'view/shared/form/items/InputFormItem';
+import UomAutocompleteFormItem from 'view/uom/autocomplete/UomAutocompleteFormItem';
 
 const { fields } = model;
 
@@ -23,6 +24,7 @@ class WorkcodeForm extends Component {
     fields.typeofWork,
     fields.workDescription,
     fields.rate,
+    fields.uom,
   ]);
 
   handleSubmit = (values) => {
@@ -79,6 +81,13 @@ class WorkcodeForm extends Component {
                   name={fields.rate.name}
                   label={fields.rate.label}
                   required={fields.rate.required}
+                />
+                <UomAutocompleteFormItem
+                  name={fields.uom.name}
+                  label={fields.uom.label}
+                  required={fields.uom.required}
+                  showCreate={!this.props.modal}
+                  form={form}
                 />
 
                 <FormButtons

@@ -1,3 +1,4 @@
+const AuthFirebaseService = require('./authFirebaseService');
 const config = require('../../config')();
 const AuthService = require('../services/auth/authService');
 
@@ -38,11 +39,15 @@ async function authMiddleware(req, res, next) {
   }
 
   try {
-    const currentUser = await AuthService.findByToken(
+    const { uid } = await AuthFirebaseService.verifyIdToken(
       idToken,
     );
 
-    if (currentUser && currentUser.disabled) {
+    const currentUser = await AuthService.findOrCreateFromAuth(
+      uid,
+    );
+
+    if (currentUser.disabled) {
       throw new Error(
         `User '${currentUser.email}' is disabled`,
       );
@@ -52,7 +57,10 @@ async function authMiddleware(req, res, next) {
 
     return next();
   } catch (error) {
-    console.error('Error while verifying ID token:', error);
+    console.error(
+      'Error while verifying Firebase ID token:',
+      error,
+    );
 
     res.status(403).send('Unauthorized');
   }
@@ -79,15 +87,19 @@ async function authenticateWithTestUserIfExists(
   }
 
   try {
-    const currentUser = await AuthService.findByEmail(
+    const authUser = await AuthFirebaseService.getUserByEmail(
       userAutoAuthenticatedEmailForTests,
     );
 
     console.log(
-      `Automatically authenticated user for tests: ${userAutoAuthenticatedEmailForTests}`,
+      `Authenticated with default user: ${userAutoAuthenticatedEmailForTests}`,
     );
 
-    if (currentUser && currentUser.disabled) {
+    const currentUser = await AuthService.findOrCreateFromAuth(
+      authUser.uid,
+    );
+
+    if (currentUser.disabled) {
       throw new Error(
         `User '${currentUser.email}' is disabled`,
       );

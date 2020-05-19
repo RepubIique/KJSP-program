@@ -24,6 +24,7 @@ import ConfirmModal from 'view/shared/modals/ConfirmModal';
 import Pagination from 'view/shared/table/Pagination';
 import Spinner from 'view/shared/Spinner';
 import TableCellCustom from 'view/shared/table/TableCellCustom';
+import ImagesListView from 'view/shared/table/ImagesListView';
 import DesignationListItem from 'view/designation/list/DesignationListItem';
 import SubdivisionListItem from 'view/subdivision/list/SubdivisionListItem';
 
@@ -260,6 +261,9 @@ class WorkerRegistrationListTable extends Component {
                   <TableCellCustom
                     label={fields.subdivision.label}
                   />
+                  <TableCellCustom
+                    label={fields.image.label}
+                  />
                 <TableCellCustom size="md" />
               </TableRow>
             </TableHead>
@@ -398,6 +402,9 @@ class WorkerRegistrationListTable extends Component {
                     </TableCell>
                     <TableCell>
                       <SubdivisionListItem value={row[fields.subdivision.name]} />
+                    </TableCell>
+                    <TableCell>
+                      <ImagesListView value={row[fields.image.name]} />
                     </TableCell>
                     <TableCell>
                       <Box display="flex">

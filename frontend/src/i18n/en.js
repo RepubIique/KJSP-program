@@ -28,6 +28,91 @@ const en = {
   },
 
   entities: {
+    workerRegistration: {
+      name: 'workerRegistration',
+      label: 'Worker Registration',
+      menu: 'Worker Registration',
+      exporterFileName: 'workerRegistration_export',
+      list: {
+        menu: 'Worker Registration',
+        title: 'Worker Registration',
+      },
+      create: {
+        success: 'Worker Registration saved successfully',
+      },
+      update: {
+        success: 'Worker Registration saved successfully',
+      },
+      destroy: {
+        success: 'Worker Registration deleted successfully',
+      },
+      destroyAll: {
+        success: 'Worker Registration(s) deleted successfully',
+      },
+      edit: {
+        title: 'Edit Worker Registration',
+      },
+      fields: {
+        id: 'Id',
+        'workerID': 'Worker ID',
+        'workerName': 'Worker Name',
+        'designation': 'Designation',
+        'passportICNo': 'Passport/IC No',
+        'passportExpireddateRange': 'Passport Expired date',
+        'passportExpireddate': 'Passport Expired date',
+        'dateofEmploymentRange': 'Date of Employment',
+        'dateofEmployment': 'Date of Employment',
+        'superiorName': 'Superior Name',
+        'dateofBirthRange': 'Date of Birth',
+        'dateofBirth': 'Date of Birth',
+        'ageRange': 'Age',
+        'age': 'Age',
+        'gender': 'Gender',
+        'placeofBirth': 'Place of Birth',
+        'nationality': 'Nationality',
+        'religion': 'Religion',
+        'race': 'Race',
+        'maritalStatus': 'Marital Status',
+        'spouseName': 'Spouse Name',
+        'noofchildRange': 'No. of child',
+        'noofchild': 'No. of child',
+        'bank': 'Bank',
+        'bankAccountNoRange': 'Bank Account No.',
+        'bankAccountNo': 'Bank Account No.',
+        'socsoNoRange': 'Socso No.',
+        'socsoNo': 'Socso No.',
+        'subdivision': 'Subdivision',
+        'image': 'Image',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+        'gender': {
+          'Male': 'Male',
+          'Female': 'Female',
+          'Other': 'Other',
+        },
+        'maritalStatus': {
+          'Married': 'Married',
+          'Divorced': 'Divorced',
+          'Single': 'Single',
+        },
+      },
+      new: {
+        title: 'New Worker Registration',
+      },
+      view: {
+        title: 'View Worker Registration',
+      },
+      importer: {
+        title: 'Import Worker Registration',
+        fileName: 'workerRegistration_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
+
     attendance: {
       name: 'attendance',
       label: 'Attendances',
@@ -178,90 +263,6 @@ const en = {
       importer: {
         title: 'Import Deductions',
         fileName: 'deduction_import_template',
-        hint:
-          'Files/Images columns must be the URLs of the files separated by space.',
-      },
-    },
-
-    workerRegistration: {
-      name: 'workerRegistration',
-      label: 'Worker Registration',
-      menu: 'Worker Registration',
-      exporterFileName: 'workerRegistration_export',
-      list: {
-        menu: 'Worker Registration',
-        title: 'Worker Registration',
-      },
-      create: {
-        success: 'Worker Registration saved successfully',
-      },
-      update: {
-        success: 'Worker Registration saved successfully',
-      },
-      destroy: {
-        success: 'Worker Registration deleted successfully',
-      },
-      destroyAll: {
-        success: 'Worker Registration(s) deleted successfully',
-      },
-      edit: {
-        title: 'Edit Worker Registration',
-      },
-      fields: {
-        id: 'Id',
-        'workerID': 'Worker ID',
-        'workerName': 'Worker Name',
-        'designation': 'Designation',
-        'passportICNo': 'Passport/IC No',
-        'passportExpireddateRange': 'Passport Expired date',
-        'passportExpireddate': 'Passport Expired date',
-        'dateofEmploymentRange': 'Date of Employment',
-        'dateofEmployment': 'Date of Employment',
-        'superiorName': 'Superior Name',
-        'dateofBirthRange': 'Date of Birth',
-        'dateofBirth': 'Date of Birth',
-        'ageRange': 'Age',
-        'age': 'Age',
-        'gender': 'Gender',
-        'placeofBirth': 'Place of Birth',
-        'nationality': 'Nationality',
-        'religion': 'Religion',
-        'race': 'Race',
-        'maritalStatus': 'Marital Status',
-        'spouseName': 'Spouse Name',
-        'noofchildRange': 'No. of child',
-        'noofchild': 'No. of child',
-        'bank': 'Bank',
-        'bankAccountNoRange': 'Bank Account No.',
-        'bankAccountNo': 'Bank Account No.',
-        'socsoNoRange': 'Socso No.',
-        'socsoNo': 'Socso No.',
-        'subdivision': 'Subdivision',
-        createdAt: 'Created at',
-        updatedAt: 'Updated at',
-        createdAtRange: 'Created at',
-      },
-      enumerators: {
-        'gender': {
-          'Male': 'Male',
-          'Female': 'Female',
-          'Other': 'Other',
-        },
-        'maritalStatus': {
-          'Married': 'Married',
-          'Divorced': 'Divorced',
-          'Single': 'Single',
-        },
-      },
-      new: {
-        title: 'New Worker Registration',
-      },
-      view: {
-        title: 'View Worker Registration',
-      },
-      importer: {
-        title: 'Import Worker Registration',
-        fileName: 'workerRegistration_import_template',
         hint:
           'Files/Images columns must be the URLs of the files separated by space.',
       },
@@ -446,7 +447,6 @@ const en = {
         'no': 'No',
         'quantityRange': 'Quantity',
         'quantity': 'Quantity',
-        'uom': 'UOM (Unit)',
         'block': 'Block',
         'month': 'Month',
         'week': 'Week',
@@ -566,6 +566,7 @@ const en = {
         'workDescription': 'Work Description',
         'rateRange': 'Rate',
         'rate': 'Rate',
+        'uom': 'Uom',
         createdAt: 'Created at',
         updatedAt: 'Updated at',
         createdAtRange: 'Created at',
@@ -947,6 +948,14 @@ const en = {
       label: 'Entity Viewer',
       description: 'View access to all entities',
     },
+    workerRegistrationEditor: {
+      label: 'Worker Registration Editor',
+      description: 'Edit access to Worker Registration',
+    },
+    workerRegistrationViewer: {
+      label: 'Worker Registration Viewer',
+      description: 'View access to Worker Registration',
+    },
     attendanceEditor: {
       label: 'Attendance Editor',
       description: 'Edit access to Attendances',
@@ -962,14 +971,6 @@ const en = {
     deductionViewer: {
       label: 'Deduction Viewer',
       description: 'View access to Deductions',
-    },
-    workerRegistrationEditor: {
-      label: 'Worker Registration Editor',
-      description: 'Edit access to Worker Registration',
-    },
-    workerRegistrationViewer: {
-      label: 'Worker Registration Viewer',
-      description: 'View access to Worker Registration',
     },
     workDoneEditor: {
       label: 'Work Done Editor',
@@ -1104,7 +1105,7 @@ const en = {
       title: 'Import Users',
       fileName: 'users_import_template',
       hint:
-        'Files/Images columns must be the URLs of the files separated by space. Relationships must be the ID of the referenced records separated by space. Roles must be the role ids separated by space.',
+        'Files/Images columns must be the URLs of the files separated by space.<br/> Relationships must be the ID of the referenced records separated by space.<br/> Roles must be the role ids separated by space.',
     },
     errors: {
       userAlreadyExists:
@@ -1334,6 +1335,19 @@ const en = {
   pagination: {
     labelDisplayedRows: '{0}-{1} of {2}',
     labelRowsPerPage: 'Per page:',
+  },
+
+  firebaseErrors: {
+    'auth/user-disabled': 'Your account is disabled',
+    'auth/user-not-found': `Sorry, we don't recognize your credentials`,
+    'auth/wrong-password': `Sorry, we don't recognize your credentials`,
+    'auth/weak-password': 'This password is too weak',
+    'auth/email-already-in-use': 'Email is already in use',
+    'auth/invalid-email': 'Please provide a valid email',
+    'auth/account-exists-with-different-credential':
+      'Email is already in use for a different authentication method.',
+    'auth/credential-already-in-use':
+      'Credentials are already in use',
   },
 };
 

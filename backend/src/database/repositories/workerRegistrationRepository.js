@@ -70,7 +70,15 @@ class WorkerRegistrationRepository {
       transaction,
     });
 
-
+    await FileRepository.replaceRelationFiles(
+      {
+        belongsTo: models.workerRegistration.getTableName(),
+        belongsToColumn: 'image',
+        belongsToId: record.id,
+      },
+      data.image,
+      options,
+    );
 
     await this._createAuditLog(
       AuditLogRepository.CREATE,
@@ -143,7 +151,15 @@ class WorkerRegistrationRepository {
       transaction,
     });
 
-
+    await FileRepository.replaceRelationFiles(
+      {
+        belongsTo: models.workerRegistration.getTableName(),
+        belongsToColumn: 'image',
+        belongsToId: record.id,
+      },
+      data.image,
+      options,
+    );
 
     await this._createAuditLog(
       AuditLogRepository.UPDATE,
@@ -688,7 +704,7 @@ class WorkerRegistrationRepository {
     if (data) {
       values = {
         ...record.get({ plain: true }),
-
+        image: data.image,
       };
     }
 
@@ -738,7 +754,9 @@ class WorkerRegistrationRepository {
       options,
     );
 
-
+    output.image = await record.getImage({
+      transaction,
+    });
 
     return output;
   }

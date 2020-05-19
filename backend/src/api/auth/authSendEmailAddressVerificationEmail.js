@@ -1,5 +1,5 @@
 const ForbiddenError = require('../../errors/forbiddenError');
-const AuthService = require('../../services/auth/authService');
+const AuthFirebaseService = require('../../auth/authFirebaseService');
 
 module.exports = async (req, res) => {
   try {
@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
       throw new ForbiddenError(req.language);
     }
 
-    await AuthService.sendEmailAddressVerificationEmail(
+    await AuthFirebaseService.sendEmailAddressVerificationEmail(
       req.language,
       req.currentUser.email,
     );

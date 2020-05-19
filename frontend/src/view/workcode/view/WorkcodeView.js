@@ -2,7 +2,7 @@ import model from 'modules/workcode/workcodeModel';
 import React, { Component } from 'react';
 import Spinner from 'view/shared/Spinner';
 import TextViewItem from 'view/shared/view/TextViewItem';
-
+import UomViewItem from 'view/uom/view/UomViewItem';
 
 const { fields } = model;
 
@@ -40,6 +40,11 @@ class WorkcodeView extends Component {
         <TextViewItem
           label={fields.rate.label}
           value={fields.rate.forView(record.rate)}
+        />
+
+        <UomViewItem
+          label={fields.uom.label}
+          value={fields.uom.forView(record.uom)}
         />
 
         <TextViewItem

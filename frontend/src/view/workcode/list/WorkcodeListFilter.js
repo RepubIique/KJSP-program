@@ -16,6 +16,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import UndoIcon from '@material-ui/icons/Undo';
 import { Button, Grid } from '@material-ui/core';
 import InputRangeFormItem from 'view/shared/form/items/InputRangeFormItem';
+import UomAutocompleteFormItem from 'view/uom/autocomplete/UomAutocompleteFormItem';
 
 const { fields } = model;
 
@@ -25,6 +26,7 @@ const schema = new FormFilterSchema([
   fields.typeofWork,
   fields.workDescription,
   fields.rateRange,
+  fields.uom,
 ]);
 
 class WorkcodeListFilter extends Component {
@@ -93,6 +95,12 @@ class WorkcodeListFilter extends Component {
                     <InputRangeFormItem
                       name={fields.rateRange.name}
                       label={fields.rateRange.label}
+                    />
+                  </Grid>
+                  <Grid item lg={6} xs={12}>
+                    <UomAutocompleteFormItem
+                      name={fields.uom.name}
+                      label={fields.uom.label}
                     />
                   </Grid>
                 </Grid>

@@ -9,6 +9,7 @@ import EnumeratorField from 'modules/shared/fields/enumeratorField';
 import DateField from 'modules/shared/fields/dateField';
 import DateRangeField from 'modules/shared/fields/dateRangeField';
 import RelationToOneField from 'modules/shared/fields/relationToOneField';
+import ImagesField from 'modules/shared/fields/imagesField';
 
 function label(name) {
   return i18n(`entities.workerRegistration.fields.${name}`);
@@ -49,6 +50,9 @@ const fields = {
   bankAccountNo: new IntegerField('bankAccountNo', label('bankAccountNo'), {}),
   socsoNo: new IntegerField('socsoNo', label('socsoNo'), {}),
   subdivision: new RelationToOneField('subdivision', label('subdivision'), {}),
+  image: new ImagesField('image', label('image'), 'workerRegistration/image',{
+    "size": 50000000
+  }),
   createdAt: new DateTimeField(
     'createdAt',
     label('createdAt'),

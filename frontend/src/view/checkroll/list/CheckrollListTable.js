@@ -26,7 +26,6 @@ import Spinner from 'view/shared/Spinner';
 import TableCellCustom from 'view/shared/table/TableCellCustom';
 import WorkerRegistrationListItem from 'view/workerRegistration/list/WorkerRegistrationListItem';
 import WorkcodeListItem from 'view/workcode/list/WorkcodeListItem';
-import UomListItem from 'view/uom/list/UomListItem';
 import BlocksListItem from 'view/blocks/list/BlocksListItem';
 import WeekListItem from 'view/week/list/WeekListItem';
 
@@ -152,9 +151,6 @@ class CheckrollListTable extends Component {
                     label={fields.quantity.label}
                   />
                   <TableCellCustom
-                    label={fields.uom.label}
-                  />
-                  <TableCellCustom
                     label={fields.block.label}
                   />
                   <TableCellCustom
@@ -232,9 +228,6 @@ class CheckrollListTable extends Component {
                       {fields.quantity.forView(
                         row[fields.quantity.name],
                       )}
-                    </TableCell>
-                    <TableCell>
-                      <UomListItem value={row[fields.uom.name]} />
                     </TableCell>
                     <TableCell>
                       <BlocksListItem value={row[fields.block.name]} />

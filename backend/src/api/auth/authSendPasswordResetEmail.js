@@ -1,8 +1,8 @@
-const AuthService = require('../../services/auth/authService');
+const AuthFirebaseService = require('../../auth/authFirebaseService');
 
 module.exports = async (req, res) => {
   try {
-    await AuthService.sendPasswordResetEmail(
+    await AuthFirebaseService.sendPasswordResetEmail(
       req.language,
       req.body.email,
     );

@@ -24,7 +24,7 @@ import ConfirmModal from 'view/shared/modals/ConfirmModal';
 import Pagination from 'view/shared/table/Pagination';
 import Spinner from 'view/shared/Spinner';
 import TableCellCustom from 'view/shared/table/TableCellCustom';
-
+import UomListItem from 'view/uom/list/UomListItem';
 
 const { fields } = model;
 
@@ -155,6 +155,9 @@ class WorkcodeListTable extends Component {
                     name={fields.rate.name}
                     label={fields.rate.label}
                   />
+                  <TableCellCustom
+                    label={fields.uom.label}
+                  />
                 <TableCellCustom size="md" />
               </TableRow>
             </TableHead>
@@ -217,6 +220,9 @@ class WorkcodeListTable extends Component {
                       {fields.rate.forView(
                         row[fields.rate.name],
                       )}
+                    </TableCell>
+                    <TableCell>
+                      <UomListItem value={row[fields.uom.name]} />
                     </TableCell>
                     <TableCell>
                       <Box display="flex">

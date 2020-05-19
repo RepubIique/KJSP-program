@@ -59,16 +59,6 @@ const selectLoadingPasswordResetEmail = createSelector(
   (auth) => !!auth.loadingPasswordResetEmail,
 );
 
-const selectLoadingPasswordReset = createSelector(
-  [selectRaw],
-  (auth) => !!auth.loadingPasswordReset,
-);
-
-const selectLoadingVerifyEmail = createSelector(
-  [selectRaw],
-  (auth) => !!auth.loadingVerifyEmail,
-);
-
 const selectLoadingUpdateProfile = createSelector(
   [selectRaw],
   (auth) => !!auth.loadingUpdateProfile,
@@ -131,8 +121,6 @@ const selectors = {
   selectRaw,
   selectCurrentUserNameOrEmailPrefix,
   selectCurrentUserAvatar,
-  selectLoadingPasswordReset,
-  selectLoadingVerifyEmail,
 };
 
 export default selectors;

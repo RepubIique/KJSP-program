@@ -11,13 +11,6 @@ const permissions = Permissions.values;
 
 const privateRoutes = [
   {
-    path: '/PayrollSum',
-    loader: () => import('view/PayrollSum/view/PayrollSumPage'),
-    menu: true,
-    permissionRequired: permissions.uomRead,
-    exact: true,
-  },
-  {
     path: '/',
     icon: <HomeIcon />,
     label: i18n('home.menu'),
@@ -95,6 +88,45 @@ const privateRoutes = [
   },
 
   {
+    path: '/worker-registration',
+    loader: () => import('view/workerRegistration/list/WorkerRegistrationListPage'),
+    permissionRequired: permissions.workerRegistrationRead,
+    exact: true,
+    icon: <ChevronRightIcon />,
+    label: i18n('entities.workerRegistration.menu'),
+    menu: true,
+  },
+  {
+    path: '/worker-registration/new',
+    loader: () => import('view/workerRegistration/form/WorkerRegistrationFormPage'),
+    menu: false,
+    permissionRequired: permissions.workerRegistrationCreate,
+    exact: true,
+  },
+  {
+    path: '/worker-registration/importer',
+    loader: () =>
+      import('view/workerRegistration/importer/WorkerRegistrationImporterPage'),
+    menu: false,
+    permissionRequired: permissions.workerRegistrationImport,
+    exact: true,
+  },
+  {
+    path: '/worker-registration/:id/edit',
+    loader: () => import('view/workerRegistration/form/WorkerRegistrationFormPage'),
+    menu: false,
+    permissionRequired: permissions.workerRegistrationEdit,
+    exact: true,
+  },
+  {
+    path: '/worker-registration/:id',
+    loader: () => import('view/workerRegistration/view/WorkerRegistrationViewPage'),
+    menu: false,
+    permissionRequired: permissions.workerRegistrationRead,
+    exact: true,
+  },
+
+  {
     path: '/attendance',
     loader: () => import('view/attendance/list/AttendanceListPage'),
     permissionRequired: permissions.attendanceRead,
@@ -169,45 +201,6 @@ const privateRoutes = [
     loader: () => import('view/deduction/view/DeductionViewPage'),
     menu: false,
     permissionRequired: permissions.deductionRead,
-    exact: true,
-  },
-
-  {
-    path: '/worker-registration',
-    loader: () => import('view/workerRegistration/list/WorkerRegistrationListPage'),
-    permissionRequired: permissions.workerRegistrationRead,
-    exact: true,
-    icon: <ChevronRightIcon />,
-    label: i18n('entities.workerRegistration.menu'),
-    menu: true,
-  },
-  {
-    path: '/worker-registration/new',
-    loader: () => import('view/workerRegistration/form/WorkerRegistrationFormPage'),
-    menu: false,
-    permissionRequired: permissions.workerRegistrationCreate,
-    exact: true,
-  },
-  {
-    path: '/worker-registration/importer',
-    loader: () =>
-      import('view/workerRegistration/importer/WorkerRegistrationImporterPage'),
-    menu: false,
-    permissionRequired: permissions.workerRegistrationImport,
-    exact: true,
-  },
-  {
-    path: '/worker-registration/:id/edit',
-    loader: () => import('view/workerRegistration/form/WorkerRegistrationFormPage'),
-    menu: false,
-    permissionRequired: permissions.workerRegistrationEdit,
-    exact: true,
-  },
-  {
-    path: '/worker-registration/:id',
-    loader: () => import('view/workerRegistration/view/WorkerRegistrationViewPage'),
-    menu: false,
-    permissionRequired: permissions.workerRegistrationRead,
     exact: true,
   },
 
@@ -639,7 +632,6 @@ const privateRoutes = [
     permissionRequired: permissions.uomRead,
     exact: true,
   },
-
 ];
 
 const publicRoutes = [
@@ -672,14 +664,6 @@ const emailUnverifiedRoutes = [
 ];
 
 const simpleRoutes = [
-  {
-    path: '/auth/password-reset',
-    loader: () => import('view/auth/PasswordResetPage'),
-  },
-  {
-    path: '/auth/verify-email',
-    loader: () => import('view/auth/VerifyEmailPage'),
-  },
   {
     path: '/403',
     loader: () => import('view/shared/errors/Error403Page'),

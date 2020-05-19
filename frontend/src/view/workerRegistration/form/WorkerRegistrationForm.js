@@ -16,6 +16,7 @@ import InputFormItem from 'view/shared/form/items/InputFormItem';
 import InputNumberFormItem from 'view/shared/form/items/InputNumberFormItem';
 import SelectFormItem from 'view/shared/form/items/SelectFormItem';
 import DatePickerFormItem from 'view/shared/form/items/DatePickerFormItem';
+import ImagesFormItem from 'view/shared/form/items/ImagesFormItem';
 import DesignationAutocompleteFormItem from 'view/designation/autocomplete/DesignationAutocompleteFormItem';
 import SubdivisionAutocompleteFormItem from 'view/subdivision/autocomplete/SubdivisionAutocompleteFormItem';
 
@@ -44,6 +45,7 @@ class WorkerRegistrationForm extends Component {
     fields.bankAccountNo,
     fields.socsoNo,
     fields.subdivision,
+    fields.image,
   ]);
 
   handleSubmit = (values) => {
@@ -204,6 +206,16 @@ class WorkerRegistrationForm extends Component {
                   required={fields.subdivision.required}
                   showCreate={!this.props.modal}
                   form={form}
+                />
+                <ImagesFormItem
+                  name={fields.image.name}
+                  label={fields.image.label}
+                  required={fields.image.required}
+                  path={fields.image.path}
+                  schema={{
+                    size: fields.image.size,
+                  }}
+                  max={fields.image.max}
                 />
 
                 <FormButtons

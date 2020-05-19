@@ -4,7 +4,6 @@ import Spinner from 'view/shared/Spinner';
 import TextViewItem from 'view/shared/view/TextViewItem';
 import WorkerRegistrationViewItem from 'view/workerRegistration/view/WorkerRegistrationViewItem';
 import WorkcodeViewItem from 'view/workcode/view/WorkcodeViewItem';
-import UomViewItem from 'view/uom/view/UomViewItem';
 import BlocksViewItem from 'view/blocks/view/BlocksViewItem';
 import WeekViewItem from 'view/week/view/WeekViewItem';
 
@@ -39,11 +38,6 @@ class CheckrollView extends Component {
         <TextViewItem
           label={fields.quantity.label}
           value={fields.quantity.forView(record.quantity)}
-        />
-
-        <UomViewItem
-          label={fields.uom.label}
-          value={fields.uom.forView(record.uom)}
         />
 
         <BlocksViewItem

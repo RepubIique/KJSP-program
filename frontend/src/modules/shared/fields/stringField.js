@@ -48,7 +48,7 @@ export default class StringField extends GenericField {
     }
 
     if (this.matches) {
-      yupChain = yupChain.matches(/^[0-9]/);
+      yupChain = yupChain.matches(this.matches);
     }
 
     return yupChain;
@@ -86,7 +86,7 @@ export default class StringField extends GenericField {
     }
 
     if (this.matches) {
-      yupChain = yupChain.matches(/^[0-9]/);
+      yupChain = yupChain.matches(this.matches);
     }
 
     return yupChain;

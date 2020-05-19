@@ -1,5 +1,6 @@
 const assert = require('assert');
 const UserRepository = require('../../database/repositories/userRepository');
+const AuthFirebaseService = require('../../auth/authFirebaseService');
 const SequelizeRepository = require('../../database/repositories/sequelizeRepository');
 
 /**
@@ -38,6 +39,8 @@ module.exports = class AuthProfileEditor {
       );
       throw error;
     }
+
+    await this._updateAtAuthentication();
   }
 
   /**
@@ -62,6 +65,18 @@ module.exports = class AuthProfileEditor {
         transaction: this.transaction,
       },
     );
+  }
+
+  /**
+   * Updates the user at the auth provider.
+   */
+  async _updateAtAuthentication() {
+    if (this.user.authenticationUid) {
+      await AuthFirebaseService.updateUser(
+        this.user.authenticationUid,
+        this.user,
+      );
+    }
   }
 
   /**

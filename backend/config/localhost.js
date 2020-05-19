@@ -1,5 +1,3 @@
-const os = require('os');
-const dotenv = require('dotenv').config();
 module.exports = {
   env: 'localhost',
 
@@ -7,38 +5,27 @@ module.exports = {
    * PostgreSQL configuration for Sequelize.
    * More info: https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection
    */
-  // database: {
-  //   username: 'postgres',
-  //   dialect: 'postgres',
-  //   password: '',
-  //   database: 'development',
-  //   host: 'localhost',
-  //   logging: console.log,
-  // },
-
-  /**
-   * MySQL configuration for Sequelize.
-   * More info: https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection
-   */
   database: {
-    username: process.env.USERNAME,
-    dialect: 'mysql',
-    password: process.env.LOCAL_DB_PASS,
-    database: process.env.DATABASE,
+    username: 'postgres',
+    dialect: 'postgres',
+    password: '',
+    database: 'development',
     host: 'localhost',
     logging: console.log,
   },
 
   /**
-   * Secret used to Sign the JWT (Authentication) tokens.
+   * MySQL configuration for Sequelize.
+   * More info: https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection
    */
-  authJwtSecret: '<place a generated random value here>',
-
-  /**
-   * Directory where uploaded files are saved.
-   * Default to temp.
-   */
-  uploadDir: os.tmpdir(),
+  // database: {
+  //   username: 'root',
+  //   dialect: 'mysql',
+  //   password: '',
+  //   database: 'development',
+  //   host: 'localhost',
+  //   logging: console.log,
+  // },
 
   /**
    * Configuration to allow email sending used on:
@@ -64,5 +51,8 @@ module.exports = {
    * When this email is set, all requests will automatically authenticate using this email.
    * Useful for testing purposes.
    */
-  userAutoAuthenticatedEmailForTests: null,
+  userAutoAuthenticatedEmailForTests:
+    null,
+
+
 };

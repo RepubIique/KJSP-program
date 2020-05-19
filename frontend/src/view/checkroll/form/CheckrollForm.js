@@ -17,7 +17,6 @@ import InputNumberFormItem from 'view/shared/form/items/InputNumberFormItem';
 import SelectFormItem from 'view/shared/form/items/SelectFormItem';
 import WorkerRegistrationAutocompleteFormItem from 'view/workerRegistration/autocomplete/WorkerRegistrationAutocompleteFormItem';
 import WorkcodeAutocompleteFormItem from 'view/workcode/autocomplete/WorkcodeAutocompleteFormItem';
-import UomAutocompleteFormItem from 'view/uom/autocomplete/UomAutocompleteFormItem';
 import BlocksAutocompleteFormItem from 'view/blocks/autocomplete/BlocksAutocompleteFormItem';
 import WeekAutocompleteFormItem from 'view/week/autocomplete/WeekAutocompleteFormItem';
 
@@ -29,7 +28,6 @@ class CheckrollForm extends Component {
     fields.workcode,
     fields.no,
     fields.quantity,
-    fields.uom,
     fields.block,
     fields.month,
     fields.week,
@@ -90,13 +88,6 @@ class CheckrollForm extends Component {
                   name={fields.quantity.name}
                   label={fields.quantity.label}
                   required={fields.quantity.required}
-                />
-                <UomAutocompleteFormItem
-                  name={fields.uom.name}
-                  label={fields.uom.label}
-                  required={fields.uom.required}
-                  showCreate={!this.props.modal}
-                  form={form}
                 />
                 <BlocksAutocompleteFormItem
                   name={fields.block.name}

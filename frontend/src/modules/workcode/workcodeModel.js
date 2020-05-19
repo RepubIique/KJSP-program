@@ -5,6 +5,7 @@ import DateTimeRangeField from 'modules/shared/fields/dateTimeRangeField';
 import StringField from 'modules/shared/fields/stringField';
 import DecimalRangeField from 'modules/shared/fields/decimalRangeField';
 import DecimalField from 'modules/shared/fields/decimalField';
+import RelationToOneField from 'modules/shared/fields/relationToOneField';
 
 function label(name) {
   return i18n(`entities.workcode.fields.${name}`);
@@ -17,6 +18,7 @@ const fields = {
   typeofWork: new StringField('typeofWork', label('typeofWork'), {}),
   workDescription: new StringField('workDescription', label('workDescription'), {}),
   rate: new DecimalField('rate', label('rate'), {}),
+  uom: new RelationToOneField('uom', label('uom'), {}),
   createdAt: new DateTimeField(
     'createdAt',
     label('createdAt'),

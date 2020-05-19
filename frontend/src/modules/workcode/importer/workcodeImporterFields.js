@@ -8,4 +8,5 @@ export default [
   fields.typeofWork,
   fields.workDescription,
   fields.rate,
+  fields.uom,
 ];

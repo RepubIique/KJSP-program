@@ -1,7 +1,7 @@
 const userFixture = require('./userFixture');
+const workerRegistrationFixture = require('./workerRegistrationFixture');
 const attendanceFixture = require('./attendanceFixture');
 const deductionFixture = require('./deductionFixture');
-const workerRegistrationFixture = require('./workerRegistrationFixture');
 const workDoneFixture = require('./workDoneFixture');
 const ffbFixture = require('./ffbFixture');
 const checkrollFixture = require('./checkrollFixture');
@@ -17,9 +17,9 @@ const AbstractRepository = require('../database/repositories/abstractRepository'
 
 module.exports = {
   user: userFixture,
+  workerRegistration: workerRegistrationFixture,
   attendance: attendanceFixture,
   deduction: deductionFixture,
-  workerRegistration: workerRegistrationFixture,
   workDone: workDoneFixture,
   ffb: ffbFixture,
   checkroll: checkrollFixture,
