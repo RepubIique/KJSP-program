@@ -11,6 +11,16 @@ const permissions = Permissions.values;
 
 const privateRoutes = [
   {
+    path: '/checkrollreport',
+    label: i18n('home.menu'),
+    menu: {
+      exact: true,
+    },
+    loader: () => import('view/checkRollreport/view/checkRollreportPage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
     path: '/',
     icon: <HomeIcon />,
     label: i18n('home.menu'),

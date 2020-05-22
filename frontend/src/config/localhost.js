@@ -1,14 +1,12 @@
 const firebaseConfig = {
-  apiKey: 'AIzaSyBnPdKvKok-7PjeBQNJ3f48c6-XybMgaV0',
-  authDomain: 'kjs-webapp.firebaseapp.com',
-  databaseURL: 'https://kjs-webapp.firebaseio.com/',
-  projectId: 'kjs-webapp',
-  storageBucket: 'kjs-webapp.appspot.com',
-  messagingSenderId: '441205368561',
-  appId: '1:441205368561:web:14ad15493cbd6fcaa92b50',
-  measurementId: 'G-0714YNCRND',
+  apiKey: "AIzaSyDMh6Q5tBKwu8k_DAJ4wK-Y83bZjPKfI28",
+  authDomain: "kjsp-1e2d0.firebaseapp.com",
+  databaseURL: "https://kjsp-1e2d0.firebaseio.com",
+  projectId: "kjsp-1e2d0",
+  storageBucket: "kjsp-1e2d0.appspot.com",
+  messagingSenderId: "228376514383",
+  appId: "1:228376514383:web:226559ccfb4d584f247f3a"
 };
-
 // Cloud Functions
 // const backendUrl = `http://localhost:5000/${
 //   firebaseConfig.projectId
