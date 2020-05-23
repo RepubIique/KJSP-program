@@ -20,6 +20,7 @@ class IamView extends Component {
           label={fields.id.label}
           value={fields.id.forView(user.id)}
         />
+
         <TextViewItem
           label={fields.authenticationUid.label}
           value={fields.authenticationUid.forView(

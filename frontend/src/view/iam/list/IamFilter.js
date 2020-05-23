@@ -65,32 +65,32 @@ class IamFilter extends Component {
             return (
               <form onSubmit={form.handleSubmit}>
                 <Grid container spacing={2}>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.id.name}
                       label={fields.id.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <DatePickerRangeFormItem
                       name={fields.createdAtRange.name}
                       label={fields.createdAtRange.label}
                       showTime
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.email.name}
                       label={fields.email.label}
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.fullName.name}
                       label={fields.fullName.label}
                     />
                   </Grid>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <SelectFormItem
                       name={fields.status.name}
                       label={fields.status.label}
@@ -101,7 +101,7 @@ class IamFilter extends Component {
                         }),
                       )}
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item lg={6} xs={12}>
                     <SelectFormItem
                       name={fields.role.name}

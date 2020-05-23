@@ -65,20 +65,20 @@ class AuditLogFilter extends Component {
             return (
               <form onSubmit={form.handleSubmit}>
                 <Grid container spacing={2}>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <DatePickerRangeFormItem
                       name={fields.timestampRange.name}
                       label={fields.timestampRange.label}
                       showTime
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.createdByEmail.name}
                       label={fields.createdByEmail.label}
                     />
                   </Grid>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <TagsFormItem
                       name={fields.entityNames.name}
                       label={fields.entityNames.label}
@@ -86,13 +86,13 @@ class AuditLogFilter extends Component {
                         'auditLog.entityNamesHint',
                       )}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.entityId.name}
                       label={fields.entityId.label}
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.action.name}
