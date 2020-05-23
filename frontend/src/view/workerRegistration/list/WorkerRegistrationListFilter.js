@@ -84,12 +84,12 @@ class WorkerRegistrationListFilter extends Component {
             return (
               <form onSubmit={form.handleSubmit}>
                 <Grid container spacing={2}>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.workerID.name}
                       label={fields.workerID.label}
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.workerName.name}
@@ -108,31 +108,31 @@ class WorkerRegistrationListFilter extends Component {
                       label={fields.passportICNo.label}
                     />
                   </Grid>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <DatePickerRangeFormItem
                       name={fields.passportExpireddateRange.name}
                       label={fields.passportExpireddateRange.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <DatePickerRangeFormItem
                       name={fields.dateofEmploymentRange.name}
                       label={fields.dateofEmploymentRange.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.superiorName.name}
                       label={fields.superiorName.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <DatePickerRangeFormItem
                       name={fields.dateofBirthRange.name}
                       label={fields.dateofBirthRange.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.ageRange.name
@@ -141,8 +141,8 @@ class WorkerRegistrationListFilter extends Component {
                         fields.ageRange.label
                       }
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <SelectFormItem
                       name={fields.gender.name}
                       label={fields.gender.label}
@@ -153,31 +153,31 @@ class WorkerRegistrationListFilter extends Component {
                         }),
                       )}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.placeofBirth.name}
                       label={fields.placeofBirth.label}
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.nationality.name}
                       label={fields.nationality.label}
                     />
                   </Grid>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.religion.name}
                       label={fields.religion.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.race.name}
                       label={fields.race.label}
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item lg={6} xs={12}>
                     <SelectFormItem
                       name={fields.maritalStatus.name}
@@ -190,13 +190,13 @@ class WorkerRegistrationListFilter extends Component {
                       )}
                     />
                   </Grid>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.spouseName.name}
                       label={fields.spouseName.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.noofchildRange.name
@@ -211,8 +211,8 @@ class WorkerRegistrationListFilter extends Component {
                       name={fields.bank.name}
                       label={fields.bank.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.bankAccountNoRange.name
@@ -221,8 +221,8 @@ class WorkerRegistrationListFilter extends Component {
                         fields.bankAccountNoRange.label
                       }
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.socsoNoRange.name
@@ -231,7 +231,7 @@ class WorkerRegistrationListFilter extends Component {
                         fields.socsoNoRange.label
                       }
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item lg={6} xs={12}>
                     <SubdivisionAutocompleteFormItem
                       name={fields.subdivision.name}
@@ -275,4 +275,6 @@ function select(state) {
   };
 }
 
-export default withRouter(connect(select)(WorkerRegistrationListFilter));
+export default withRouter(
+  connect(select)(WorkerRegistrationListFilter),
+);
