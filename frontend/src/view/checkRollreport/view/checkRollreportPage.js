@@ -26,7 +26,16 @@ class checkRollreportPage extends Component {
       <React.Fragment>
         <div style={{ maxWidth: '100%' }}>
           <MaterialTable
+              options={{
+                filtering: true,
+                headerStyle: {
+                  backgroundColor: '#01579b',
+                  color: '#FFF'
+                }
+              }}
+              
             columns={[
+              
               { title: 'Worker ID', field: 'workerIDId' },
               { title: 'Name', field: 'workerName' },
               {

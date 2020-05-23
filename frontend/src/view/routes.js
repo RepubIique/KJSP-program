@@ -6,13 +6,15 @@ import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import HistoryIcon from '@material-ui/icons/History';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import Assessment from '@material-ui/icons/Assessment';
 
 const permissions = Permissions.values;
 
 const privateRoutes = [
   {
+    icon: <Assessment />,
     path: '/checkrollreport',
-    label: i18n('home.menu'),
+    label: 'Checkroll report',
     menu: {
       exact: true,
     },
