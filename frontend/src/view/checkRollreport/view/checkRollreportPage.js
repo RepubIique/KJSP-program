@@ -2,11 +2,23 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
 import MaterialTable from 'material-table';
-import checkRollreportService from 'modules/checkRollreport/checkRollreportservice';
+import tableData from '../data/data.js';
+
+let result = [];
 
 class checkRollreportPage extends Component {
-  componentDidMount() {
-    console.log(checkRollreportService.findAndCountAll());
+  constructor(props) {
+    super(props); //since we are extending class Table so we have to use super in order to override Component class constructor
+    this.state = {
+      //state is by default an object
+      result: [result],
+    };
+  }
+
+  async componentDidMount() {
+    result = await tableData.getData();
+    console.log(result);
+    this.setState({ result: result });
   }
 
   render() {
@@ -19,13 +31,13 @@ class checkRollreportPage extends Component {
               { title: 'Name', field: 'workerName' },
               {
                 title: 'Account Code',
-                field: 'accCode',
                 type: 'numeric',
+                field: 'accCode',
               },
               {
                 title: 'no',
-                field: 'no',
                 type: 'numeric',
+                field: 'no',
               },
               {
                 title: 'Description',
@@ -33,22 +45,18 @@ class checkRollreportPage extends Component {
               },
               {
                 title: 'Quantity',
-                field: 'quantity',
                 type: 'numeric',
-              },
-              {
-                title: 'UPM',
-                field: 'uom',
+                field: 'quantity',
               },
               {
                 title: 'Rate',
-                field: 'rate',
                 type: 'numeric',
+                field: 'rate',
               },
               {
                 title: 'Amount',
-                field: 'Amount',
                 type: 'numeric',
+                field: 'Amount',
               },
               {
                 title: 'Sub-division',
@@ -56,8 +64,8 @@ class checkRollreportPage extends Component {
               },
               {
                 title: 'Block ID',
-                field: 'blockId',
                 type: 'numeric',
+                field: 'blockId',
               },
               {
                 title: 'Month',
@@ -68,7 +76,7 @@ class checkRollreportPage extends Component {
                 field: 'year',
               },
             ]}
-            data={[]}
+            data={result}
             title="Checkroll Report"
           />
         </div>
