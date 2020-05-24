@@ -122,148 +122,149 @@ class WorkerRegistrationListTable extends Component {
                     />
                   )}
                 </TableCellCustom>
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.workerID.name}
-                    label={fields.workerID.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.workerName.name}
-                    label={fields.workerName.label}
-                  />
-                  <TableCellCustom
-                    label={fields.designation.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.passportICNo.name}
-                    label={fields.passportICNo.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.passportExpireddate.name}
-                    label={fields.passportExpireddate.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.dateofEmployment.name}
-                    label={fields.dateofEmployment.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.superiorName.name}
-                    label={fields.superiorName.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.dateofBirth.name}
-                    label={fields.dateofBirth.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.age.name}
-                    label={fields.age.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.gender.name}
-                    label={fields.gender.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.placeofBirth.name}
-                    label={fields.placeofBirth.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.nationality.name}
-                    label={fields.nationality.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.religion.name}
-                    label={fields.religion.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.race.name}
-                    label={fields.race.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.maritalStatus.name}
-                    label={fields.maritalStatus.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.spouseName.name}
-                    label={fields.spouseName.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.noofchild.name}
-                    label={fields.noofchild.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.bank.name}
-                    label={fields.bank.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.bankAccountNo.name}
-                    label={fields.bankAccountNo.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.socsoNo.name}
-                    label={fields.socsoNo.label}
-                  />
-                  <TableCellCustom
-                    label={fields.subdivision.label}
-                  />
-                  <TableCellCustom
-                    label={fields.image.label}
-                  />
+                <TableCellCustom
+                  label={fields.image.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.workerID.name}
+                  label={fields.workerID.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.workerName.name}
+                  label={fields.workerName.label}
+                />
+                <TableCellCustom
+                  label={fields.designation.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.passportICNo.name}
+                  label={fields.passportICNo.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.passportExpireddate.name}
+                  label={fields.passportExpireddate.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.dateofEmployment.name}
+                  label={fields.dateofEmployment.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.superiorName.name}
+                  label={fields.superiorName.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.dateofBirth.name}
+                  label={fields.dateofBirth.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.age.name}
+                  label={fields.age.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.gender.name}
+                  label={fields.gender.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.placeofBirth.name}
+                  label={fields.placeofBirth.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.nationality.name}
+                  label={fields.nationality.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.religion.name}
+                  label={fields.religion.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.race.name}
+                  label={fields.race.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.maritalStatus.name}
+                  label={fields.maritalStatus.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.spouseName.name}
+                  label={fields.spouseName.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.noofchild.name}
+                  label={fields.noofchild.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.bank.name}
+                  label={fields.bank.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.bankAccountNo.name}
+                  label={fields.bankAccountNo.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.socsoNo.name}
+                  label={fields.socsoNo.label}
+                />
+                <TableCellCustom
+                  label={fields.subdivision.label}
+                />
+
                 <TableCellCustom size="md" />
               </TableRow>
             </TableHead>
@@ -303,6 +304,11 @@ class WorkerRegistrationListTable extends Component {
                       />
                     </TableCell>
                     <TableCell>
+                      <ImagesListView
+                        value={row[fields.image.name]}
+                      />
+                    </TableCell>
+                    <TableCell>
                       {fields.workerID.forView(
                         row[fields.workerID.name],
                       )}
@@ -313,7 +319,9 @@ class WorkerRegistrationListTable extends Component {
                       )}
                     </TableCell>
                     <TableCell>
-                      <DesignationListItem value={row[fields.designation.name]} />
+                      <DesignationListItem
+                        value={row[fields.designation.name]}
+                      />
                     </TableCell>
                     <TableCell>
                       {fields.passportICNo.forView(
@@ -322,7 +330,9 @@ class WorkerRegistrationListTable extends Component {
                     </TableCell>
                     <TableCell>
                       {fields.passportExpireddate.forView(
-                        row[fields.passportExpireddate.name],
+                        row[
+                          fields.passportExpireddate.name
+                        ],
                       )}
                     </TableCell>
                     <TableCell>
@@ -401,11 +411,11 @@ class WorkerRegistrationListTable extends Component {
                       )}
                     </TableCell>
                     <TableCell>
-                      <SubdivisionListItem value={row[fields.subdivision.name]} />
+                      <SubdivisionListItem
+                        value={row[fields.subdivision.name]}
+                      />
                     </TableCell>
-                    <TableCell>
-                      <ImagesListView value={row[fields.image.name]} />
-                    </TableCell>
+
                     <TableCell>
                       <Box display="flex">
                         <Tooltip

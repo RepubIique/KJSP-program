@@ -79,16 +79,22 @@ class AttendanceListFilter extends Component {
             return (
               <form onSubmit={form.handleSubmit}>
                 <Grid container spacing={2}>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.id.name}
                       label={fields.id.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <SubdivisionAutocompleteFormItem
                       name={fields.subDivision.name}
                       label={fields.subDivision.label}
+                    />
+                  </Grid> */}
+                  <Grid item lg={6} xs={12}>
+                    <WorkerRegistrationAutocompleteFormItem
+                      name={fields.workerID.name}
+                      label={fields.workerID.label}
                     />
                   </Grid>
                   <Grid item lg={6} xs={12}>
@@ -97,13 +103,8 @@ class AttendanceListFilter extends Component {
                       label={fields.week.label}
                     />
                   </Grid>
-                  <Grid item lg={6} xs={12}>
-                    <WorkerRegistrationAutocompleteFormItem
-                      name={fields.workerID.name}
-                      label={fields.workerID.label}
-                    />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.totalWorkingDayRange.name
@@ -112,8 +113,8 @@ class AttendanceListFilter extends Component {
                         fields.totalWorkingDayRange.label
                       }
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.totalWorkingHoursRange.name
@@ -122,8 +123,8 @@ class AttendanceListFilter extends Component {
                         fields.totalWorkingHoursRange.label
                       }
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.totalRestDayRange.name
@@ -132,8 +133,8 @@ class AttendanceListFilter extends Component {
                         fields.totalRestDayRange.label
                       }
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.totalPublicHolidayRange.name
@@ -142,8 +143,8 @@ class AttendanceListFilter extends Component {
                         fields.totalPublicHolidayRange.label
                       }
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.totalAbsentRange.name
@@ -162,8 +163,8 @@ class AttendanceListFilter extends Component {
                         fields.totalSickLeaveRange.label
                       }
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputRangeFormItem
                       name={fields.totalOnLeaveRange.name}
                       label={fields.totalOnLeaveRange.label}
@@ -174,7 +175,7 @@ class AttendanceListFilter extends Component {
                       name={fields.totalOvertimeHourRange.name}
                       label={fields.totalOvertimeHourRange.label}
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item lg={6} xs={12}>
                     <SelectFormItem
                       name={fields.month.name}
@@ -187,7 +188,7 @@ class AttendanceListFilter extends Component {
                       )}
                     />
                   </Grid>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.yearRange.name
@@ -196,7 +197,7 @@ class AttendanceListFilter extends Component {
                         fields.yearRange.label
                       }
                     />
-                  </Grid>
+                  </Grid> */}
                 </Grid>
 
                 <FilterButtons>
@@ -234,4 +235,6 @@ function select(state) {
   };
 }
 
-export default withRouter(connect(select)(AttendanceListFilter));
+export default withRouter(
+  connect(select)(AttendanceListFilter),
+);

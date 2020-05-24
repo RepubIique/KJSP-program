@@ -77,13 +77,13 @@ class DeductionListFilter extends Component {
                       label={fields.workersID.label}
                     />
                   </Grid>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.deductfor.name}
                       label={fields.deductfor.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputRangeFormItem
                       name={fields.bfrmRange.name}
                       label={fields.bfrmRange.label}
@@ -106,8 +106,8 @@ class DeductionListFilter extends Component {
                       name={fields.cfrmRange.name}
                       label={fields.cfrmRange.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <SelectFormItem
                       name={fields.month.name}
                       label={fields.month.label}
@@ -118,8 +118,8 @@ class DeductionListFilter extends Component {
                         }),
                       )}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.yearRange.name
@@ -128,7 +128,7 @@ class DeductionListFilter extends Component {
                         fields.yearRange.label
                       }
                     />
-                  </Grid>
+                  </Grid> */}
                 </Grid>
 
                 <FilterButtons>
@@ -166,4 +166,6 @@ function select(state) {
   };
 }
 
-export default withRouter(connect(select)(DeductionListFilter));
+export default withRouter(
+  connect(select)(DeductionListFilter),
+);

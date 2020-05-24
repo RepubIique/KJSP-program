@@ -17,9 +17,7 @@ import InputFormItem from 'view/shared/form/items/InputFormItem';
 const { fields } = model;
 
 class EstateForm extends Component {
-  schema = new FormSchema(fields.id, [
-    fields.estate,
-  ]);
+  schema = new FormSchema(fields.id, [fields.estate]);
 
   handleSubmit = (values) => {
     const { id, ...data } = this.schema.cast(values);
