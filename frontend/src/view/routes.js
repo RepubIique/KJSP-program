@@ -7,10 +7,23 @@ import HistoryIcon from '@material-ui/icons/History';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Assessment from '@material-ui/icons/Assessment';
-
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import DoneAllIcon from '@material-ui/icons/DoneAll';
+import MinimizeIcon from '@material-ui/icons/Minimize';
 const permissions = Permissions.values;
 
 const privateRoutes = [
+  {
+    icon: <Assessment />,
+    path: '/PayRollSummary',
+    label: 'Payroll Summary',
+    menu: {
+      exact: true,
+    },
+    loader: () => import('view/payRollSummary/view/payRollSummaryPage'),
+    permissionRequired: null,
+    exact: true,
+  },
   {
     icon: <Assessment />,
     path: '/checkrollreport',
@@ -104,7 +117,7 @@ const privateRoutes = [
     loader: () => import('view/workerRegistration/list/WorkerRegistrationListPage'),
     permissionRequired: permissions.workerRegistrationRead,
     exact: true,
-    icon: <ChevronRightIcon />,
+    icon: <GroupAddIcon />,
     label: i18n('entities.workerRegistration.menu'),
     menu: true,
   },
@@ -143,7 +156,7 @@ const privateRoutes = [
     loader: () => import('view/attendance/list/AttendanceListPage'),
     permissionRequired: permissions.attendanceRead,
     exact: true,
-    icon: <ChevronRightIcon />,
+    icon: <DoneAllIcon />,
     label: i18n('entities.attendance.menu'),
     menu: true,
   },
@@ -182,7 +195,7 @@ const privateRoutes = [
     loader: () => import('view/deduction/list/DeductionListPage'),
     permissionRequired: permissions.deductionRead,
     exact: true,
-    icon: <ChevronRightIcon />,
+    icon: <MinimizeIcon />,
     label: i18n('entities.deduction.menu'),
     menu: true,
   },
