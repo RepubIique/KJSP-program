@@ -53,7 +53,6 @@ require('./designation')(routes);
 require('./blocks')(routes);
 require('./uom')(routes);
 require('./checkRollreport')(routes);
-require('./PayRollSummary')(routes);
 
 // Add the routes to the /api endpoint
 app.use('/api', routes);
