@@ -28,6 +28,7 @@ class checkRollreportPage extends Component {
       <React.Fragment>
         <div style={{ maxWidth: '100%' }}>
           <MaterialTable
+<<<<<<< HEAD
 
               options={{
                 filtering: true,

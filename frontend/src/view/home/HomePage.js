@@ -16,7 +16,7 @@ const styles = (theme) => ({
   chartWrapper: {
     border: '1px solid rgb(224, 224, 224)',
     borderRadius: '5px',
-    backgroundColor: '#fff',
+    backgroundColor: '#303030',
     padding: theme.spacing(2),
     display: 'flex',
     alignItems: 'center',

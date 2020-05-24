@@ -122,50 +122,50 @@ class WorkDoneListTable extends Component {
                     />
                   )}
                 </TableCellCustom>
-                  <TableCellCustom
+                {/* <TableCellCustom
                     onSort={this.doChangeSort}
                     hasRows={hasRows}
                     sorter={sorter}
                     name={fields.id.name}
                     label={fields.id.label}
-                  />
-                  <TableCellCustom
-                    label={fields.workerID.label}
-                  />
-                  <TableCellCustom
-                    label={fields.workcode.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.quantity.name}
-                    label={fields.quantity.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.block.name}
-                    label={fields.block.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.month.name}
-                    label={fields.month.label}
-                  />
-                  <TableCellCustom
-                    label={fields.week.label}
-                  />
-                  <TableCellCustom
-                    onSort={this.doChangeSort}
-                    hasRows={hasRows}
-                    sorter={sorter}
-                    name={fields.year.name}
-                    label={fields.year.label}
-                  />
+                  /> */}
+                <TableCellCustom
+                  label={fields.workerID.label}
+                />
+                <TableCellCustom
+                  label={fields.workcode.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.quantity.name}
+                  label={fields.quantity.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.block.name}
+                  label={fields.block.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.month.name}
+                  label={fields.month.label}
+                />
+                <TableCellCustom
+                  label={fields.week.label}
+                />
+                <TableCellCustom
+                  onSort={this.doChangeSort}
+                  hasRows={hasRows}
+                  sorter={sorter}
+                  name={fields.year.name}
+                  label={fields.year.label}
+                />
                 <TableCellCustom size="md" />
               </TableRow>
             </TableHead>
@@ -204,16 +204,20 @@ class WorkDoneListTable extends Component {
                         }
                       />
                     </TableCell>
-                    <TableCell>
+                    {/* <TableCell>
                       {fields.id.forView(
                         row[fields.id.name],
                       )}
+                    </TableCell> */}
+                    <TableCell>
+                      <WorkerRegistrationListItem
+                        value={row[fields.workerID.name]}
+                      />
                     </TableCell>
                     <TableCell>
-                      <WorkerRegistrationListItem value={row[fields.workerID.name]} />
-                    </TableCell>
-                    <TableCell>
-                      <WorkcodeListItem value={row[fields.workcode.name]} />
+                      <WorkcodeListItem
+                        value={row[fields.workcode.name]}
+                      />
                     </TableCell>
                     <TableCell>
                       {fields.quantity.forView(
@@ -231,7 +235,9 @@ class WorkDoneListTable extends Component {
                       )}
                     </TableCell>
                     <TableCell>
-                      <WeekListItem value={row[fields.week.name]} />
+                      <WeekListItem
+                        value={row[fields.week.name]}
+                      />
                     </TableCell>
                     <TableCell>
                       {fields.year.forView(

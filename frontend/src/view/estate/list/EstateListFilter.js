@@ -16,12 +16,9 @@ import SearchIcon from '@material-ui/icons/Search';
 import UndoIcon from '@material-ui/icons/Undo';
 import { Button, Grid } from '@material-ui/core';
 
-
 const { fields } = model;
 
-const schema = new FormFilterSchema([
-  fields.estate,
-]);
+const schema = new FormFilterSchema([fields.estate]);
 
 class EstateListFilter extends Component {
   componentDidMount() {
@@ -52,48 +49,49 @@ class EstateListFilter extends Component {
     const { loading } = this.props;
 
     return (
-      <FilterWrapper>
-        <Formik
-          initialValues={this.initialFilter()}
-          validationSchema={schema.schema}
-          onSubmit={this.handleSubmit}
-          render={(form) => {
-            return (
-              <form onSubmit={form.handleSubmit}>
-                <Grid container spacing={2}>
-                  <Grid item lg={6} xs={12}>
-                    <InputFormItem
-                      name={fields.estate.name}
-                      label={fields.estate.label}
-                    />
-                  </Grid>
-                </Grid>
+      <div></div>
+      // <FilterWrapper>
+      //   <Formik
+      //     initialValues={this.initialFilter()}
+      //     validationSchema={schema.schema}
+      //     onSubmit={this.handleSubmit}
+      //     render={(form) => {
+      //       return (
+      //         <form onSubmit={form.handleSubmit}>
+      //           <Grid container spacing={2}>
+      //             <Grid item lg={6} xs={12}>
+      //               <InputFormItem
+      //                 name={fields.estate.name}
+      //                 label={fields.estate.label}
+      //               />
+      //             </Grid>
+      //           </Grid>
 
-                <FilterButtons>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    type="submit"
-                    disabled={loading}
-                    startIcon={<SearchIcon />}
-                  >
-                    {i18n('common.search')}
-                  </Button>
+      //           <FilterButtons>
+      //             <Button
+      //               variant="contained"
+      //               color="primary"
+      //               type="submit"
+      //               disabled={loading}
+      //               startIcon={<SearchIcon />}
+      //             >
+      //               {i18n('common.search')}
+      //             </Button>
 
-                  <Button
-                    type="button"
-                    onClick={() => this.handleReset(form)}
-                    disabled={loading}
-                    startIcon={<UndoIcon />}
-                  >
-                    {i18n('common.reset')}
-                  </Button>
-                </FilterButtons>
-              </form>
-            );
-          }}
-        />
-      </FilterWrapper>
+      //             <Button
+      //               type="button"
+      //               onClick={() => this.handleReset(form)}
+      //               disabled={loading}
+      //               startIcon={<UndoIcon />}
+      //             >
+      //               {i18n('common.reset')}
+      //             </Button>
+      //           </FilterButtons>
+      //         </form>
+      //       );
+      //     }}
+      //   />
+      // </FilterWrapper>
     );
   }
 }
@@ -104,4 +102,6 @@ function select(state) {
   };
 }
 
-export default withRouter(connect(select)(EstateListFilter));
+export default withRouter(
+  connect(select)(EstateListFilter),
+);

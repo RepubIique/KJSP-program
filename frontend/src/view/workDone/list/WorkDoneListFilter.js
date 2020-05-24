@@ -73,12 +73,12 @@ class WorkDoneListFilter extends Component {
             return (
               <form onSubmit={form.handleSubmit}>
                 <Grid container spacing={2}>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <InputFormItem
                       name={fields.id.name}
                       label={fields.id.label}
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item lg={6} xs={12}>
                     <WorkerRegistrationAutocompleteFormItem
                       name={fields.workerID.name}
@@ -91,13 +91,13 @@ class WorkDoneListFilter extends Component {
                       label={fields.workcode.label}
                     />
                   </Grid>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <InputRangeFormItem
                       name={fields.quantityRange.name}
                       label={fields.quantityRange.label}
                     />
-                  </Grid>
-                  <Grid item lg={6} xs={12}>
+                  </Grid> */}
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.blockRange.name
@@ -106,7 +106,7 @@ class WorkDoneListFilter extends Component {
                         fields.blockRange.label
                       }
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item lg={6} xs={12}>
                     <SelectFormItem
                       name={fields.month.name}
@@ -125,7 +125,7 @@ class WorkDoneListFilter extends Component {
                       label={fields.week.label}
                     />
                   </Grid>
-                  <Grid item lg={6} xs={12}>
+                  {/* <Grid item lg={6} xs={12}>
                     <InputNumberRangeFormItem
                       name={
                         fields.yearRange.name
@@ -134,7 +134,7 @@ class WorkDoneListFilter extends Component {
                         fields.yearRange.label
                       }
                     />
-                  </Grid>
+                  </Grid> */}
                 </Grid>
 
                 <FilterButtons>
@@ -172,4 +172,6 @@ function select(state) {
   };
 }
 
-export default withRouter(connect(select)(WorkDoneListFilter));
+export default withRouter(
+  connect(select)(WorkDoneListFilter),
+);
