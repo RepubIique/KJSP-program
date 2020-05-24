@@ -28,7 +28,6 @@ class checkRollreportPage extends Component {
       <React.Fragment>
         <div style={{ maxWidth: '100%' }}>
           <MaterialTable
-<<<<<<< HEAD
 
               options={{
                 filtering: true,
@@ -39,7 +38,6 @@ class checkRollreportPage extends Component {
               }}
               
             columns={[
-              
               { title: 'Worker ID', field: 'workerIDId' },
               { title: 'Name', field: 'workerName' },
               {
