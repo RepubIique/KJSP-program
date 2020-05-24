@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
 import MaterialTable from 'material-table';
+import MTableToolbar from 'material-table'
 import tableData from '../data/data.js';
+import Chip from '@material-ui/core/Chip';
 
 let result = [];
 
@@ -26,10 +28,11 @@ class checkRollreportPage extends Component {
       <React.Fragment>
         <div style={{ maxWidth: '100%' }}>
           <MaterialTable
+
               options={{
                 filtering: true,
                 headerStyle: {
-                  backgroundColor: '#01579b',
+                  backgroundColor: '#2196F3',
                   color: '#FFF'
                 }
               }}
