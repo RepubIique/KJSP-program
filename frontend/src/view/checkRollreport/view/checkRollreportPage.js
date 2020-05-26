@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
 import MaterialTable from 'material-table';
-import MTableToolbar from 'material-table'
 import tableData from '../data/data.js';
-import Chip from '@material-ui/core/Chip';
+import { size } from 'lodash';
 
 let result = [];
 
@@ -28,21 +27,18 @@ class checkRollreportPage extends Component {
       <React.Fragment>
         <div style={{ maxWidth: '100%' }}>
           <MaterialTable
-
-              options={{
-                filtering: true,
-                headerStyle: {
-                  backgroundColor: '#2196F3',
-                  color: '#FFF'
-                }
-              }}
-              
+            options={{
+              filtering: true,
+              headerStyle: {
+                backgroundColor: '#2196F3',
+                color: '#FFF',
+                padding: '0.3em'              },
+            }}
             columns={[
               { title: 'Worker ID', field: 'workerIDId' },
               { title: 'Name', field: 'workerName' },
               {
                 title: 'Account Code',
-                type: 'numeric',
                 field: 'accCode',
               },
               {
@@ -56,17 +52,14 @@ class checkRollreportPage extends Component {
               },
               {
                 title: 'Quantity',
-                type: 'numeric',
                 field: 'quantity',
               },
               {
                 title: 'Rate',
-                type: 'numeric',
                 field: 'rate',
               },
               {
                 title: 'Amount',
-                type: 'numeric',
                 field: 'Amount',
               },
               {
@@ -75,7 +68,6 @@ class checkRollreportPage extends Component {
               },
               {
                 title: 'Block ID',
-                type: 'numeric',
                 field: 'blockId',
               },
               {

@@ -1,7 +1,7 @@
 const PermissionChecker = require('../../services/iam/permissionChecker');
 const permissions = require('../../security/permissions')
   .values;
-const PayRollSummaryservice = require('../../services/PayRollSummaryservice');
+const PayRollSummaryService = require('../../services/payRollSummaryService');
 
 module.exports = async (req, res) => {
   try {
@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
       permissions.uomRead,
     );
 
-    const payload = await new PayRollSummaryservice(
+    const payload = await new PayRollSummaryService(
       req,
     ).findAndCountAll(req.query);
 
