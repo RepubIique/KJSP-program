@@ -1,6 +1,6 @@
 module.exports = (app) => {
 
-    app.get(`/checkRollreport`, require('./checkRollreportList'));
+    app.get(`/checkRollReport`, require('./checkRollReportList'));
 
   };
   
