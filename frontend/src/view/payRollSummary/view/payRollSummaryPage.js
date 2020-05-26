@@ -125,7 +125,7 @@ class payRollSummaryPage extends Component {
                 title: 'TRANSPORTATION',
                 field: 'TRANSPORTATION',
               },
-              { title: 'gross', field: 'gross' },
+              { title: 'gross', field: 'totalOfall' },
               { title: 'month', field: 'month' },
               { title: 'year', field: 'year' },
               {
