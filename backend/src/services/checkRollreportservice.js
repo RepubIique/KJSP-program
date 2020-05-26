@@ -7,11 +7,11 @@ const SequelizeRepository = require('../database/repositories/sequelizeRepositor
 const sequelize = require('../database/models').sequelize;
 
 /**
- * Handles checkRollreport operations
+ * Handles checkRollReport operations
  */
-module.exports = class checkRollreportService {
+module.exports = class checkRollReportService {
     async findAndCountAll(args) {
-        console.log('------------------------')
+        console.log('-------- Check Roll Report Service --------')
         return sequelize.query(
             'SELECT * from checkRollreport',
           );

@@ -1,6 +1,6 @@
 module.exports = (app) => {
 
-    app.get(`/PayRollSummary`, require('./PayRollSummaryList'));
+    app.get(`/payRollSummary`, require('./payRollSummaryList'));
 
   };
   
