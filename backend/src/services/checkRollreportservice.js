@@ -11,7 +11,7 @@ const sequelize = require('../database/models').sequelize;
  */
 module.exports = class checkRollreportService {
     async findAndCountAll(args) {
-        console.log('------------------------')
+        console.log('-------- Check Roll Report Service --------')
         return sequelize.query(
             'SELECT * from checkRollreport',
           );
