@@ -1,7 +1,7 @@
 const PermissionChecker = require('../../services/iam/permissionChecker');
 const permissions = require('../../security/permissions')
   .values;
-const monthlyLaborCostService = require('../../services/monthlyLaborCostService');
+const monthlyLabourCostService = require('../../services/monthlyLabourCostService');
 
 module.exports = async (req, res) => {
   try {
@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
       permissions.uomRead,
     );
 
-    const payload = await new monthlyLaborCostService(
+    const payload = await new monthlyLabourCostService(
       req,
     ).findAndCountAll(req.query);
 
