@@ -56,7 +56,7 @@ require('./checkRollReport')(routes);
 require('./payRollSummary')(routes);
 require('./workerWorkDoneSummary')(routes);
 require('./labourCostSummary')(routes);
-require('./monthlyLaborCost')(routes);
+require('./monthlyLabourCost')(routes);
 
 // Add the routes to the /api endpoint
 app.use('/api', routes);

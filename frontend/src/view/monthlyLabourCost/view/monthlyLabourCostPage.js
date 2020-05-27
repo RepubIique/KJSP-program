@@ -9,7 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 
 let result = [];
 
-class monthlyLaborCost extends Component {
+class monthlyLabourCost extends Component {
   constructor(props) {
     super(props); //since we are extending class Table so we have to use super in order to override Component class constructor
     this.state = {
@@ -155,4 +155,4 @@ class monthlyLaborCost extends Component {
   }
 }
 
-export default monthlyLaborCost;
+export default monthlyLabourCost;
