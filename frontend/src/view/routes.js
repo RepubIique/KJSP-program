@@ -59,12 +59,12 @@ const privateRoutes = [
   },
   {
     icon: <Assessment />,
-    path: '/monthlyLaborCost',
+    path: '/monthlyLabourCost',
     label: 'Monthly Labor Cost',
     menu: {
       exact: true,
     },
-    loader: () => import('view/monthlyLaborCost/view/monthlyLaborCostPage'),
+    loader: () => import('view/monthlyLabourCost/view/monthlyLabourCostPage'),
     permissionRequired: null,
     exact: true,
   },
