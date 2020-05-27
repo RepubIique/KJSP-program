@@ -15,8 +15,8 @@ const permissions = Permissions.values;
 const privateRoutes = [
   {
     icon: <Assessment />,
-    path: '/PayRollSummary',
-    label: 'Payroll Summary',
+    path: '/payRollSummary',
+    label: 'Pay Roll Summary',
     menu: {
       exact: true,
     },
@@ -26,12 +26,45 @@ const privateRoutes = [
   },
   {
     icon: <Assessment />,
-    path: '/checkrollreport',
-    label: 'Checkroll report',
+    path: '/checkRollReport',
+    label: 'Check Roll Report',
     menu: {
       exact: true,
     },
-    loader: () => import('view/checkRollreport/view/checkRollreportPage'),
+    loader: () => import('view/checkRollReport/view/checkRollReportPage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
+    icon: <Assessment />,
+    path: '/workerWorkDoneSummary',
+    label: 'Worker Work Done Summary',
+    menu: {
+      exact: true,
+    },
+    loader: () => import('view/workerWorkDoneSummary/view/workerWorkDoneSummaryPage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
+    icon: <Assessment />,
+    path: '/labourCostSummary',
+    label: 'Labour Cost Summary',
+    menu: {
+      exact: true,
+    },
+    loader: () => import('view/labourCostSummary/view/labourCostSummaryPage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
+    icon: <Assessment />,
+    path: '/monthlyLabourCost',
+    label: 'Monthly Labor Cost',
+    menu: {
+      exact: true,
+    },
+    loader: () => import('view/monthlyLabourCost/view/monthlyLabourCostPage'),
     permissionRequired: null,
     exact: true,
   },

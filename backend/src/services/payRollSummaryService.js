@@ -3,11 +3,11 @@
 const sequelize = require('../database/models').sequelize;
 
 /**
- * Handles PayRollSummary operations
+ * Handles payRollSummary operations
  */
-module.exports = class PayRollSummaryService {
+module.exports = class payRollSummaryService {
     async findAndCountAll(args) {
-        console.log('------------------------')
+        console.log('--------- Pay Roll Summary Service --------')
         return sequelize.query(
             'SELECT * from PayRollSummary',
           );

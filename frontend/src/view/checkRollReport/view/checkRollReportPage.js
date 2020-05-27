@@ -7,7 +7,7 @@ import { size } from 'lodash';
 
 let result = [];
 
-class checkRollreportPage extends Component {
+class checkRollReportPage extends Component {
   constructor(props) {
     super(props); //since we are extending class Table so we have to use super in order to override Component class constructor
     this.state = {
@@ -80,7 +80,7 @@ class checkRollreportPage extends Component {
               },
             ]}
             data={result}
-            title="Checkroll Report"
+            title="Check Roll Report"
           />
         </div>
       </React.Fragment>
@@ -88,4 +88,4 @@ class checkRollreportPage extends Component {
   }
 }
 
-export default checkRollreportPage;
+export default checkRollReportPage;

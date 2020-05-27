@@ -9,7 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 
 let result = [];
 
-class payRollSummaryPage extends Component {
+class workerWorkDoneSummaryPage extends Component {
   constructor(props) {
     super(props); //since we are extending class Table so we have to use super in order to override Component class constructor
     this.state = {
@@ -125,7 +125,7 @@ class payRollSummaryPage extends Component {
                 title: 'TRANSPORTATION',
                 field: 'TRANSPORTATION',
               },
-              { title: 'gross', field: 'gross' },
+              { title: 'gross', field: 'totalOfall' },
               { title: 'month', field: 'month' },
               { title: 'year', field: 'year' },
               {
@@ -147,7 +147,7 @@ class payRollSummaryPage extends Component {
               },
             ]}
             data={result}
-            title="Pay Roll Summary"
+            title="Worker Work Done Summary"
           />
         </div>
       </React.Fragment>
@@ -155,4 +155,4 @@ class payRollSummaryPage extends Component {
   }
 }
 
-export default payRollSummaryPage;
+export default workerWorkDoneSummaryPage;

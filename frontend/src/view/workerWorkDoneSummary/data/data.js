@@ -5,7 +5,7 @@ let tableData = {
     let tableStuff;
 
     const res = await authAxios
-      .get('/checkRollreport')
+      .get('/workerWorkDoneSummary')
       .then(async (res) => {
         for (let j = 0; j < res.data.length; j++) {
           tableStuff = res.data[j];

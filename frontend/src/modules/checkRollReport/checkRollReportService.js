@@ -1,6 +1,6 @@
 import authAxios from 'modules/shared/axios/authAxios';
 
-export default class checkRollreportService {
+export default class checkRollReportService {
 
 
 
@@ -25,7 +25,7 @@ export default class checkRollreportService {
       offset,
     };
 
-    const response = await authAxios.get('/checkRollreport', {
+    const response = await authAxios.get('/checkRollReport', {
       params: query,
     });
 
