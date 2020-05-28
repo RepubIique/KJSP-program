@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { i18n } from 'i18n';
+import barChartData from './data/barChartdata.js';
+
+
+let result = [];
+
+
+
+
+
+
+
+
 
 const options = {
   responsive: true,
@@ -44,34 +56,42 @@ const options = {
   },
 };
 
+
+let labelArray =[];
+
+for (let i = 0; i < result.length; i++) {
+  labelArray.push(result[i].workerName)
+  console.log(result[i].workerName)
+}
+
+
+
+
+
 const data1 = {
   labels: [
-    i18n('home.charts.months.1'),
-    i18n('home.charts.months.2'),
-    i18n('home.charts.months.3'),
-    i18n('home.charts.months.4'),
-    i18n('home.charts.months.5'),
-    i18n('home.charts.months.6'),
-    i18n('home.charts.months.7'),
+
+
+
   ],
   datasets: [
-    {
-      label: i18n('home.charts.orange'),
-      type: 'line',
-      data: [51, 65, 40, 49, 60, 37, 40],
-      fill: false,
-      borderColor: '#EC932F',
-      backgroundColor: '#EC932F',
-      pointBorderColor: '#EC932F',
-      pointBackgroundColor: '#EC932F',
-      pointHoverBackgroundColor: '#EC932F',
-      pointHoverBorderColor: '#EC932F',
-      yAxisID: 'y-axis-2',
-    },
+    // {
+    //   label: i18n('home.charts.orange'),
+    //   type: 'line',
+    //   data: [51, 65, 40, 49, 60, 37, 40],
+    //   fill: false,
+    //   borderColor: '#EC932F',
+    //   backgroundColor: '#EC932F',
+    //   pointBorderColor: '#EC932F',
+    //   pointBackgroundColor: '#EC932F',
+    //   pointHoverBackgroundColor: '#EC932F',
+    //   pointHoverBorderColor: '#EC932F',
+    //   yAxisID: 'y-axis-2',
+    // },
     {
       type: 'bar',
       label: i18n('home.charts.blue'),
-      data: [200, 185, 590, 621, 250, 400, 95],
+      data: [76, 43],
       fill: false,
       backgroundColor: '#36A2EB',
       borderColor: '#36A2EB',
@@ -83,6 +103,19 @@ const data1 = {
 };
 
 export default class HomeMixChartOne extends Component {
+  constructor(props) {
+    super(props); //since we are extending class Table so we have to use super in order to override Component class constructor
+    this.state = {
+      //state is by default an object
+      result: [result],
+    };
+  }
+  
+  async componentDidMount() {
+    result = await barChartData.getData();
+    console.log(result);
+    this.setState({ result: result });
+  }
   render() {
     return <Bar data={data1} options={options} />;
   }
