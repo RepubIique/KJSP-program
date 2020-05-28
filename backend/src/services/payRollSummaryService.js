@@ -2,14 +2,27 @@
 // this below seems to be working ...
 const sequelize = require('../database/models').sequelize;
 
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 /**
  * Handles payRollSummary operations
  */
 module.exports = class payRollSummaryService {
-    async findAndCountAll(args) {
-        console.log('--------- Pay Roll Summary Service --------')
+    async findAndCountAll(params) {
+        console.log('--------- Pay Roll Summary Service --------');
+        console.log(params);
+
+        if (params.month !== '%') {
+            params.month = monthNames[params.month];
+        }
+        
+
         return sequelize.query(
-            'SELECT * from PayRollSummary',
+            'SELECT * FROM PayRollSummary WHERE year LIKE :year AND month LIKE :month;',
+            {
+              replacements: params
+            }
           );
       }
 }

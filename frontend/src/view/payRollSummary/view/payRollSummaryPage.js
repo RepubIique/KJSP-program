@@ -15,14 +15,53 @@ class payRollSummaryPage extends Component {
     this.state = {
       //state is by default an object
       result: [result],
+      params: {
+        year: '%',
+        month: '%',
+        sub: '%'
+      }
+      
     };
+    this.handleSelectChangeYear = this.handleSelectChangeYear.bind(this);
+    this.handleSelectChangeMonth = this.handleSelectChangeMonth.bind(this);
+    this.handleSelectChangeSub = this.handleSelectChangeSub.bind(this);
   }
 
   async componentDidMount() {
-    result = await tableData.getData();
+    this.fetchData();
+  }
+
+  async fetchData() {
+    result = await tableData.getData(this.state.params);
     console.log(result);
     this.setState({ result: result });
   }
+
+
+  handleSelectChangeYear(event) {
+    console.log(event.target.value);
+    let params = this.state.params;
+    params.year = event.target.value;
+    this.setState({ params });
+    this.fetchData();
+  }
+
+  handleSelectChangeMonth(event) {
+    console.log(event.target.value);
+    let params = this.state.params;
+    params.month = event.target.value;
+    this.setState({ params });
+    this.fetchData();
+  }
+
+  handleSelectChangeSub(event) {
+    console.log(event.target.value);
+    let params = this.state.params;
+    params.sub = event.target.value;
+    this.setState({ params });
+    this.fetchData();
+  }
+  
 
   render() {
     return (
@@ -36,10 +75,12 @@ class payRollSummaryPage extends Component {
                 </InputLabel>
                 <Select
                   native
-                  defaultValue=""
+                  
                   id="grouped-native-select"
+                  value={this.state.params.year}
+                  onChange={this.handleSelectChangeYear}>
                 >
-                  <option aria-label="None" value="" />
+                  <option aria-label="None" value="%">Select Year</option>
                   <option value={2020}>2020</option>
                   <option value={2021}>2021</option>
                   <option value={2022}>2022</option>
@@ -55,22 +96,40 @@ class payRollSummaryPage extends Component {
                 </InputLabel>
                 <Select
                   native
-                  defaultValue=""
+                  value={this.state.params.month}
+                  onChange={this.handleSelectChangeMonth}>
                   id="grouped-native-select"
                 >
-                  <option aria-label="None" value="" />
-                  <option value={1}>January</option>
-                  <option value={2}>Febuary</option>
-                  <option value={3}>Machr</option>
-                  <option value={4}>April</option>
-                  <option value={5}>May</option>
-                  <option value={6}>June</option>
-                  <option value={7}>July</option>
-                  <option value={8}>August</option>
-                  <option value={9}>September</option>
-                  <option value={10}>October</option>
-                  <option value={11}>November</option>
-                  <option value={12}>December</option>
+                  <option aria-label="None" value="%">Select Month</option>
+                  <option value={0}>January</option>
+                  <option value={1}>February</option>
+                  <option value={2}>March</option>
+                  <option value={3}>April</option>
+                  <option value={4}>May</option>
+                  <option value={5}>June</option>
+                  <option value={6}>July</option>
+                  <option value={7}>August</option>
+                  <option value={8}>September</option>
+                  <option value={9}>October</option>
+                  <option value={10}>November</option>
+                  <option value={11}>December</option>
+                </Select>
+              </FormControl>
+
+              <FormControl>
+                <InputLabel htmlFor="grouped-select">
+                  Subdivision
+                </InputLabel>
+                <Select
+                  native
+                  value={this.state.params.sub}
+                  onChange={this.handleSelectChangeSub}>
+                  id="grouped-native-select"
+                >
+                  <option aria-label="None" value="%">Select Subdivision</option>
+                  <option value={0}>SubA</option>
+                  <option value={1}>SubB</option>
+                  <option value={2}>SubC</option>
                 </Select>
               </FormControl>
             </CardContent>
