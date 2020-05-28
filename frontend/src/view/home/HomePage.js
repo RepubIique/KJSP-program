@@ -16,7 +16,7 @@ const styles = (theme) => ({
   chartWrapper: {
     border: '1px solid rgb(224, 224, 224)',
     borderRadius: '5px',
-    backgroundColor: '#303030',
+    backgroundColor: '#fff',
     padding: theme.spacing(2),
     display: 'flex',
     alignItems: 'center',
@@ -38,7 +38,7 @@ class HomePage extends PureComponent {
         }}
       >
         <Grid container>
-          <Grid
+          {/* <Grid
             item
             style={{
               paddingLeft: '12px',
@@ -54,8 +54,8 @@ class HomePage extends PureComponent {
             <div className={classes.chartWrapper}>
               <HomeDoughnutChart />
             </div>
-          </Grid>
-          <Grid
+          </Grid> */}
+          {/* <Grid
             item
             style={{
               paddingLeft: '12px',
@@ -71,8 +71,8 @@ class HomePage extends PureComponent {
             <div className={classes.chartWrapper}>
               <HomeMixChartTwo />
             </div>
-          </Grid>
-          <Grid
+          </Grid> */}
+          {/* <Grid
             item
             style={{
               paddingLeft: '12px',
@@ -88,7 +88,7 @@ class HomePage extends PureComponent {
             <div className={classes.chartWrapper}>
               <HomeBarChart />
             </div>
-          </Grid>
+          </Grid> */}
 
           <Grid
             item
@@ -126,7 +126,7 @@ class HomePage extends PureComponent {
             </div>
           </Grid>
 
-          <Grid
+          {/* <Grid
             item
             style={{
               paddingLeft: '12px',
@@ -142,7 +142,7 @@ class HomePage extends PureComponent {
             <div className={classes.chartWrapper}>
               <HomeHorizontalBarChart />
             </div>
-          </Grid>
+          </Grid> */}
           <Grid
             item
             style={{
@@ -160,7 +160,7 @@ class HomePage extends PureComponent {
               <HomeLineChart />
             </div>
           </Grid>
-          <Grid
+          {/* <Grid
             item
             style={{
               paddingLeft: '12px',
@@ -176,7 +176,7 @@ class HomePage extends PureComponent {
             <div className={classes.chartWrapper}>
               <HomeRadarChart />
             </div>
-          </Grid>
+          </Grid> */}
         </Grid>
 
         <p
