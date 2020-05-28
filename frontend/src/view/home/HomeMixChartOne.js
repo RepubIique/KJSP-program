@@ -32,7 +32,7 @@ export default class HomeMixChartOne extends Component {
 
   async componentDidMount() {
     result = await barChartData.getData();
-
+    console.log(result);
     this.setState({ result: result });
   }
 
@@ -50,7 +50,7 @@ export default class HomeMixChartOne extends Component {
       scales: {
         xAxes: [
           {
-            display: false,
+            display: true,
             gridLines: {
               display: false,
             },
@@ -81,23 +81,23 @@ export default class HomeMixChartOne extends Component {
     const data1 = {
       labels: populateName(),
       datasets: [
-        {
-          label: i18n('home.charts.orange'),
-          type: 'line',
-          data: populateQuan(),
-          fill: false,
-          borderColor: '#EC932F',
-          backgroundColor: '#EC932F',
-          pointBorderColor: '#EC932F',
-          pointBackgroundColor: '#EC932F',
-          pointHoverBackgroundColor: '#EC932F',
-          pointHoverBorderColor: '#EC932F',
-          yAxisID: 'y-axis-2',
-        },
+        // {
+        //   label: 'Worker',
+        //   type: 'line',
+        //   data: populateQuan(),
+        //   fill: false,
+        //   borderColor: '#EC932F',
+        //   backgroundColor: '#EC932F',
+        //   pointBorderColor: '#EC932F',
+        //   pointBackgroundColor: '#EC932F',
+        //   pointHoverBackgroundColor: '#EC932F',
+        //   pointHoverBorderColor: '#EC932F',
+        //   yAxisID: 'y-axis-2',
+        // },
         {
           type: 'bar',
-          label: i18n('home.charts.blue'),
-          data: populateName(),
+          label: 'Ringgit Earned',
+          data: populateQuan(),
           fill: false,
           backgroundColor: '#36A2EB',
           borderColor: '#36A2EB',
