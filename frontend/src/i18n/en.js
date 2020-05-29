@@ -1164,7 +1164,7 @@ const en = {
   },
   home: {
     menu: 'Home',
-    message: `This page uses fake data for demonstration purposes only. You can edit it at frontend/view/home/HomePage.js.`,
+    message: `Created by Team Digital Studios.`,
     charts: {
       day: 'Day',
       red: 'Red',

@@ -1,7 +1,7 @@
 const PermissionChecker = require('../../services/iam/permissionChecker');
 const permissions = require('../../security/permissions')
   .values;
-const barChartperfService = require('../../services/barChartperfService');
+const checkRollReportService = require('../../services/checkRollReportService');
 
 module.exports = async (req, res) => {
   try {
@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
       permissions.uomRead,
     );
 
-    const payload = await new barChartperfService(
+    const payload = await new checkRollReportService(
       req,
     ).findAndCountAll(req.query);
 

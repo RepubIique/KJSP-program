@@ -67,13 +67,14 @@ class payRollSummaryPage extends Component {
     return (
       <React.Fragment>
         <div>
-          <Card>
+          <Card  style={{width: "33em"}}>
             <CardContent>
-              <FormControl>
+              <FormControl >
                 <InputLabel htmlFor="grouped-native-select">
                   Year
                 </InputLabel>
                 <Select
+                style={{marginRight: "1em"}}
                   native
                   
                   id="grouped-native-select"
@@ -95,6 +96,7 @@ class payRollSummaryPage extends Component {
                   Month
                 </InputLabel>
                 <Select
+                                style={{marginRight: "1em"}}
                   native
                   value={this.state.params.month}
                   onChange={this.handleSelectChangeMonth}>
@@ -121,6 +123,7 @@ class payRollSummaryPage extends Component {
                   Subdivision
                 </InputLabel>
                 <Select
+                                style={{marginRight: "1em"}}
                   native
                   value={this.state.params.sub}
                   onChange={this.handleSelectChangeSub}>
@@ -138,14 +141,20 @@ class payRollSummaryPage extends Component {
         <br></br>
         <div style={{ maxWidth: '100%' }}>
           <MaterialTable
-            options={{
-              filtering: true,
-              headerStyle: {
-                backgroundColor: '#2196F3',
-                color: '#FFF',
-                padding: '0.3em',
-              },
-            }}
+           options={{
+            // filtering: true,
+            headerStyle: {
+              backgroundColor: '#2196F3',
+              color: '#FFF',
+              padding: '0.3em',
+              fontSize: '0.8em',
+            },
+            
+            cellStyle:{
+              padding: '0.3em',
+              fontSize: '0.8em',
+            }
+          }}
             columns={[
               { title: 'Worker ID', field: 'workerID' },
               { title: 'Name', field: 'workerName' },
@@ -155,33 +164,33 @@ class payRollSummaryPage extends Component {
               },
               { title: 'General', field: 'GENERALsum' },
               {
-                title: 'FFBHARVESTING',
+                title: 'FFB Harvesting',
                 field: 'FFBHARVESTING',
               },
-              { title: 'PRUNING', field: 'PRUNING' },
+              { title: 'Pruning', field: 'PRUNING' },
               {
-                title: 'FIELDMAINTENANCE',
+                title: 'Field Maint.',
                 field: 'FIELDMAINTENANCE',
               },
               {
-                title: 'PESTDISEASE',
+                title: 'Pest/Disease',
                 field: 'PESTDISEASE',
               },
               {
-                title: 'PLANTINGSUPPLYING',
+                title: 'Planting/Supply',
                 field: 'PLANTINGSUPPLYING',
               },
               {
-                title: 'BUILDINGCONSTRUCTION',
+                title: 'Building Const.',
                 field: 'BUILDINGCONSTRUCTION',
               },
               {
-                title: 'INFRAMAINTENANCE',
+                title: 'Infa. Maintenance',
                 field: 'INFRAMAINTENANCE',
               },
-              { title: 'NURSERY', field: 'NURSERY' },
+              { title: 'Nursery', field: 'NURSERY' },
               {
-                title: 'TRANSPORTATION',
+                title: 'Transportation',
                 field: 'TRANSPORTATION',
               },
               { title: 'gross', field: 'gross' },
@@ -191,17 +200,17 @@ class payRollSummaryPage extends Component {
                 title: 'deductionTotal',
                 field: 'deductionTotal',
               },
-              { title: 'netPayable', field: 'netPayable' },
+              { title: 'net Payable', field: 'netPayable' },
               {
-                title: 'percWageDeeduct',
+                title: '% of Wage Deducted',
                 field: 'percWageDeeduct',
               },
               {
-                title: 'achievementofminwages',
+                title: 'Min Wage Achiev.',
                 field: 'achievementofminwages',
               },
               {
-                title: 'workingHour',
+                title: 'Working Hours',
                 field: 'workingHour',
               },
             ]}

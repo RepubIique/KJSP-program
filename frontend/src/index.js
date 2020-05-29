@@ -18,6 +18,6 @@ import { i18n } from 'i18n';
    * It may cause cache issues when developing, so, after your app is ready,
    * change those lines
    */
-  unregister();
-  // registerServiceWorker();
+  // unregister();
+  // register();
 })();

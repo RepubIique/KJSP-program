@@ -28,14 +28,21 @@ class checkRollReportPage extends Component {
         <div style={{ maxWidth: '100%' }}>
           <MaterialTable
             options={{
-              filtering: true,
+              // filtering: true,
               headerStyle: {
                 backgroundColor: '#2196F3',
                 color: '#FFF',
-                padding: '0.3em'              },
+                padding: '0.3em',
+                fontSize: '0.8em',
+              },
+              
+              cellStyle:{
+                padding: '0.3em',
+                fontSize: '0.8em',
+              }
             }}
             columns={[
-              { title: 'Worker ID', field: 'workerIDId' },
+              { title: 'Worker ID', field: 'workerID' },
               { title: 'Name', field: 'workerName' },
               {
                 title: 'Account Code',

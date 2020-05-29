@@ -736,6 +736,8 @@ const simpleRoutes = [
   },
 ];
 
+
+
 export default {
   privateRoutes,
   publicRoutes,
