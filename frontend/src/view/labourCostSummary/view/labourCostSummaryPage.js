@@ -80,11 +80,14 @@ class labourCostSummary extends Component {
         <div style={{ maxWidth: '100%' }}>
           <MaterialTable
             options={{
-              filtering: true,
+              // filtering: true,
               headerStyle: {
                 backgroundColor: '#2196F3',
                 color: '#FFF',
-                padding: '0.3em',
+                fontSize: '0.8em',
+              },
+              cellStyle: {
+                fontSize: '1em',
               },
             }}
             columns={[

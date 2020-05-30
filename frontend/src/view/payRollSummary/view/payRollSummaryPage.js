@@ -18,13 +18,18 @@ class payRollSummaryPage extends Component {
       params: {
         year: '%',
         month: '%',
-        sub: '%'
-      }
-      
+        sub: '%',
+      },
     };
-    this.handleSelectChangeYear = this.handleSelectChangeYear.bind(this);
-    this.handleSelectChangeMonth = this.handleSelectChangeMonth.bind(this);
-    this.handleSelectChangeSub = this.handleSelectChangeSub.bind(this);
+    this.handleSelectChangeYear = this.handleSelectChangeYear.bind(
+      this,
+    );
+    this.handleSelectChangeMonth = this.handleSelectChangeMonth.bind(
+      this,
+    );
+    this.handleSelectChangeSub = this.handleSelectChangeSub.bind(
+      this,
+    );
   }
 
   async componentDidMount() {
@@ -36,7 +41,6 @@ class payRollSummaryPage extends Component {
     console.log(result);
     this.setState({ result: result });
   }
-
 
   handleSelectChangeYear(event) {
     console.log(event.target.value);
@@ -61,27 +65,28 @@ class payRollSummaryPage extends Component {
     this.setState({ params });
     this.fetchData();
   }
-  
 
   render() {
     return (
       <React.Fragment>
         <div>
-          <Card  style={{width: "33em"}}>
+          <Card style={{ width: '100%' }}>
             <CardContent>
-              <FormControl >
+              <FormControl>
                 <InputLabel htmlFor="grouped-native-select">
                   Year
                 </InputLabel>
                 <Select
-                style={{marginRight: "1em"}}
+                  style={{ marginRight: '1em' }}
                   native
-                  
                   id="grouped-native-select"
                   value={this.state.params.year}
-                  onChange={this.handleSelectChangeYear}>
+                  onChange={this.handleSelectChangeYear}
                 >
-                  <option aria-label="None" value="%">Select Year</option>
+                  >
+                  <option aria-label="None" value="%">
+                    Select Year
+                  </option>
                   <option value={2020}>2020</option>
                   <option value={2021}>2021</option>
                   <option value={2022}>2022</option>
@@ -96,13 +101,15 @@ class payRollSummaryPage extends Component {
                   Month
                 </InputLabel>
                 <Select
-                                style={{marginRight: "1em"}}
+                  style={{ marginRight: '1em' }}
                   native
                   value={this.state.params.month}
-                  onChange={this.handleSelectChangeMonth}>
-                  id="grouped-native-select"
+                  onChange={this.handleSelectChangeMonth}
                 >
-                  <option aria-label="None" value="%">Select Month</option>
+                  id="grouped-native-select" >
+                  <option aria-label="None" value="%">
+                    Select Month
+                  </option>
                   <option value={0}>January</option>
                   <option value={1}>February</option>
                   <option value={2}>March</option>
@@ -123,13 +130,15 @@ class payRollSummaryPage extends Component {
                   Subdivision
                 </InputLabel>
                 <Select
-                                style={{marginRight: "1em"}}
+                  style={{ marginRight: '1em' }}
                   native
                   value={this.state.params.sub}
-                  onChange={this.handleSelectChangeSub}>
-                  id="grouped-native-select"
+                  onChange={this.handleSelectChangeSub}
                 >
-                  <option aria-label="None" value="%">Select Subdivision</option>
+                  id="grouped-native-select" >
+                  <option aria-label="None" value="%">
+                    Select Subdivision
+                  </option>
                   <option value={0}>SubA</option>
                   <option value={1}>SubB</option>
                   <option value={2}>SubC</option>
@@ -141,20 +150,18 @@ class payRollSummaryPage extends Component {
         <br></br>
         <div style={{ maxWidth: '100%' }}>
           <MaterialTable
-           options={{
-            // filtering: true,
-            headerStyle: {
-              backgroundColor: '#2196F3',
-              color: '#FFF',
-              padding: '0.3em',
-              fontSize: '0.8em',
-            },
-            
-            cellStyle:{
-              padding: '0.3em',
-              fontSize: '0.8em',
-            }
-          }}
+            options={{
+              // filtering: true,
+              headerStyle: {
+                backgroundColor: '#2196F3',
+                color: '#FFF',
+                fontSize: '0.8em',
+              },
+
+              cellStyle: {
+                fontSize: '1em',
+              },
+            }}
             columns={[
               { title: 'Worker ID', field: 'workerID' },
               { title: 'Name', field: 'workerName' },

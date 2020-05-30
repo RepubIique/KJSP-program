@@ -32,14 +32,13 @@ class checkRollReportPage extends Component {
               headerStyle: {
                 backgroundColor: '#2196F3',
                 color: '#FFF',
-                padding: '0.3em',
+
                 fontSize: '0.8em',
               },
-              
-              cellStyle:{
-                padding: '0.3em',
+
+              cellStyle: {
                 fontSize: '0.8em',
-              }
+              },
             }}
             columns={[
               { title: 'Worker ID', field: 'workerID' },
