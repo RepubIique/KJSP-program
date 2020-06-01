@@ -8,7 +8,7 @@ module.exports = class workerWorkDoneSummaryService {
     async findAndCountAll(args) {
         console.log('--------- Worker Work Done Summary Service ---------')
         return sequelize.query(
-            'SELECT * from checkRollreport',
+            'SELECT * from workerWorkdoneSummary',
           );
       }
 }

@@ -93,60 +93,16 @@ class workerWorkDoneSummaryPage extends Component {
             columns={[
               { title: 'Worker ID', field: 'workerID' },
               { title: 'Name', field: 'workerName' },
+
+              { title: 'workCategory', field: 'workCategory' },
               {
-                title: 'Working Hours',
-                field: 'WORKINGHRS',
+                title: 'rate',
+                field: 'rate',
               },
-              { title: 'General', field: 'GENERALsum' },
+              { title: 'workDone', field: 'workDone' },
               {
-                title: 'FFBHARVESTING',
-                field: 'FFBHARVESTING',
-              },
-              { title: 'PRUNING', field: 'PRUNING' },
-              {
-                title: 'FIELDMAINTENANCE',
-                field: 'FIELDMAINTENANCE',
-              },
-              {
-                title: 'PESTDISEASE',
-                field: 'PESTDISEASE',
-              },
-              {
-                title: 'PLANTINGSUPPLYING',
-                field: 'PLANTINGSUPPLYING',
-              },
-              {
-                title: 'BUILDINGCONSTRUCTION',
-                field: 'BUILDINGCONSTRUCTION',
-              },
-              {
-                title: 'INFRAMAINTENANCE',
-                field: 'INFRAMAINTENANCE',
-              },
-              { title: 'NURSERY', field: 'NURSERY' },
-              {
-                title: 'TRANSPORTATION',
-                field: 'TRANSPORTATION',
-              },
-              { title: 'gross', field: 'totalOfall' },
-              { title: 'month', field: 'month' },
-              { title: 'year', field: 'year' },
-              {
-                title: 'deductionTotal',
-                field: 'deductionTotal',
-              },
-              { title: 'netPayable', field: 'netPayable' },
-              {
-                title: 'percWageDeeduct',
-                field: 'percWageDeeduct',
-              },
-              {
-                title: 'achievementofminwages',
-                field: 'achievementofminwages',
-              },
-              {
-                title: 'workingHour',
-                field: 'workingHour',
+                title: 'amountRM',
+                field: 'amountRM',
               },
             ]}
             data={result}
