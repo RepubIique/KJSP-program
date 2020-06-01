@@ -21,8 +21,15 @@ class WorkerRegistrationPage extends Component {
         <Breadcrumb
           items={[
             [i18n('home.menu'), '/'],
-            [i18n('entities.workerRegistration.menu'), '/worker-registration'],
-            [i18n('entities.workerRegistration.view.title')],
+            [
+              i18n('entities.workerRegistration.menu'),
+              '/worker-registration',
+            ],
+            [
+              i18n(
+                'entities.workerRegistration.view.title',
+              ),
+            ],
           ]}
         />
 
@@ -31,7 +38,9 @@ class WorkerRegistrationPage extends Component {
             {i18n('entities.workerRegistration.view.title')}
           </PageTitle>
 
-          <WorkerRegistrationViewToolbar match={this.props.match} />
+          <WorkerRegistrationViewToolbar
+            match={this.props.match}
+          />
 
           <WorkerRegistrationView
             loading={this.props.loading}

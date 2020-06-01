@@ -20,7 +20,8 @@ const privateRoutes = [
     menu: {
       exact: true,
     },
-    loader: () => import('view/payRollSummary/view/payRollSummaryPage'),
+    loader: () =>
+      import('view/payRollSummary/view/payRollSummaryPage'),
     permissionRequired: null,
     exact: true,
   },
@@ -31,7 +32,10 @@ const privateRoutes = [
     menu: {
       exact: true,
     },
-    loader: () => import('view/checkRollReport/view/checkRollReportPage'),
+    loader: () =>
+      import(
+        'view/checkRollReport/view/checkRollReportPage'
+      ),
     permissionRequired: null,
     exact: true,
   },
@@ -42,7 +46,10 @@ const privateRoutes = [
     menu: {
       exact: true,
     },
-    loader: () => import('view/workerWorkDoneSummary/view/workerWorkDoneSummaryPage'),
+    loader: () =>
+      import(
+        'view/workerWorkDoneSummary/view/workerWorkDoneSummaryPage'
+      ),
     permissionRequired: null,
     exact: true,
   },
@@ -53,7 +60,10 @@ const privateRoutes = [
     menu: {
       exact: true,
     },
-    loader: () => import('view/labourCostSummary/view/labourCostSummaryPage'),
+    loader: () =>
+      import(
+        'view/labourCostSummary/view/labourCostSummaryPage'
+      ),
     permissionRequired: null,
     exact: true,
   },
@@ -64,7 +74,10 @@ const privateRoutes = [
     menu: {
       exact: true,
     },
-    loader: () => import('view/monthlyLabourCost/view/monthlyLabourCostPage'),
+    loader: () =>
+      import(
+        'view/monthlyLabourCost/view/monthlyLabourCostPage'
+      ),
     permissionRequired: null,
     exact: true,
   },
@@ -139,7 +152,7 @@ const privateRoutes = [
   {
     path: '/settings',
     icon: <SettingsIcon />,
-    label: i18n('settings.menu'),
+    label: 'Admin Panel',
     loader: () => import('view/settings/SettingsFormPage'),
     permissionRequired: permissions.settingsEdit,
     menu: true,
@@ -147,38 +160,54 @@ const privateRoutes = [
 
   {
     path: '/worker-registration',
-    loader: () => import('view/workerRegistration/list/WorkerRegistrationListPage'),
+    loader: () =>
+      import(
+        'view/workerRegistration/list/WorkerRegistrationListPage'
+      ),
     permissionRequired: permissions.workerRegistrationRead,
     exact: true,
     icon: <GroupAddIcon />,
     label: i18n('entities.workerRegistration.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/worker-registration/new',
-    loader: () => import('view/workerRegistration/form/WorkerRegistrationFormPage'),
+    loader: () =>
+      import(
+        'view/workerRegistration/form/WorkerRegistrationFormPage'
+      ),
     menu: false,
-    permissionRequired: permissions.workerRegistrationCreate,
+    permissionRequired:
+      permissions.workerRegistrationCreate,
     exact: true,
   },
   {
     path: '/worker-registration/importer',
     loader: () =>
-      import('view/workerRegistration/importer/WorkerRegistrationImporterPage'),
+      import(
+        'view/workerRegistration/importer/WorkerRegistrationImporterPage'
+      ),
     menu: false,
-    permissionRequired: permissions.workerRegistrationImport,
+    permissionRequired:
+      permissions.workerRegistrationImport,
     exact: true,
   },
   {
     path: '/worker-registration/:id/edit',
-    loader: () => import('view/workerRegistration/form/WorkerRegistrationFormPage'),
+    loader: () =>
+      import(
+        'view/workerRegistration/form/WorkerRegistrationFormPage'
+      ),
     menu: false,
     permissionRequired: permissions.workerRegistrationEdit,
     exact: true,
   },
   {
     path: '/worker-registration/:id',
-    loader: () => import('view/workerRegistration/view/WorkerRegistrationViewPage'),
+    loader: () =>
+      import(
+        'view/workerRegistration/view/WorkerRegistrationViewPage'
+      ),
     menu: false,
     permissionRequired: permissions.workerRegistrationRead,
     exact: true,
@@ -186,16 +215,18 @@ const privateRoutes = [
 
   {
     path: '/attendance',
-    loader: () => import('view/attendance/list/AttendanceListPage'),
+    loader: () =>
+      import('view/attendance/list/AttendanceListPage'),
     permissionRequired: permissions.attendanceRead,
     exact: true,
     icon: <DoneAllIcon />,
     label: i18n('entities.attendance.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/attendance/new',
-    loader: () => import('view/attendance/form/AttendanceFormPage'),
+    loader: () =>
+      import('view/attendance/form/AttendanceFormPage'),
     menu: false,
     permissionRequired: permissions.attendanceCreate,
     exact: true,
@@ -203,21 +234,25 @@ const privateRoutes = [
   {
     path: '/attendance/importer',
     loader: () =>
-      import('view/attendance/importer/AttendanceImporterPage'),
+      import(
+        'view/attendance/importer/AttendanceImporterPage'
+      ),
     menu: false,
     permissionRequired: permissions.attendanceImport,
     exact: true,
   },
   {
     path: '/attendance/:id/edit',
-    loader: () => import('view/attendance/form/AttendanceFormPage'),
+    loader: () =>
+      import('view/attendance/form/AttendanceFormPage'),
     menu: false,
     permissionRequired: permissions.attendanceEdit,
     exact: true,
   },
   {
     path: '/attendance/:id',
-    loader: () => import('view/attendance/view/AttendanceViewPage'),
+    loader: () =>
+      import('view/attendance/view/AttendanceViewPage'),
     menu: false,
     permissionRequired: permissions.attendanceRead,
     exact: true,
@@ -225,16 +260,18 @@ const privateRoutes = [
 
   {
     path: '/deduction',
-    loader: () => import('view/deduction/list/DeductionListPage'),
+    loader: () =>
+      import('view/deduction/list/DeductionListPage'),
     permissionRequired: permissions.deductionRead,
     exact: true,
     icon: <MinimizeIcon />,
     label: i18n('entities.deduction.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/deduction/new',
-    loader: () => import('view/deduction/form/DeductionFormPage'),
+    loader: () =>
+      import('view/deduction/form/DeductionFormPage'),
     menu: false,
     permissionRequired: permissions.deductionCreate,
     exact: true,
@@ -242,21 +279,25 @@ const privateRoutes = [
   {
     path: '/deduction/importer',
     loader: () =>
-      import('view/deduction/importer/DeductionImporterPage'),
+      import(
+        'view/deduction/importer/DeductionImporterPage'
+      ),
     menu: false,
     permissionRequired: permissions.deductionImport,
     exact: true,
   },
   {
     path: '/deduction/:id/edit',
-    loader: () => import('view/deduction/form/DeductionFormPage'),
+    loader: () =>
+      import('view/deduction/form/DeductionFormPage'),
     menu: false,
     permissionRequired: permissions.deductionEdit,
     exact: true,
   },
   {
     path: '/deduction/:id',
-    loader: () => import('view/deduction/view/DeductionViewPage'),
+    loader: () =>
+      import('view/deduction/view/DeductionViewPage'),
     menu: false,
     permissionRequired: permissions.deductionRead,
     exact: true,
@@ -264,16 +305,18 @@ const privateRoutes = [
 
   {
     path: '/work-done',
-    loader: () => import('view/workDone/list/WorkDoneListPage'),
+    loader: () =>
+      import('view/workDone/list/WorkDoneListPage'),
     permissionRequired: permissions.workDoneRead,
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.workDone.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/work-done/new',
-    loader: () => import('view/workDone/form/WorkDoneFormPage'),
+    loader: () =>
+      import('view/workDone/form/WorkDoneFormPage'),
     menu: false,
     permissionRequired: permissions.workDoneCreate,
     exact: true,
@@ -288,14 +331,16 @@ const privateRoutes = [
   },
   {
     path: '/work-done/:id/edit',
-    loader: () => import('view/workDone/form/WorkDoneFormPage'),
+    loader: () =>
+      import('view/workDone/form/WorkDoneFormPage'),
     menu: false,
     permissionRequired: permissions.workDoneEdit,
     exact: true,
   },
   {
     path: '/work-done/:id',
-    loader: () => import('view/workDone/view/WorkDoneViewPage'),
+    loader: () =>
+      import('view/workDone/view/WorkDoneViewPage'),
     menu: false,
     permissionRequired: permissions.workDoneRead,
     exact: true,
@@ -308,7 +353,7 @@ const privateRoutes = [
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.ffb.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/ffb/new',
@@ -342,16 +387,18 @@ const privateRoutes = [
 
   {
     path: '/checkroll',
-    loader: () => import('view/checkroll/list/CheckrollListPage'),
+    loader: () =>
+      import('view/checkroll/list/CheckrollListPage'),
     permissionRequired: permissions.checkrollRead,
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.checkroll.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/checkroll/new',
-    loader: () => import('view/checkroll/form/CheckrollFormPage'),
+    loader: () =>
+      import('view/checkroll/form/CheckrollFormPage'),
     menu: false,
     permissionRequired: permissions.checkrollCreate,
     exact: true,
@@ -359,21 +406,25 @@ const privateRoutes = [
   {
     path: '/checkroll/importer',
     loader: () =>
-      import('view/checkroll/importer/CheckrollImporterPage'),
+      import(
+        'view/checkroll/importer/CheckrollImporterPage'
+      ),
     menu: false,
     permissionRequired: permissions.checkrollImport,
     exact: true,
   },
   {
     path: '/checkroll/:id/edit',
-    loader: () => import('view/checkroll/form/CheckrollFormPage'),
+    loader: () =>
+      import('view/checkroll/form/CheckrollFormPage'),
     menu: false,
     permissionRequired: permissions.checkrollEdit,
     exact: true,
   },
   {
     path: '/checkroll/:id',
-    loader: () => import('view/checkroll/view/CheckrollViewPage'),
+    loader: () =>
+      import('view/checkroll/view/CheckrollViewPage'),
     menu: false,
     permissionRequired: permissions.checkrollRead,
     exact: true,
@@ -381,16 +432,18 @@ const privateRoutes = [
 
   {
     path: '/subdivision',
-    loader: () => import('view/subdivision/list/SubdivisionListPage'),
+    loader: () =>
+      import('view/subdivision/list/SubdivisionListPage'),
     permissionRequired: permissions.subdivisionRead,
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.subdivision.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/subdivision/new',
-    loader: () => import('view/subdivision/form/SubdivisionFormPage'),
+    loader: () =>
+      import('view/subdivision/form/SubdivisionFormPage'),
     menu: false,
     permissionRequired: permissions.subdivisionCreate,
     exact: true,
@@ -398,21 +451,25 @@ const privateRoutes = [
   {
     path: '/subdivision/importer',
     loader: () =>
-      import('view/subdivision/importer/SubdivisionImporterPage'),
+      import(
+        'view/subdivision/importer/SubdivisionImporterPage'
+      ),
     menu: false,
     permissionRequired: permissions.subdivisionImport,
     exact: true,
   },
   {
     path: '/subdivision/:id/edit',
-    loader: () => import('view/subdivision/form/SubdivisionFormPage'),
+    loader: () =>
+      import('view/subdivision/form/SubdivisionFormPage'),
     menu: false,
     permissionRequired: permissions.subdivisionEdit,
     exact: true,
   },
   {
     path: '/subdivision/:id',
-    loader: () => import('view/subdivision/view/SubdivisionViewPage'),
+    loader: () =>
+      import('view/subdivision/view/SubdivisionViewPage'),
     menu: false,
     permissionRequired: permissions.subdivisionRead,
     exact: true,
@@ -420,16 +477,18 @@ const privateRoutes = [
 
   {
     path: '/workcode',
-    loader: () => import('view/workcode/list/WorkcodeListPage'),
+    loader: () =>
+      import('view/workcode/list/WorkcodeListPage'),
     permissionRequired: permissions.workcodeRead,
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.workcode.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/workcode/new',
-    loader: () => import('view/workcode/form/WorkcodeFormPage'),
+    loader: () =>
+      import('view/workcode/form/WorkcodeFormPage'),
     menu: false,
     permissionRequired: permissions.workcodeCreate,
     exact: true,
@@ -444,14 +503,16 @@ const privateRoutes = [
   },
   {
     path: '/workcode/:id/edit',
-    loader: () => import('view/workcode/form/WorkcodeFormPage'),
+    loader: () =>
+      import('view/workcode/form/WorkcodeFormPage'),
     menu: false,
     permissionRequired: permissions.workcodeEdit,
     exact: true,
   },
   {
     path: '/workcode/:id',
-    loader: () => import('view/workcode/view/WorkcodeViewPage'),
+    loader: () =>
+      import('view/workcode/view/WorkcodeViewPage'),
     menu: false,
     permissionRequired: permissions.workcodeRead,
     exact: true,
@@ -464,7 +525,7 @@ const privateRoutes = [
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.week.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/week/new',
@@ -503,7 +564,7 @@ const privateRoutes = [
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.estate.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/estate/new',
@@ -542,7 +603,7 @@ const privateRoutes = [
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.mill.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/mill/new',
@@ -576,16 +637,18 @@ const privateRoutes = [
 
   {
     path: '/designation',
-    loader: () => import('view/designation/list/DesignationListPage'),
+    loader: () =>
+      import('view/designation/list/DesignationListPage'),
     permissionRequired: permissions.designationRead,
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.designation.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/designation/new',
-    loader: () => import('view/designation/form/DesignationFormPage'),
+    loader: () =>
+      import('view/designation/form/DesignationFormPage'),
     menu: false,
     permissionRequired: permissions.designationCreate,
     exact: true,
@@ -593,21 +656,25 @@ const privateRoutes = [
   {
     path: '/designation/importer',
     loader: () =>
-      import('view/designation/importer/DesignationImporterPage'),
+      import(
+        'view/designation/importer/DesignationImporterPage'
+      ),
     menu: false,
     permissionRequired: permissions.designationImport,
     exact: true,
   },
   {
     path: '/designation/:id/edit',
-    loader: () => import('view/designation/form/DesignationFormPage'),
+    loader: () =>
+      import('view/designation/form/DesignationFormPage'),
     menu: false,
     permissionRequired: permissions.designationEdit,
     exact: true,
   },
   {
     path: '/designation/:id',
-    loader: () => import('view/designation/view/DesignationViewPage'),
+    loader: () =>
+      import('view/designation/view/DesignationViewPage'),
     menu: false,
     permissionRequired: permissions.designationRead,
     exact: true,
@@ -620,7 +687,7 @@ const privateRoutes = [
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.blocks.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/blocks/new',
@@ -659,7 +726,7 @@ const privateRoutes = [
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.uom.menu'),
-    menu: true,
+    menu: false,
   },
   {
     path: '/uom/new',
@@ -735,8 +802,6 @@ const simpleRoutes = [
     loader: () => import('view/shared/errors/Error404Page'),
   },
 ];
-
-
 
 export default {
   privateRoutes,

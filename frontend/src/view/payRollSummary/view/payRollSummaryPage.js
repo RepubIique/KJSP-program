@@ -209,11 +209,11 @@ class payRollSummaryPage extends Component {
               },
               { title: 'net Payable', field: 'netPayable' },
               {
-                title: '% of Wage Deducted',
+                title: 'Wage Deducted (%)',
                 field: 'percWageDeeduct',
               },
               {
-                title: 'Min Wage Achiev.',
+                title: 'Min Wage Achieve',
                 field: 'achievementofminwages',
               },
               {
