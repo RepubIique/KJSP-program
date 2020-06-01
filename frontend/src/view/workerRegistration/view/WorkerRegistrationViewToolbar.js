@@ -117,4 +117,6 @@ function select(state) {
   };
 }
 
-export default connect(select)(WorkerRegistrationViewToolbar);
+export default connect(select)(
+  WorkerRegistrationViewToolbar,
+);
