@@ -121,8 +121,9 @@ class SettingsForm extends Component {
             />
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item>
             <h3>Input Forms</h3>
+
             <FormButtons>
               <Button
                 variant="contained"
@@ -139,10 +140,22 @@ class SettingsForm extends Component {
                 color="primary"
                 type="button"
                 component={Link}
+                to={'/checkroll'}
+              >
+                {i18n('entities.checkroll.menu')}
+              </Button>
+            </FormButtons>
+            <FormButtons>
+              <Button
+                variant="contained"
+                color="primary"
+                type="button"
+                component={Link}
                 to={'/attendance'}
               >
                 {i18n('entities.attendance.menu')}
               </Button>
+
               <Button
                 variant="contained"
                 color="primary"
@@ -152,17 +165,17 @@ class SettingsForm extends Component {
               >
                 {i18n('entities.deduction.menu')}
               </Button>
-            </FormButtons>
-            <FormButtons>
               <Button
                 variant="contained"
                 color="primary"
                 type="button"
                 component={Link}
-                to={'/work-done'}
+                to={'/mill'}
               >
-                {i18n('entities.workDone.menu')}
+                {i18n('entities.mill.menu')}
               </Button>
+            </FormButtons>
+            <FormButtons>
               <Button
                 variant="contained"
                 color="primary"
@@ -177,18 +190,18 @@ class SettingsForm extends Component {
                 color="primary"
                 type="button"
                 component={Link}
-                to={'/checkroll'}
+                to={'/subdivision'}
               >
-                {i18n('entities.checkroll.menu')}
+                {i18n('entities.subdivision.menu')}
               </Button>
               <Button
                 variant="contained"
                 color="primary"
                 type="button"
                 component={Link}
-                to={'/subdivision'}
+                to={'/work-done'}
               >
-                {i18n('entities.subdivision.menu')}
+                {i18n('entities.workDone.menu')}
               </Button>
             </FormButtons>
             <FormButtons>
@@ -218,15 +231,6 @@ class SettingsForm extends Component {
                 to={'/estate'}
               >
                 {i18n('entities.estate.menu')}
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                type="button"
-                component={Link}
-                to={'/mill'}
-              >
-                {i18n('entities.mill.menu')}
               </Button>
             </FormButtons>
             <FormButtons>
