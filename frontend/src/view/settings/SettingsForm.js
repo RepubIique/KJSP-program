@@ -122,7 +122,7 @@ class SettingsForm extends Component {
           </Grid>
 
           <Grid item>
-            <h3>Input Forms</h3>
+            <h3>Reference Tables</h3>
 
             <FormButtons>
               <Button

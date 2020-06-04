@@ -13,6 +13,18 @@ import MinimizeIcon from '@material-ui/icons/Minimize';
 const permissions = Permissions.values;
 
 const privateRoutes = [
+    {
+    icon: <Assessment />,
+    path: '/payslip',
+    label: 'payslip',
+    menu: {
+      exact: true,
+    },
+    loader: () =>
+      import('view/payslip/view/payslip'),
+    permissionRequired: null,
+    exact: true,
+  },
   {
     icon: <Assessment />,
     path: '/payRollSummary',
