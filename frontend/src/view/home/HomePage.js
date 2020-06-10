@@ -9,8 +9,15 @@ import HomeMixChartOne from 'view/home/HomeMixChartOne';
 import HomeHorizontalBarChart from 'view/home/HomeHorizontalBarChart';
 import HomePolarChart from 'view/home/HomePolarChart';
 import HomeLineChart from 'view/home/HomeLineChart';
-import { Grid } from '@material-ui/core';
+import { Grid, Card } from '@material-ui/core';
 import { withStyles } from '@material-ui/core';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
 const styles = (theme) => ({
   chartWrapper: {
@@ -38,6 +45,74 @@ class HomePage extends PureComponent {
         }}
       >
         <Grid container>
+        <Grid            style={{
+              paddingLeft: '12px',
+              paddingRight: '12px',
+              paddingBottom: '24px',
+            }}>
+            <Card
+            >
+              <TableContainer component={Paper}>
+                <Table
+                  size="small"
+                  aria-label="a dense table"
+                >
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>
+                        Summary for year 2020
+                      </TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell component="th" scope="row">
+                        Total Salaries
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                      <b>$4,786,571</b>  
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        Total Deductions
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                      <b> $4,571</b>
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        Average Salary
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                      <b>$4,786,571</b>  
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        Total Employees
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                      <b>89 </b>
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        Total Sick Days
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                       <b>89 </b>
+                      </TableCell>
+                      
+
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </Card>
+          </Grid>
           {/* <Grid
             item
             style={{
@@ -160,6 +235,8 @@ class HomePage extends PureComponent {
               <HomeLineChart />
             </div>
           </Grid>
+
+       
           {/* <Grid
             item
             style={{

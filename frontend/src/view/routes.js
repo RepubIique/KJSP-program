@@ -54,7 +54,7 @@ const privateRoutes = [
   {
     icon: <Assessment />,
     path: '/workerWorkDoneSummary',
-    label: 'Worker Work Done Summary',
+    label: 'Worker Summary',
     menu: {
       exact: true,
     },
