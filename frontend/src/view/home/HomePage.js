@@ -178,7 +178,9 @@ class HomePage extends PureComponent {
             sm={12}
             xs={12}
           >
+
             <div className={classes.chartWrapper}>
+
               <HomeMixChartOne />
             </div>
           </Grid>

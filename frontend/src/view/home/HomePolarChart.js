@@ -15,6 +15,8 @@ const data = {
       ],
     },
   ],
+  label: 'Ringgit Earned for the month',
+
   labels: [
     i18n('home.charts.red'),
     i18n('home.charts.green'),

@@ -39,6 +39,7 @@ export default class HomeMixChartOne extends Component {
   }
 
   render() {
+    
     const options = {
       responsive: true,
       tooltips: {
@@ -98,7 +99,7 @@ export default class HomeMixChartOne extends Component {
         // },
         {
           type: 'bar',
-          label: 'Ringgit Earned',
+          label: 'Ringgit Earned for the month',
           data: populateQuan(),
           fill: false,
           backgroundColor: '#36A2EB',
