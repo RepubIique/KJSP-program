@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import { CardContent, Grid } from '@material-ui/core';
 
-
-let cardOne = ()
-
-
 export default class payslip extends Component {
   render() {
     return (
