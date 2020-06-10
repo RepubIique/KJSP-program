@@ -32,34 +32,111 @@ export default class payslip extends Component {
             <Grid container spacing={3}>
               <Grid item xs={4}>
                 <Card>
-                  <CardContent></CardContent>
+                  <CardContent>
+                    <Grid container spacing={3}>
+                      <Grid item xs={7}>
+                        Name:
+                        <br></br>
+                        ID:
+                      </Grid>
+                      <Grid item xs={5}>
+                        {this.state.result[0].workerName}
+                        <br></br>
+                        {this.state.result[0].workerID}
+                      </Grid>
+                    </Grid>
+                  </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={4}>
                 <Card>
-                  <CardContent></CardContent>
+                  <CardContent>2</CardContent>
                 </Card>
               </Grid>
               <Grid item xs={4}>
                 <Card>
-                  <CardContent></CardContent>
+                  <CardContent>3</CardContent>
                 </Card>
               </Grid>
             </Grid>
             <Grid container spacing={3}>
               <Grid item xs={4}>
                 <Card>
-                  <CardContent></CardContent>
+                  <CardContent>
+                    <Grid container spacing={3}>
+                      <Grid item xs={7}>
+                        Working Day:
+                        <br></br>
+                        Rest Day:
+                        <br></br>
+                        Public Holiday:
+                        <br></br>
+                        Absent:
+                        <br></br>
+                        Sick Leave:
+                        <br></br>
+                        On Leave:
+                        <br></br>
+                        Overtime:
+                        <br></br>
+                        Total Day:
+                        <br></br>
+                        Total Working Hour:
+                        <br></br>
+                        Average Working Hour:
+                        <br></br>
+                      </Grid>
+                      <Grid item xs={5}>
+                        {
+                          this.state.result[0]
+                            .totalWorkingDay
+                        }
+                        <br></br>
+                        {this.state.result[0].totalRestDay}
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .totalPublicHoliday
+                        }
+                        <br></br>
+                        {this.state.result[0].totalAbsent}
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .totalSickLeave
+                        }
+                        <br></br>
+                        {this.state.result[0].totalOnLeave}
+                        <br></br>
+                        {this.state.result[0].totalRestDay}
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .totalWorkingDay
+                        }
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .totalWorkingHours
+                        }
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .averageWorkingHour
+                        }
+                      </Grid>
+                    </Grid>
+                  </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={4}>
                 <Card>
-                  <CardContent></CardContent>
+                  <CardContent>5</CardContent>
                 </Card>
               </Grid>
               <Grid item xs={4}>
                 <Card>
-                  <CardContent></CardContent>
+                  <CardContent>6</CardContent>
                 </Card>
               </Grid>
             </Grid>
@@ -67,7 +144,10 @@ export default class payslip extends Component {
         </Card>
         <br></br>
         <Card>
-          <CardContent>Hi</CardContent>
+          <CardContent>
+            The contents above are currently hard coded just
+            for viewing purposes.
+          </CardContent>
         </Card>
       </React.Fragment>
     );
