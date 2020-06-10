@@ -146,7 +146,7 @@ export default class payslip extends Component {
         <Card>
           <CardContent>
             The contents above are currently hard coded just
-            for viewing purposes
+            for viewing purposes.
           </CardContent>
         </Card>
       </React.Fragment>
