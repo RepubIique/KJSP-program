@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import { CardContent, Grid } from '@material-ui/core';
 import tableData from '../data/data.js';
+import dropdownData from '../data/dropDownData.js';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 let result = [];
+let resultDD = [];
 
 export default class payslip extends Component {
   constructor(props) {
@@ -37,6 +39,7 @@ export default class payslip extends Component {
 
   async fetchData() {
     result = await tableData.getData(this.state.params);
+    resultDD = await dropdownData.getData(this.state.params);
     console.log(result);
     this.setState({ result: result });
   }
@@ -66,9 +69,9 @@ export default class payslip extends Component {
   }
 
   render() {
-    let workerName = result.map((x) => x.workerName);
+    let workerName = resultDD.map((x) => x.workerName);
     let optionItems = workerName.map((name) => (
-      <option key={name}>{name}</option>
+      <option key={name} >{name}</option>
     ));
 
     return (

@@ -19,7 +19,7 @@ module.exports = class payslipSummaryService {
         
 
         return sequelize.query(
-            'SELECT * FROM payslip WHERE year LIKE :year AND month LIKE :month;',
+            'SELECT * FROM payslip WHERE year LIKE :year AND month LIKE :month and workerName like :sub;',
             {
               replacements: params
             }
