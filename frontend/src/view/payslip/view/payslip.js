@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import { CardContent, Grid } from '@material-ui/core';
 import tableData from '../data/data.js';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 let result = [];
 
@@ -11,7 +14,21 @@ export default class payslip extends Component {
     this.state = {
       //state is by default an object
       result: [result],
+      params: {
+        year: '%',
+        month: '%',
+        sub: '%',
+      },
     };
+    this.handleSelectChangeYear = this.handleSelectChangeYear.bind(
+      this,
+    );
+    this.handleSelectChangeMonth = this.handleSelectChangeMonth.bind(
+      this,
+    );
+    this.handleSelectChangeSub = this.handleSelectChangeSub.bind(
+      this,
+    );
   }
 
   async componentDidMount() {
@@ -24,9 +41,112 @@ export default class payslip extends Component {
     this.setState({ result: result });
   }
 
+  handleSelectChangeYear(event) {
+    console.log(event.target.value);
+    let params = this.state.params;
+    params.year = event.target.value;
+    this.setState({ params });
+    this.fetchData();
+  }
+
+  handleSelectChangeMonth(event) {
+    console.log(event.target.value);
+    let params = this.state.params;
+    params.month = event.target.value;
+    this.setState({ params });
+    this.fetchData();
+  }
+
+  handleSelectChangeSub(event) {
+    console.log(event.target.value);
+    let params = this.state.params;
+    params.sub = event.target.value;
+    this.setState({ params });
+    this.fetchData();
+  }
+
   render() {
     return (
+
       <React.Fragment>
+              <div>
+      <Card style={{ width: '100%' }}>
+        <CardContent>
+          <FormControl>
+            <InputLabel htmlFor="grouped-native-select">
+              Year
+            </InputLabel>
+            <Select
+              style={{ marginRight: '1em' }}
+              native
+              id="grouped-native-select"
+              value={this.state.params.year}
+              onChange={this.handleSelectChangeYear}
+            >
+              >
+              <option aria-label="None" value="%">
+                Select Year
+              </option>
+              <option value={2020}>2020</option>
+              <option value={2021}>2021</option>
+              <option value={2022}>2022</option>
+              <option value={2023}>2023</option>
+              <option value={2024}>2024</option>
+              <option value={2025}>2025</option>
+            </Select>
+          </FormControl>
+
+          <FormControl>
+            <InputLabel htmlFor="grouped-select">
+              Month
+            </InputLabel>
+            <Select
+              style={{ marginRight: '1em' }}
+              native
+              value={this.state.params.month}
+              onChange={this.handleSelectChangeMonth}
+            >
+              id="grouped-native-select" >
+              <option aria-label="None" value="%">
+                Select Month
+              </option>
+              <option value={0}>January</option>
+              <option value={1}>February</option>
+              <option value={2}>March</option>
+              <option value={3}>April</option>
+              <option value={4}>May</option>
+              <option value={5}>June</option>
+              <option value={6}>July</option>
+              <option value={7}>August</option>
+              <option value={8}>September</option>
+              <option value={9}>October</option>
+              <option value={10}>November</option>
+              <option value={11}>December</option>
+            </Select>
+          </FormControl>
+
+          <FormControl>
+            <InputLabel htmlFor="grouped-select">
+              Subdivision
+            </InputLabel>
+            <Select
+              style={{ marginRight: '1em' }}
+              native
+              value={this.state.params.sub}
+              onChange={this.handleSelectChangeSub}
+            >
+              id="grouped-native-select" >
+              <option aria-label="None" value="%">
+                Select Employee
+              </option>
+              <option value={0}>SubA</option>
+              <option value={1}>SubB</option>
+              <option value={2}>SubC</option>
+            </Select>
+          </FormControl>
+        </CardContent>
+      </Card>
+    </div>
         <Card>
           <CardContent>
             <Grid container spacing={3}>
