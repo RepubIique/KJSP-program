@@ -5,16 +5,14 @@ let tableData = {
     let tableStuff;
 
     const res = await authAxios
-      .get('/payRollSummary', {params})
+      .get('/payslip', { params })
       .then(async (res) => {
         for (let j = 0; j < res.data.length; j++) {
           tableStuff = res.data[j];
         }
       });
-     return tableStuff;
+    return tableStuff;
   },
-
-  
 };
 
 export default tableData;
