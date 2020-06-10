@@ -58,6 +58,7 @@ require('./workerWorkDoneSummary')(routes);
 require('./labourCostSummary')(routes);
 require('./monthlyLabourCost')(routes);
 require('./barChartperf')(routes);
+require('./payslip')(routes);
 
 // Add the routes to the /api endpoint
 app.use('/api', routes);
