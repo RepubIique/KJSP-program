@@ -73,7 +73,8 @@ export default class payslip extends Component {
     let optionItems = workerName.map((name) => (
       <option key={name} >{name}</option>
     ));
-
+    let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)
+   
     return (
       <React.Fragment>
         <div>
