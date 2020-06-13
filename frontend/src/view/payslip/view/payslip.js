@@ -51,6 +51,8 @@ export default class payslip extends Component {
     console.log(result);
     this.setState({ result: result });
     resultDeductions = await deductionData.getData(this.state.params);
+    console.log(resultDeductions);
+
   }
 
   handleSelectChangeYear(event) {
