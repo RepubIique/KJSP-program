@@ -179,7 +179,7 @@ const privateRoutes = [
     exact: true,
     icon: <GroupAddIcon />,
     label: i18n('entities.workerRegistration.menu'),
-    menu: false,
+    menu: true,
   },
   {
     path: '/worker-registration/new',
@@ -232,7 +232,7 @@ const privateRoutes = [
     exact: true,
     icon: <DoneAllIcon />,
     label: i18n('entities.attendance.menu'),
-    menu: false,
+    menu: true,
   },
   {
     path: '/attendance/new',
@@ -277,7 +277,7 @@ const privateRoutes = [
     exact: true,
     icon: <MinimizeIcon />,
     label: i18n('entities.deduction.menu'),
-    menu: false,
+    menu: true,
   },
   {
     path: '/deduction/new',
@@ -322,7 +322,7 @@ const privateRoutes = [
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.workDone.menu'),
-    menu: false,
+    menu: true,
   },
   {
     path: '/work-done/new',
@@ -404,7 +404,7 @@ const privateRoutes = [
     exact: true,
     icon: <ChevronRightIcon />,
     label: i18n('entities.checkroll.menu'),
-    menu: false,
+    menu: true,
   },
   {
     path: '/checkroll/new',
