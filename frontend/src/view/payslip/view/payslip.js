@@ -51,11 +51,10 @@ export default class payslip extends Component {
     console.log(result);
     this.setState({ result: result });
 
-    resultDeductions = await deductionData.getData(this.state.params);
+    resultDeductions = await deductionData.getData(
+      this.state.params,
+    );
     console.log(resultDeductions);
-
-
-
   }
 
   handleSelectChangeYear(event) {
@@ -111,6 +110,7 @@ export default class payslip extends Component {
     let yearMap = newYear.map((year) => (
       <option key={year}>{year}</option>
     ));
+    let $ = this.state.result[0];
     return (
       <React.Fragment>
         <div>
@@ -193,18 +193,15 @@ export default class payslip extends Component {
                         Date Joined:
                       </Grid>
                       <Grid item xs={5}>
-                        {this.state.result[0].workerName}
+                        {$.workerName}
                         <br></br>
-                        {this.state.result[0].workerID}
+                        {$.workerID}
                         <br></br>
-                        {this.state.result[0].designation}
+                        {$.designation}
                         <br></br>
-                        {this.state.result[0].subdivision}
+                        {$.subdivision}
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .dateofEmployment
-                        }
+                        {$.dateofEmployment}
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -225,13 +222,13 @@ export default class payslip extends Component {
                         <br></br>
                       </Grid>
                       <Grid item xs={5}>
-                        Tim to add
+                        {$.passportICNo}
                         <br></br>
-                        {this.state.result[0].socsoNo}
+                        {$.socsoNo}
                         <br></br>
-                        {this.state.result[0].bank}
+                        {$.bank}
                         <br></br>
-                        {this.state.result[0].bankAccountNo}
+                        {$.bankAccountNo}
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -245,7 +242,7 @@ export default class payslip extends Component {
                         Superior:
                       </Grid>
                       <Grid item xs={5}>
-                        {this.state.result[0].superiorName}
+                        {$.superiorName}
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -281,43 +278,25 @@ export default class payslip extends Component {
                         <br></br>
                       </Grid>
                       <Grid item xs={5}>
-                        {
-                          this.state.result[0]
-                            .totalWorkingDay
-                        }
+                        {$.totalWorkingDay}
                         <br></br>
-                        {this.state.result[0].totalRestDay}
+                        {$.totalRestDay}
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .totalPublicHoliday
-                        }
+                        {$.totalPublicHoliday}
                         <br></br>
-                        {this.state.result[0].totalAbsent}
+                        {$.totalAbsent}
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .totalSickLeave
-                        }
+                        {$.totalSickLeave}
                         <br></br>
-                        {this.state.result[0].totalOnLeave}
+                        {$.totalOnLeave}
                         <br></br>
-                        {this.state.result[0].totalRestDay}
+                        {$.totalRestDay}
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .totalWorkingDay
-                        }
+                        {$.totalWorkingDay}
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .totalOvertimeHour
-                        }
+                        {$.totalOvertimeHour}
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .averageWorkingHour
-                        }
+                        {$.averageWorkingHour}
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -352,47 +331,30 @@ export default class payslip extends Component {
                         Transportation:
                         <br></br>
                         <hr></hr>
+                        Total income:
                       </Grid>
                       <Grid item xs={5}>
-                        {this.state.result[0].generalTotal}
+                        {$.generalTotal}
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .ffbharvestingTotal
-                        }
+                        {$.ffbharvestingTotal}
                         <br></br>
-                        {this.state.result[0].pruningTotal}
+                        {$.pruningTotal}
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .fieldmaintenanceTotal
-                        }
+                        {$.fieldmaintenanceTotal}
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .pestDiseaseTotal
-                        }
+                        {$.pestDiseaseTotal}
                         <br></br>
                         Tim to add
                         <br></br>
                         Tim to add
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .buildingconstructionTotal
-                        }
+                        {$.buildingconstructionTotal}
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .inframaintenanceTotal
-                        }
+                        {$.inframaintenanceTotal}
                         <br></br>
-                        {this.state.result[0].nurseryTotal}
+                        {$.nurseryTotal}
                         <br></br>
-                        {
-                          this.state.result[0]
-                            .transportationTotal
-                        }
+                        {$.transportationTotal}
                         <br></br>
                         <hr></hr>
                       </Grid>
