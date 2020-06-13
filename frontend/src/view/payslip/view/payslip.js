@@ -14,6 +14,7 @@ import Select from '@material-ui/core/Select';
 
 let result = [];
 let resultDD = [];
+let resultDeductions = [];
 
 export default class payslip extends Component {
   constructor(props) {
@@ -40,7 +41,6 @@ export default class payslip extends Component {
 
   async componentDidMount() {
     this.fetchData();
-    console.log(deductionData.getData())
   }
 
   async fetchData() {
@@ -50,6 +50,7 @@ export default class payslip extends Component {
     );
     console.log(result);
     this.setState({ result: result });
+    resultDeductions = await deductionData.getData(this.state.params);
   }
 
   handleSelectChangeYear(event) {
