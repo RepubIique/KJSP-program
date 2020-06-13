@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
-import { CardContent, Grid } from '@material-ui/core';
+import {
+  CardContent,
+  Grid,
+  CardHeader,
+} from '@material-ui/core';
 import tableData from '../data/data.js';
 import dropdownData from '../data/dropDownData.js';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -173,11 +177,26 @@ export default class payslip extends Component {
                         Name:
                         <br></br>
                         ID:
+                        <br></br>
+                        Designation:
+                        <br></br>
+                        Division:
+                        <br></br>
+                        Date Joined:
                       </Grid>
                       <Grid item xs={5}>
                         {this.state.result[0].workerName}
                         <br></br>
                         {this.state.result[0].workerID}
+                        <br></br>
+                        {this.state.result[0].designation}
+                        <br></br>
+                        {this.state.result[0].subdivision}
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .dateofEmployment
+                        }
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -185,18 +204,50 @@ export default class payslip extends Component {
               </Grid>
               <Grid item xs={4}>
                 <Card>
-                  <CardContent>2</CardContent>
+                  <CardContent>
+                    <Grid container spacing={3}>
+                      <Grid item xs={7}>
+                        IC/PP No:
+                        <br></br>
+                        Socso No:
+                        <br></br>
+                        Bank:
+                        <br></br>
+                        Bank Acc:
+                        <br></br>
+                      </Grid>
+                      <Grid item xs={5}>
+                        Tim to add
+                        <br></br>
+                        {this.state.result[0].socsoNo}
+                        <br></br>
+                        {this.state.result[0].bank}
+                        <br></br>
+                        {this.state.result[0].bankAccountNo}
+                      </Grid>
+                    </Grid>
+                  </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={4}>
                 <Card>
-                  <CardContent>3</CardContent>
+                  <CardContent>
+                    <Grid container spacing={3}>
+                      <Grid item xs={7}>
+                        Superior:
+                      </Grid>
+                      <Grid item xs={5}>
+                        {this.state.result[0].superiorName}
+                      </Grid>
+                    </Grid>
+                  </CardContent>
                 </Card>
               </Grid>
             </Grid>
             <Grid container spacing={3}>
               <Grid item xs={4}>
                 <Card>
+                  <CardHeader subheader="Attendance" />
                   <CardContent>
                     <Grid container spacing={3}>
                       <Grid item xs={7}>
@@ -252,7 +303,7 @@ export default class payslip extends Component {
                         <br></br>
                         {
                           this.state.result[0]
-                            .totalWorkingHours
+                            .totalOvertimeHour
                         }
                         <br></br>
                         {
@@ -266,12 +317,14 @@ export default class payslip extends Component {
               </Grid>
               <Grid item xs={4}>
                 <Card>
-                  <CardContent>5</CardContent>
+                  <CardHeader subheader="Details of Payment" />
+                  <CardContent></CardContent>
                 </Card>
               </Grid>
               <Grid item xs={4}>
                 <Card>
-                  <CardContent>6</CardContent>
+                  <CardHeader subheader="Deduction" />
+                  <CardContent></CardContent>
                 </Card>
               </Grid>
             </Grid>
@@ -280,8 +333,7 @@ export default class payslip extends Component {
         <br></br>
         <Card>
           <CardContent>
-            The contents above are currently hard coded just
-            for viewing purposes.
+            The contents above are currently dynamic :)
           </CardContent>
         </Card>
       </React.Fragment>
