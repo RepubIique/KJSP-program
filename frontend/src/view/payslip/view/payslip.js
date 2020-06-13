@@ -27,6 +27,7 @@ export default class payslip extends Component {
         month: '%',
         sub: '%',
       },
+      resultDeductions: [resultDeductions],
     };
     this.handleSelectChangeYear = this.handleSelectChangeYear.bind(
       this,
@@ -54,6 +55,7 @@ export default class payslip extends Component {
     resultDeductions = await deductionData.getData(
       this.state.params,
     );
+    this.setState({ resultDeductions: resultDeductions });
     console.log(resultDeductions);
   }
 
@@ -112,10 +114,27 @@ export default class payslip extends Component {
       <option key={year}>{year}</option>
     ));
 
+    let deductionName = resultDeductions.map(
+      (x) => x.deductfor,
+    );
+    let deductionCost = resultDeductions.map(
+      (x) => x.totalDeductions,
+    );
+    let deductionCostStr = deductionCost.map((x) =>
+      parseInt(x),
+    );
+
     return (
       <React.Fragment>
         <div>
-          <Card style={{ width: '100%' }}>
+          <Card
+            style={{
+              width: '100%',
+              background: 'white',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          >
             <CardContent>
               <FormControl>
                 <InputLabel htmlFor="grouped-native-select">
@@ -175,7 +194,14 @@ export default class payslip extends Component {
           </Card>
         </div>
         <br></br>
-        <Card>
+        <Card
+          style={{
+            width: '100%',
+            background: 'white',
+            display: 'block',
+            margin: '0 auto',
+          }}
+        >
           <CardContent>
             <Grid container spacing={3}>
               <Grid item xs={4}>
@@ -369,8 +395,23 @@ export default class payslip extends Component {
                   <CardHeader subheader="Deduction" />
                   <CardContent>
                     <Grid container spacing={3}>
-                      <Grid item xs={7}></Grid>
-                      <Grid item xs={5}></Grid>
+                      <Grid item xs={7}>
+                        {deductionName.map((x, i) => (
+                          <p key={i}>{x}</p>
+                        ))}
+                        <hr></hr>
+                        Total Deduction:
+                      </Grid>
+                      <Grid item xs={5}>
+                        {deductionCost.map((x, i) => (
+                          <p key={i}>{x}</p>
+                        ))}
+                        <hr></hr>
+                        {deductionCostStr.reduce(
+                          (a, b) => a + b,
+                          0,
+                        )}
+                      </Grid>
                     </Grid>
                   </CardContent>
                 </Card>
@@ -379,7 +420,14 @@ export default class payslip extends Component {
           </CardContent>
         </Card>
         <br></br>
-        <Card>
+        <Card
+          style={{
+            width: '100%',
+            background: 'white',
+            display: 'block',
+            margin: '0 auto',
+          }}
+        >
           <CardContent>
             The contents above are currently dynamic :)
           </CardContent>
