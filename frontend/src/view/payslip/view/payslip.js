@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import { CardContent, Grid } from '@material-ui/core';
 import tableData from '../data/data.js';
+import deductionData from '../data/deductionData.js';
 import dropdownData from '../data/dropDownData.js';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -35,6 +36,7 @@ export default class payslip extends Component {
 
   async componentDidMount() {
     this.fetchData();
+    console.log(deductionData.getData())
   }
 
   async fetchData() {

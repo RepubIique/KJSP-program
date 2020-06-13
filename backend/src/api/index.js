@@ -61,6 +61,7 @@ require('./barChartperf')(routes);
 require('./payslip')(routes);
 require('./workerNameList')(routes);
 require('./polarChart')(routes);
+require('./deductionPayslip')(routes);
 
 // Add the routes to the /api endpoint
 app.use('/api', routes);

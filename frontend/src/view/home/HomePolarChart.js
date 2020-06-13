@@ -12,6 +12,7 @@ let populateSub = () => {
   return data;
 };
 
+console.log("here" + populateSub())
 let populateGross = () => {
   let data = [];
   for (let i = 0; i < result.length; i++) {
