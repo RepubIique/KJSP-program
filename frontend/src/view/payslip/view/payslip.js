@@ -28,7 +28,7 @@ export default class payslip extends Component {
     this.handleSelectChangeMonth = this.handleSelectChangeMonth.bind(
       this,
     );
-    this.handleSelectChangeSub = this.handleSelectChangeSub.bind(
+    this.handleSelectChangeEmp = this.handleSelectChangeEmp.bind(
       this,
     );
   }
@@ -47,11 +47,11 @@ export default class payslip extends Component {
   }
 
   handleSelectChangeYear(event) {
-    console.log(event.target.value);
     let params = this.state.params;
     params.year = event.target.value;
     this.setState({ params });
     this.fetchData();
+    console.log(params);
   }
 
   handleSelectChangeMonth(event) {
@@ -62,7 +62,7 @@ export default class payslip extends Component {
     this.fetchData();
   }
 
-  handleSelectChangeSub(event) {
+  handleSelectChangeEmp(event) {
     console.log(event.target.value);
     let params = this.state.params;
     params.sub = event.target.value;
@@ -143,13 +143,13 @@ export default class payslip extends Component {
 
               <FormControl>
                 <InputLabel htmlFor="grouped-select">
-                  Subdivision
+                  Employee
                 </InputLabel>
                 <Select
                   style={{ marginRight: '1em' }}
                   native
                   value={this.state.params.sub}
-                  onChange={this.handleSelectChangeSub}
+                  onChange={this.handleSelectChangeEmp}
                 >
                   id="grouped-native-select" >
                   <option aria-label="None" value="%">
