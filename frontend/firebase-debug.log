@@ -1,0 +1,27 @@
+[debug] [2020-06-13T11:08:37.192Z] ----------------------------------------------------------------------
+[debug] [2020-06-13T11:08:37.193Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Timot\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js use development
+[debug] [2020-06-13T11:08:37.194Z] CLI Version:   8.4.0
+[debug] [2020-06-13T11:08:37.194Z] Platform:      win32
+[debug] [2020-06-13T11:08:37.194Z] Node Version:  v13.11.0
+[debug] [2020-06-13T11:08:37.194Z] Time:          Sat Jun 13 2020 19:08:37 GMT+0800 (Australian Western Standard Time)
+[debug] [2020-06-13T11:08:37.195Z] ----------------------------------------------------------------------
+[debug] [2020-06-13T11:08:37.195Z] 
+[debug] [2020-06-13T11:08:37.206Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-06-13T11:08:37.206Z] > authorizing via signed-in user
+[debug] [2020-06-13T11:08:37.209Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-06-13T11:08:37.209Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-06-13T11:08:37.640Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 13 Jun 2020 11:08:35 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-06-13T11:08:37.646Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/kjsp-1e2d0  
+ 
+[debug] [2020-06-13T11:08:38.400Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 13 Jun 2020 11:08:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-06-13T11:08:38.774Z] Error: EPERM: operation not permitted, rename 'C:\Users\Timot\.config\configstore\firebase-tools.json.1852588929' -> 'C:\Users\Timot\.config\configstore\firebase-tools.json'
+    at Object.renameSync (fs.js:707:3)
+    at Function.writeFileSync [as sync] (C:\Users\Timot\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\write-file-atomic\index.js:244:8)
+    at Configstore.set all [as all] (C:\Users\Timot\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\configstore\index.js:61:20)
+    at Configstore.set (C:\Users\Timot\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\configstore\index.js:91:12)
+    at Object.makeActiveProject (C:\Users\Timot\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:146:31)
+    at C:\Users\Timot\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\use.js:75:23
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.

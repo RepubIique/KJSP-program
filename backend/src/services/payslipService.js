@@ -2,9 +2,7 @@
 // this below seems to be working ...
 const sequelize = require('../database/models').sequelize;
 
-const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
+
 /**
  * Handles payRollSummary operations
  */
@@ -13,9 +11,7 @@ module.exports = class payslipSummaryService {
         console.log('---------payslip Summary Service --------');
         console.log(params);
 
-        if (params.month !== '%') {
-            params.month = monthNames[params.month];
-        }
+
         
 
         return sequelize.query(
