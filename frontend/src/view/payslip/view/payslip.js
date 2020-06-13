@@ -39,7 +39,9 @@ export default class payslip extends Component {
 
   async fetchData() {
     result = await tableData.getData(this.state.params);
-    resultDD = await dropdownData.getData(this.state.params);
+    resultDD = await dropdownData.getData(
+      this.state.params,
+    );
     console.log(result);
     this.setState({ result: result });
   }
@@ -70,11 +72,33 @@ export default class payslip extends Component {
 
   render() {
     let workerName = resultDD.map((x) => x.workerName);
-    let optionItems = workerName.map((name) => (
-      <option key={name} >{name}</option>
+    let nameMap = workerName.map((name) => (
+      <option key={name}>{name}</option>
     ));
-    let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)
-   
+    let eliminateDuplicates = (arr) => {
+      var i,
+        len = arr.length,
+        out = [],
+        obj = {};
+
+      for (i = 0; i < len; i++) {
+        obj[arr[i]] = 0;
+      }
+      for (i in obj) {
+        out.push(i);
+      }
+      return out;
+    };
+    let months = result.map((x) => x.month);
+    let newMonths = eliminateDuplicates(months);
+    let monthMap = newMonths.map((month) => (
+      <option key={month}>{month}</option>
+    ));
+    let year = result.map((x) => x.year);
+    let newYear = eliminateDuplicates(year);
+    let yearMap = newYear.map((year) => (
+      <option key={year}>{year}</option>
+    ));
     return (
       <React.Fragment>
         <div>
@@ -95,12 +119,7 @@ export default class payslip extends Component {
                   <option aria-label="None" value="%">
                     Select Year
                   </option>
-                  <option value={2020}>2020</option>
-                  <option value={2021}>2021</option>
-                  <option value={2022}>2022</option>
-                  <option value={2023}>2023</option>
-                  <option value={2024}>2024</option>
-                  <option value={2025}>2025</option>
+                  {yearMap}
                 </Select>
               </FormControl>
 
@@ -118,18 +137,7 @@ export default class payslip extends Component {
                   <option aria-label="None" value="%">
                     Select Month
                   </option>
-                  <option value={0}>January</option>
-                  <option value={1}>February</option>
-                  <option value={2}>March</option>
-                  <option value={3}>April</option>
-                  <option value={4}>May</option>
-                  <option value={5}>June</option>
-                  <option value={6}>July</option>
-                  <option value={7}>August</option>
-                  <option value={8}>September</option>
-                  <option value={9}>October</option>
-                  <option value={10}>November</option>
-                  <option value={11}>December</option>
+                  {monthMap}
                 </Select>
               </FormControl>
 
@@ -147,7 +155,7 @@ export default class payslip extends Component {
                   <option aria-label="None" value="%">
                     Select Employee
                   </option>
-                  {optionItems}
+                  {nameMap}
                 </Select>
               </FormControl>
             </CardContent>
