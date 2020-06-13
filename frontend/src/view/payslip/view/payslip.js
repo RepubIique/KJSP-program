@@ -82,10 +82,7 @@ export default class payslip extends Component {
   }
 
   render() {
-    let workerName = resultDD.map((x) => x.workerName);
-    let nameMap = workerName.map((name) => (
-      <option key={name}>{name}</option>
-    ));
+    let $ = this.state.result[0];
     let eliminateDuplicates = (arr) => {
       var i,
         len = arr.length,
@@ -100,6 +97,10 @@ export default class payslip extends Component {
       }
       return out;
     };
+    let workerName = resultDD.map((x) => x.workerName);
+    let nameMap = workerName.map((name) => (
+      <option key={name}>{name}</option>
+    ));
     let months = result.map((x) => x.month);
     let newMonths = eliminateDuplicates(months);
     let monthMap = newMonths.map((month) => (
@@ -110,7 +111,7 @@ export default class payslip extends Component {
     let yearMap = newYear.map((year) => (
       <option key={year}>{year}</option>
     ));
-    let $ = this.state.result[0];
+
     return (
       <React.Fragment>
         <div>
@@ -342,11 +343,11 @@ export default class payslip extends Component {
                         <br></br>
                         {$.fieldmaintenanceTotal}
                         <br></br>
-                        {$.pestDiseaseTotal}
+                        {$.pestdiseaseTotal}
                         <br></br>
                         Tim to add
                         <br></br>
-                        Tim to add
+                        {$.PLANTINGSUPPLYINGTotal}
                         <br></br>
                         {$.buildingconstructionTotal}
                         <br></br>
@@ -357,6 +358,7 @@ export default class payslip extends Component {
                         {$.transportationTotal}
                         <br></br>
                         <hr></hr>
+                        {$.Gross}
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -365,7 +367,12 @@ export default class payslip extends Component {
               <Grid item xs={4}>
                 <Card>
                   <CardHeader subheader="Deduction" />
-                  <CardContent></CardContent>
+                  <CardContent>
+                    <Grid container spacing={3}>
+                      <Grid item xs={7}></Grid>
+                      <Grid item xs={5}></Grid>
+                    </Grid>
+                  </CardContent>
                 </Card>
               </Grid>
             </Grid>
