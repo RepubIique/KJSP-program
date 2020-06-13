@@ -50,7 +50,9 @@ export default class payslip extends Component {
     );
     console.log(result);
     this.setState({ result: result });
-    resultDeductions = await deductionData.getData(this.state.params);
+    resultDeductions = await deductionData.getData(
+      this.state.params,
+    );
   }
 
   handleSelectChangeYear(event) {
@@ -321,7 +323,78 @@ export default class payslip extends Component {
               <Grid item xs={4}>
                 <Card>
                   <CardHeader subheader="Details of Payment" />
-                  <CardContent></CardContent>
+                  <CardContent>
+                    <Grid container spacing={3}>
+                      <Grid item xs={7}>
+                        General:
+                        <br></br>
+                        FFB Harvesting:
+                        <br></br>
+                        Pruning:
+                        <br></br>
+                        Field Maintenance:
+                        <br></br>
+                        Pest & Disease:
+                        <br></br>
+                        Manuring:
+                        <br></br>
+                        Planting/Supplying:
+                        <br></br>
+                        Building Construction:
+                        <br></br>
+                        Infra Maintenance:
+                        <br></br>
+                        Nursery:
+                        <br></br>
+                        Transportation:
+                        <br></br>
+                        <hr></hr>
+                      </Grid>
+                      <Grid item xs={5}>
+                        {this.state.result[0].generalTotal}
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .ffbharvestingTotal
+                        }
+                        <br></br>
+                        {this.state.result[0].pruningTotal}
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .fieldmaintenanceTotal
+                        }
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .pestDiseaseTotal
+                        }
+                        <br></br>
+                        Tim to add
+                        <br></br>
+                        Tim to add
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .buildingconstructionTotal
+                        }
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .inframaintenanceTotal
+                        }
+                        <br></br>
+                        {this.state.result[0].nurseryTotal}
+                        <br></br>
+                        {
+                          this.state.result[0]
+                            .transportationTotal
+                        }
+                        <br></br>
+                        <hr></hr>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={4}>
