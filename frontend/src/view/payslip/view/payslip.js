@@ -198,6 +198,7 @@ export default class payslip extends Component {
           </Card>
         </div>
         <br></br>
+        <div           id="section-to-print">
         <Card
           style={{
             width: '100%',
@@ -205,7 +206,7 @@ export default class payslip extends Component {
             display: 'block',
             margin: '0 auto',
           }}
-          id="section-to-print"
+
           variant="outlined"
         >
           <CardContent>
@@ -423,7 +424,7 @@ export default class payslip extends Component {
           </CardContent>
         </Card>
         <br></br>
-        <Card
+        <Card  variant="outlined"
           style={{
             width: '100%',
             background: 'white',
@@ -491,6 +492,7 @@ export default class payslip extends Component {
             </Grid>
           </CardContent>
         </Card>
+        </div>
       </React.Fragment>
     );
   }
