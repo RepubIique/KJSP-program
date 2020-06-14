@@ -56,6 +56,7 @@ class HomePage extends PureComponent {
     return (
       <div
         style={{
+          width: '100%',
           padding: 0,
           marginLeft: '-12px',
           marginRight: '-12px',

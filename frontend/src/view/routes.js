@@ -14,6 +14,17 @@ const permissions = Permissions.values;
 
 const privateRoutes = [
   {
+    path: '/',
+    icon: <HomeIcon />,
+    label: i18n('home.menu'),
+    menu: {
+      exact: true,
+    },
+    loader: () => import('view/home/HomePage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
     icon: <Assessment />,
     path: '/payslip',
     label: 'Payslip',
@@ -64,45 +75,35 @@ const privateRoutes = [
     permissionRequired: null,
     exact: true,
   },
-  {
-    icon: <Assessment />,
-    path: '/labourCostSummary',
-    label: 'Labour Cost Summary',
-    menu: {
-      exact: true,
-    },
-    loader: () =>
-      import(
-        'view/labourCostSummary/view/labourCostSummaryPage'
-      ),
-    permissionRequired: null,
-    exact: true,
-  },
-  {
-    icon: <Assessment />,
-    path: '/monthlyLabourCost',
-    label: 'Monthly Labor Cost',
-    menu: {
-      exact: true,
-    },
-    loader: () =>
-      import(
-        'view/monthlyLabourCost/view/monthlyLabourCostPage'
-      ),
-    permissionRequired: null,
-    exact: true,
-  },
-  {
-    path: '/',
-    icon: <HomeIcon />,
-    label: i18n('home.menu'),
-    menu: {
-      exact: true,
-    },
-    loader: () => import('view/home/HomePage'),
-    permissionRequired: null,
-    exact: true,
-  },
+  // {
+  //   icon: <Assessment />,
+  //   path: '/labourCostSummary',
+  //   label: 'Labour Cost Summary',
+  //   menu: {
+  //     exact: false,
+  //   },
+  //   loader: () =>
+  //     import(
+  //       'view/labourCostSummary/view/labourCostSummaryPage'
+  //     ),
+  //   permissionRequired: null,
+  //   exact: true,
+  // },
+  // {
+  //   icon: <Assessment />,
+  //   path: '/monthlyLabourCost',
+  //   label: 'Monthly Labor Cost',
+  //   menu: {
+  //     exact: false,
+  //   },
+  //   loader: () =>
+  //     import(
+  //       'view/monthlyLabourCost/view/monthlyLabourCostPage'
+  //     ),
+  //   permissionRequired: null,
+  //   exact: true,
+  // },
+
 
   {
     path: '/profile',
