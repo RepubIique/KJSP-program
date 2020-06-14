@@ -46,7 +46,7 @@ class HomePage extends PureComponent {
   async componentDidMount() {
     result = await barDataData.getData();
     console.log('here');
-    console.log(result[0].totalSalaries);
+    console.log(result[0]);
     this.setState({ result: result });
     this.totalSalary = result[0].totalSalaries;
   }
@@ -97,31 +97,31 @@ class HomePage extends PureComponent {
                         Total Salaries
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <b>{this.totalSalary}</b>
+                        <b>{this.state.result[0].totalSalaries}</b>
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Total Deductions
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <b> $4,571</b>
+                        <b>{this.state.result[0].totalDeductions}</b>
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Average Salary
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <b>$4,786,571</b>
+                        <b>{this.state.result[0].averageWage}</b>
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Total Employees
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <b>89 </b>
+                        <b>{this.state.result[0].totalWorkers} </b>
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Total Sick Days
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <b>89 </b>
+                        <b>{this.state.result[0].totalSick} </b>
                       </TableCell>
                     </TableRow>
                   </TableBody>
