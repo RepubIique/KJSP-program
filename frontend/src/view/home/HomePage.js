@@ -45,8 +45,8 @@ class HomePage extends PureComponent {
 
   async componentDidMount() {
     result = await barDataData.getData();
-    console.log('here');
-    console.log(result[0]);
+
+
     this.setState({ result: result });
     this.totalSalary = result[0].totalSalaries;
   }
@@ -115,7 +115,7 @@ class HomePage extends PureComponent {
                         Total Employees
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <b>{this.state.result[0].totalWorkers} </b>
+                        <b>{this.state.result[0].totalSalaries} </b>
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Total Sick Days
@@ -217,7 +217,7 @@ class HomePage extends PureComponent {
             </div>
           </Grid>
 
-          {/* <Grid
+          <Grid
             item
             style={{
               paddingLeft: '12px',
@@ -233,7 +233,7 @@ class HomePage extends PureComponent {
             <div className={classes.chartWrapper}>
               <HomeHorizontalBarChart />
             </div>
-          </Grid> */}
+          </Grid>
           <Grid
             item
             style={{

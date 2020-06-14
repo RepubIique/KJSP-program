@@ -10,7 +10,7 @@ let populateName = () => {
   for (let i = 0; i < result.length; i++) {
     nameArr.push(result[i].workerName);
   }
-  console.log(nameArr);
+
   return nameArr;
 };
 
@@ -19,7 +19,7 @@ let populateQuan = () => {
   for (let i = 0; i < result.length; i++) {
     QuanArr.push(result[i].totalQuantity);
   }
-  console.log(QuanArr);
+
   return QuanArr;
 };
 
@@ -34,7 +34,7 @@ export default class HomeMixChartOne extends Component {
 
   async componentDidMount() {
     result = await barChartData.getData();
-    console.log(result);
+
     this.setState({ result: result });
   }
 
