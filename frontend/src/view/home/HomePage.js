@@ -18,6 +18,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import barDataData from './data/barData.js';
+
+
 
 const styles = (theme) => ({
   chartWrapper: {
@@ -31,11 +34,19 @@ const styles = (theme) => ({
     overflow: 'hidden',
   },
 });
+let result =[]
 
 class HomePage extends PureComponent {
+
+  async componentDidMount() {
+    result = await barDataData.getData();
+    console.log(result[0].totalSalaries);
+    this.setState({ result: result });
+   this.totalSalary = result[0].totalSalaries
+  }
+
   render() {
     const { classes } = this.props;
-
     return (
       <div
         style={{
@@ -79,7 +90,7 @@ class HomePage extends PureComponent {
                         Total Salaries
                       </TableCell>
                       <TableCell component="th" scope="row">
-                      <b>$4,786,571</b>  
+                      <b>{ this.totalSalary }</b>  
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Total Deductions

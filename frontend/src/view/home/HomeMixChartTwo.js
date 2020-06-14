@@ -24,6 +24,9 @@ const options = {
     yAxes: [
       {
         type: 'linear',
+        ticks: {
+          beginAtZero: true
+      },
         display: false,
         position: 'left',
         id: 'y-axis-1',
