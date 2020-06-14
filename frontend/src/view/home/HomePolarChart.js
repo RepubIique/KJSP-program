@@ -8,17 +8,17 @@ let populateSub = () => {
   for (let i = 0; i < result.length; i++) {
     data.push(result[i].subdivision);
   }
-  console.log(data);
+
   return data;
 };
 
-console.log("here" + populateSub())
+
 let populateGross = () => {
   let data = [];
   for (let i = 0; i < result.length; i++) {
     data.push(result[i].gross);
   }
-  console.log(data);
+
   return data;
 };
 
@@ -38,7 +38,7 @@ export default class HomePolarChart extends Component {
   async componentDidMount() {
 
     result = await polarChartData.getData();
-    console.log(result);
+
     this.setState({ result: result });
     data = {
       datasets: [
