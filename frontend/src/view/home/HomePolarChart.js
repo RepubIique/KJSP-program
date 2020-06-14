@@ -40,6 +40,7 @@ export default class HomePolarChart extends Component {
     result = await polarChartData.getData();
 
     this.setState({ result: result });
+    console.log(      populateSub())
     data = {
  
       datasets: [
@@ -58,7 +59,7 @@ export default class HomePolarChart extends Component {
       label: 'Ringgit Earned for the month',
     
       labels: [
-        populateSub()
+        populateSub()[0],    populateSub()[1],    populateSub()[2]
       ],
     };
   }

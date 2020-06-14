@@ -185,6 +185,7 @@ class HomePage extends PureComponent {
           </Grid> */}
 
           <Grid
+          
             item
             style={{
               paddingLeft: '12px',
@@ -197,6 +198,7 @@ class HomePage extends PureComponent {
             sm={12}
             xs={12}
           >
+
             <div className={classes.chartWrapper}>
               <HomeMixChartOne />
             </div>
