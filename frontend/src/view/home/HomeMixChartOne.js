@@ -39,7 +39,6 @@ export default class HomeMixChartOne extends Component {
   }
 
   render() {
-    
     const options = {
       responsive: true,
       tooltips: {
@@ -55,18 +54,18 @@ export default class HomeMixChartOne extends Component {
           {
             display: true,
             gridLines: {
-              display: false,
+              display: true,
             },
           },
         ],
         yAxes: [
           {
             type: 'linear',
-            display: false,
+            display: true,
             position: 'left',
             id: 'y-axis-1',
             gridLines: {
-              display: false,
+              display: true,
             },
           },
           {
@@ -81,25 +80,26 @@ export default class HomeMixChartOne extends Component {
         ],
       },
     };
+
     const data1 = {
       labels: populateName(),
       datasets: [
-        // {
-        //   label: 'Worker',
-        //   type: 'line',
-        //   data: populateQuan(),
-        //   fill: false,
-        //   borderColor: '#EC932F',
-        //   backgroundColor: '#EC932F',
-        //   pointBorderColor: '#EC932F',
-        //   pointBackgroundColor: '#EC932F',
-        //   pointHoverBackgroundColor: '#EC932F',
-        //   pointHoverBorderColor: '#EC932F',
-        //   yAxisID: 'y-axis-2',
-        // },
+        {
+          label: 'Fancy line',
+          type: 'line',
+          data: populateQuan(),
+          fill: false,
+          borderColor: '#EC932F',
+          backgroundColor: '#EC932F',
+          pointBorderColor: '#EC932F',
+          pointBackgroundColor: '#EC932F',
+          pointHoverBackgroundColor: '#EC932F',
+          pointHoverBorderColor: '#EC932F',
+          yAxisID: 'y-axis-2',
+        },
         {
           type: 'bar',
-          label: 'Ringgit Earned for the month',
+          label: 'Ringgit Earned Per Worker Per Month',
           data: populateQuan(),
           fill: false,
           backgroundColor: '#36A2EB',
