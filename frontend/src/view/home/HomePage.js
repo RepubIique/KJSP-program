@@ -62,7 +62,7 @@ class HomePage extends PureComponent {
           marginRight: '-12px',
         }}
       >
-        <Grid container>
+
           <Grid
             style={{
               paddingLeft: '12px',
@@ -70,11 +70,12 @@ class HomePage extends PureComponent {
               paddingBottom: '24px',
             }}
           >
-            <Card>
-              <TableContainer component={Paper}>
+            <Card         >
+              <TableContainer component={Paper}     >
                 <Table
                   size="small"
                   aria-label="a dense table"
+
                 >
                   <TableHead>
                     <TableRow>
@@ -116,7 +117,7 @@ class HomePage extends PureComponent {
                         Total Employees
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <b>{this.state.result[0].totalSalaries} </b>
+                        <b>{this.state.result[0].totalWorkers} </b>
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Total Sick Days
@@ -130,6 +131,7 @@ class HomePage extends PureComponent {
               </TableContainer>
             </Card>
           </Grid>
+          <Grid container>
           {/* <Grid
             item
             style={{

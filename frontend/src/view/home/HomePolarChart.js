@@ -41,6 +41,7 @@ export default class HomePolarChart extends Component {
 
     this.setState({ result: result });
     data = {
+ 
       datasets: [
         {
           data: populateGross(),
@@ -53,6 +54,7 @@ export default class HomePolarChart extends Component {
           ],
         },
       ],
+      
       label: 'Ringgit Earned for the month',
     
       labels: [
