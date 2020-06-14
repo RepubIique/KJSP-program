@@ -20,8 +20,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import barDataData from './data/barData.js';
 
-
-
 const styles = (theme) => ({
   chartWrapper: {
     border: '1px solid rgb(224, 224, 224)',
@@ -34,15 +32,23 @@ const styles = (theme) => ({
     overflow: 'hidden',
   },
 });
-let result =[]
+let result = [];
 
 class HomePage extends PureComponent {
+  constructor(props) {
+    super(props); //since we are extending class Table so we have to use super in order to override Component class constructor
+    this.state = {
+      //state is by default an object
+      result: [result],
+    };
+  }
 
   async componentDidMount() {
     result = await barDataData.getData();
+    console.log('here');
     console.log(result[0].totalSalaries);
     this.setState({ result: result });
-   this.totalSalary = result[0].totalSalaries
+    this.totalSalary = result[0].totalSalaries;
   }
 
   render() {
@@ -56,13 +62,14 @@ class HomePage extends PureComponent {
         }}
       >
         <Grid container>
-        <Grid            style={{
+          <Grid
+            style={{
               paddingLeft: '12px',
               paddingRight: '12px',
               paddingBottom: '24px',
-            }}>
-            <Card
-            >
+            }}
+          >
+            <Card>
               <TableContainer component={Paper}>
                 <Table
                   size="small"
@@ -90,34 +97,32 @@ class HomePage extends PureComponent {
                         Total Salaries
                       </TableCell>
                       <TableCell component="th" scope="row">
-                      <b>{ this.totalSalary }</b>  
+                        <b>{this.totalSalary}</b>
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Total Deductions
                       </TableCell>
                       <TableCell component="th" scope="row">
-                      <b> $4,571</b>
+                        <b> $4,571</b>
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Average Salary
                       </TableCell>
                       <TableCell component="th" scope="row">
-                      <b>$4,786,571</b>  
+                        <b>$4,786,571</b>
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Total Employees
                       </TableCell>
                       <TableCell component="th" scope="row">
-                      <b>89 </b>
+                        <b>89 </b>
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Total Sick Days
                       </TableCell>
                       <TableCell component="th" scope="row">
-                       <b>89 </b>
+                        <b>89 </b>
                       </TableCell>
-                      
-
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -189,9 +194,7 @@ class HomePage extends PureComponent {
             sm={12}
             xs={12}
           >
-
             <div className={classes.chartWrapper}>
-
               <HomeMixChartOne />
             </div>
           </Grid>
@@ -249,7 +252,6 @@ class HomePage extends PureComponent {
             </div>
           </Grid>
 
-       
           {/* <Grid
             item
             style={{

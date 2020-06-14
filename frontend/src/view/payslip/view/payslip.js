@@ -371,7 +371,7 @@ export default class payslip extends Component {
                         <br></br>
                         {$.pestdiseaseTotal}
                         <br></br>
-                        Tim to add
+                        {$.MANURINGTotal}
                         <br></br>
                         {$.PLANTINGSUPPLYINGTotal}
                         <br></br>
