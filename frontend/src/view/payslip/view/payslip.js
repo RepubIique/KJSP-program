@@ -100,7 +100,9 @@ export default class payslip extends Component {
       }
       return out;
     };
-    let workerName = resultDD.map((x) => x.workerName);
+    let workerName = eliminateDuplicates(
+      resultDD.map((x) => x.workerName),
+    );
     let nameMap = workerName.map((name) => (
       <option key={name}>{name}</option>
     ));
@@ -141,24 +143,22 @@ export default class payslip extends Component {
           >
             <CardContent>
               <FormControl>
-                <InputLabel htmlFor="grouped-native-select">
-                  Year
+                <InputLabel htmlFor="grouped-select">
+                  Employee
                 </InputLabel>
                 <Select
                   style={{ marginRight: '1em' }}
                   native
-                  id="grouped-native-select"
-                  value={this.state.params.year}
-                  onChange={this.handleSelectChangeYear}
+                  value={this.state.params.sub}
+                  onChange={this.handleSelectChangeEmp}
                 >
-                  >
+                  id="grouped-native-select" >
                   <option aria-label="None" value="%">
-                    Select Year
+                    Select Employee
                   </option>
-                  {yearMap}
+                  {nameMap}
                 </Select>
               </FormControl>
-
               <FormControl>
                 <InputLabel htmlFor="grouped-select">
                   Month
@@ -176,322 +176,322 @@ export default class payslip extends Component {
                   {monthMap}
                 </Select>
               </FormControl>
-
               <FormControl>
-                <InputLabel htmlFor="grouped-select">
-                  Employee
+                <InputLabel htmlFor="grouped-native-select">
+                  Year
                 </InputLabel>
                 <Select
                   style={{ marginRight: '1em' }}
                   native
-                  value={this.state.params.sub}
-                  onChange={this.handleSelectChangeEmp}
+                  id="grouped-native-select"
+                  value={this.state.params.year}
+                  onChange={this.handleSelectChangeYear}
                 >
-                  id="grouped-native-select" >
+                  >
                   <option aria-label="None" value="%">
-                    Select Employee
+                    Select Year
                   </option>
-                  {nameMap}
+                  {yearMap}
                 </Select>
               </FormControl>
             </CardContent>
           </Card>
         </div>
         <br></br>
-        <div           id="section-to-print">
-        <Card
-          style={{
-            width: '100%',
-            background: 'white',
-            display: 'block',
-            margin: '0 auto',
-          }}
-
-          variant="outlined"
-        >
-          <CardContent>
-            <Grid container spacing={3}>
-              <Grid item xs={4}>
-                <Card variant="outlined">
-                  <CardContent>
-                    <Grid container spacing={3}>
-                      <Grid item xs={7}>
-                        Name:
-                        <br></br>
-                        ID:
-                        <br></br>
-                        Designation:
-                        <br></br>
-                        Division:
-                        <br></br>
-                        Date Joined:
+        <div id="section-to-print">
+          <Card
+            style={{
+              width: '100%',
+              background: 'white',
+              display: 'block',
+              margin: '0 auto',
+            }}
+            variant="outlined"
+          >
+            <CardContent>
+              <Grid container spacing={3}>
+                <Grid item xs={4}>
+                  <Card variant="outlined">
+                    <CardContent>
+                      <Grid container spacing={3}>
+                        <Grid item xs={7}>
+                          Name:
+                          <br></br>
+                          ID:
+                          <br></br>
+                          Designation:
+                          <br></br>
+                          Division:
+                          <br></br>
+                          Date Joined:
+                        </Grid>
+                        <Grid item xs={5}>
+                          {$.workerName}
+                          <br></br>
+                          {$.workerID}
+                          <br></br>
+                          {$.designation}
+                          <br></br>
+                          {$.subdivision}
+                          <br></br>
+                          {$.dateofEmployment}
+                        </Grid>
                       </Grid>
-                      <Grid item xs={5}>
-                        {$.workerName}
-                        <br></br>
-                        {$.workerID}
-                        <br></br>
-                        {$.designation}
-                        <br></br>
-                        {$.subdivision}
-                        <br></br>
-                        {$.dateofEmployment}
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={4}>
+                  <Card variant="outlined">
+                    <CardContent>
+                      <Grid container spacing={3}>
+                        <Grid item xs={7}>
+                          IC/PP No:
+                          <br></br>
+                          Socso No:
+                          <br></br>
+                          Bank:
+                          <br></br>
+                          Bank Acc:
+                          <br></br>
+                        </Grid>
+                        <Grid item xs={5}>
+                          {$.passportICNo}
+                          <br></br>
+                          {$.socsoNo}
+                          <br></br>
+                          {$.bank}
+                          <br></br>
+                          {$.bankAccountNo}
+                        </Grid>
                       </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={4}>
+                  <Card variant="outlined">
+                    <CardContent>
+                      <Grid container spacing={3}>
+                        <Grid item xs={7}>
+                          Superior:
+                        </Grid>
+                        <Grid item xs={5}>
+                          {$.superiorName}
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                  </Card>
+                </Grid>
               </Grid>
-              <Grid item xs={4}>
-                <Card variant="outlined">
-                  <CardContent>
-                    <Grid container spacing={3}>
-                      <Grid item xs={7}>
-                        IC/PP No:
-                        <br></br>
-                        Socso No:
-                        <br></br>
-                        Bank:
-                        <br></br>
-                        Bank Acc:
-                        <br></br>
+              <Grid container spacing={3}>
+                <Grid item xs={4}>
+                  <Card variant="outlined">
+                    <CardHeader subheader="Attendance" />
+                    <CardContent>
+                      <Grid container spacing={3}>
+                        <Grid item xs={7}>
+                          Working Day:
+                          <br></br>
+                          Rest Day:
+                          <br></br>
+                          Public Holiday:
+                          <br></br>
+                          Absent:
+                          <br></br>
+                          Sick Leave:
+                          <br></br>
+                          On Leave:
+                          <br></br>
+                          Overtime:
+                          <br></br>
+                          Total Day:
+                          <br></br>
+                          Total Working Hour:
+                          <br></br>
+                          Average Working Hour:
+                          <br></br>
+                        </Grid>
+                        <Grid item xs={5}>
+                          {$.totalWorkingDay}
+                          <br></br>
+                          {$.totalRestDay}
+                          <br></br>
+                          {$.totalPublicHoliday}
+                          <br></br>
+                          {$.totalAbsent}
+                          <br></br>
+                          {$.totalSickLeave}
+                          <br></br>
+                          {$.totalOnLeave}
+                          <br></br>
+                          {$.totalRestDay}
+                          <br></br>
+                          {$.totalWorkingDay}
+                          <br></br>
+                          {$.totalOvertimeHour}
+                          <br></br>
+                          {$.averageWorkingHour}
+                        </Grid>
                       </Grid>
-                      <Grid item xs={5}>
-                        {$.passportICNo}
-                        <br></br>
-                        {$.socsoNo}
-                        <br></br>
-                        {$.bank}
-                        <br></br>
-                        {$.bankAccountNo}
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={4}>
+                  <Card variant="outlined">
+                    <CardHeader subheader="Details of Payment" />
+                    <CardContent>
+                      <Grid container spacing={3}>
+                        <Grid item xs={7}>
+                          General:
+                          <br></br>
+                          FFB Harvesting:
+                          <br></br>
+                          Pruning:
+                          <br></br>
+                          Field Maintenance:
+                          <br></br>
+                          Pest & Disease:
+                          <br></br>
+                          Manuring:
+                          <br></br>
+                          Planting/Supplying:
+                          <br></br>
+                          Building Construction:
+                          <br></br>
+                          Infra Maintenance:
+                          <br></br>
+                          Nursery:
+                          <br></br>
+                          Transportation:
+                          <br></br>
+                          <hr></hr>
+                          Total income:
+                        </Grid>
+                        <Grid item xs={5}>
+                          {$.generalTotal}
+                          <br></br>
+                          {$.ffbharvestingTotal}
+                          <br></br>
+                          {$.pruningTotal}
+                          <br></br>
+                          {$.fieldmaintenanceTotal}
+                          <br></br>
+                          {$.pestdiseaseTotal}
+                          <br></br>
+                          {$.MANURINGTotal}
+                          <br></br>
+                          {$.PLANTINGSUPPLYINGTotal}
+                          <br></br>
+                          {$.buildingconstructionTotal}
+                          <br></br>
+                          {$.inframaintenanceTotal}
+                          <br></br>
+                          {$.nurseryTotal}
+                          <br></br>
+                          {$.transportationTotal}
+                          <br></br>
+                          <hr></hr>
+                          {$.Gross}
+                        </Grid>
                       </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={4}>
+                  <Card variant="outlined">
+                    <CardHeader subheader="Deduction" />
+                    <CardContent>
+                      <Grid container spacing={3}>
+                        <Grid item xs={7}>
+                          {deductionName.map((x, i) => (
+                            <p key={i}>{x}</p>
+                          ))}
+                          <hr></hr>
+                          Total Deduction:
+                        </Grid>
+                        <Grid item xs={5}>
+                          {deductionCost.map((x, i) => (
+                            <p key={i}>{x}</p>
+                          ))}
+                          <hr></hr>
+                          {totalDeductionCost}
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                  </Card>
+                </Grid>
               </Grid>
-              <Grid item xs={4}>
-                <Card variant="outlined">
-                  <CardContent>
-                    <Grid container spacing={3}>
-                      <Grid item xs={7}>
-                        Superior:
+            </CardContent>
+          </Card>
+          <br></br>
+          <Card
+            variant="outlined"
+            style={{
+              width: '100%',
+              background: 'white',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          >
+            <CardContent>
+              <Grid container spacing={3}>
+                <Grid item xs={4}>
+                  Payout by:
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <hr></hr>
+                  Name:
+                  <br></br>
+                  Date:
+                  <br></br>
+                  All payments are made in Rinngit Malaysia
+                  (RM)
+                </Grid>
+                <Grid item xs={4}>
+                  <Card variant="outlined">
+                    <CardContent>
+                      <Grid container spacing={3}>
+                        <Grid item xs={7}>
+                          Total Gross Wages:
+                        </Grid>
+                        <Grid item xs={5}>
+                          {$.Gross}
+                        </Grid>
                       </Grid>
-                      <Grid item xs={5}>
-                        {$.superiorName}
+                    </CardContent>
+                  </Card>
+                  <br></br>% of Deduction:
+                  <br></br>
+                  {(
+                    (totalDeductionCost / $.Gross) *
+                    100
+                  ).toFixed(2)}
+                </Grid>
+                <Grid item xs={4}>
+                  <Card variant="outlined">
+                    <CardContent>
+                      <Grid container spacing={3}>
+                        <Grid item xs={7}>
+                          Total Net Payable:
+                        </Grid>
+                        <Grid item xs={5}>
+                          {$.netPayable}
+                        </Grid>
                       </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                  Received by:
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <hr></hr>
+                  Name:
+                  <br></br>
+                  Date:
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid container spacing={3}>
-              <Grid item xs={4}>
-                <Card variant="outlined">
-                  <CardHeader subheader="Attendance" />
-                  <CardContent>
-                    <Grid container spacing={3}>
-                      <Grid item xs={7}>
-                        Working Day:
-                        <br></br>
-                        Rest Day:
-                        <br></br>
-                        Public Holiday:
-                        <br></br>
-                        Absent:
-                        <br></br>
-                        Sick Leave:
-                        <br></br>
-                        On Leave:
-                        <br></br>
-                        Overtime:
-                        <br></br>
-                        Total Day:
-                        <br></br>
-                        Total Working Hour:
-                        <br></br>
-                        Average Working Hour:
-                        <br></br>
-                      </Grid>
-                      <Grid item xs={5}>
-                        {$.totalWorkingDay}
-                        <br></br>
-                        {$.totalRestDay}
-                        <br></br>
-                        {$.totalPublicHoliday}
-                        <br></br>
-                        {$.totalAbsent}
-                        <br></br>
-                        {$.totalSickLeave}
-                        <br></br>
-                        {$.totalOnLeave}
-                        <br></br>
-                        {$.totalRestDay}
-                        <br></br>
-                        {$.totalWorkingDay}
-                        <br></br>
-                        {$.totalOvertimeHour}
-                        <br></br>
-                        {$.averageWorkingHour}
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={4}>
-                <Card variant="outlined">
-                  <CardHeader subheader="Details of Payment" />
-                  <CardContent>
-                    <Grid container spacing={3}>
-                      <Grid item xs={7}>
-                        General:
-                        <br></br>
-                        FFB Harvesting:
-                        <br></br>
-                        Pruning:
-                        <br></br>
-                        Field Maintenance:
-                        <br></br>
-                        Pest & Disease:
-                        <br></br>
-                        Manuring:
-                        <br></br>
-                        Planting/Supplying:
-                        <br></br>
-                        Building Construction:
-                        <br></br>
-                        Infra Maintenance:
-                        <br></br>
-                        Nursery:
-                        <br></br>
-                        Transportation:
-                        <br></br>
-                        <hr></hr>
-                        Total income:
-                      </Grid>
-                      <Grid item xs={5}>
-                        {$.generalTotal}
-                        <br></br>
-                        {$.ffbharvestingTotal}
-                        <br></br>
-                        {$.pruningTotal}
-                        <br></br>
-                        {$.fieldmaintenanceTotal}
-                        <br></br>
-                        {$.pestdiseaseTotal}
-                        <br></br>
-                        {$.MANURINGTotal}
-                        <br></br>
-                        {$.PLANTINGSUPPLYINGTotal}
-                        <br></br>
-                        {$.buildingconstructionTotal}
-                        <br></br>
-                        {$.inframaintenanceTotal}
-                        <br></br>
-                        {$.nurseryTotal}
-                        <br></br>
-                        {$.transportationTotal}
-                        <br></br>
-                        <hr></hr>
-                        {$.Gross}
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={4}>
-                <Card variant="outlined">
-                  <CardHeader subheader="Deduction" />
-                  <CardContent>
-                    <Grid container spacing={3}>
-                      <Grid item xs={7}>
-                        {deductionName.map((x, i) => (
-                          <p key={i}>{x}</p>
-                        ))}
-                        <hr></hr>
-                        Total Deduction:
-                      </Grid>
-                      <Grid item xs={5}>
-                        {deductionCost.map((x, i) => (
-                          <p key={i}>{x}</p>
-                        ))}
-                        <hr></hr>
-                        {totalDeductionCost}
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
-              </Grid>
-            </Grid>
-          </CardContent>
-        </Card>
-        <br></br>
-        <Card  variant="outlined"
-          style={{
-            width: '100%',
-            background: 'white',
-            display: 'block',
-            margin: '0 auto',
-          }}
-        >
-          <CardContent>
-            <Grid container spacing={3}>
-              <Grid item xs={4}>
-                Payout by:
-                <br></br>
-                <br></br>
-                <br></br>
-                <hr></hr>
-                Name:
-                <br></br>
-                Date:
-                <br></br>
-                All payments are made in Rinngit Malaysia
-                (RM)
-              </Grid>
-              <Grid item xs={4}>
-                <Card variant="outlined">
-                  <CardContent>
-                    <Grid container spacing={3}>
-                      <Grid item xs={7}>
-                        Total Gross Wages:
-                      </Grid>
-                      <Grid item xs={5}>
-                        {$.Gross}
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
-                <br></br>% of Deduction:
-                <br></br>
-                {(
-                  (totalDeductionCost / $.Gross) *
-                  100
-                ).toFixed(2)}
-              </Grid>
-              <Grid item xs={4}>
-                <Card variant="outlined">
-                  <CardContent>
-                    <Grid container spacing={3}>
-                      <Grid item xs={7}>
-                        Total Net Payable:
-                      </Grid>
-                      <Grid item xs={5}>
-                        {$.netPayable}
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
-                Received by:
-                <br></br>
-                <br></br>
-                <br></br>
-                <hr></hr>
-                Name:
-                <br></br>
-                Date:
-              </Grid>
-            </Grid>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
         </div>
       </React.Fragment>
     );
