@@ -11,6 +11,7 @@ import dropdownData from '../data/dropDownData.js';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import './css.css';
 
 let result = [];
 let resultDD = [];
@@ -201,11 +202,13 @@ export default class payslip extends Component {
             display: 'block',
             margin: '0 auto',
           }}
+          id="section-to-print"
+          variant="outlined"
         >
-          <CardContent>
+          <CardContent >
             <Grid container spacing={3}>
               <Grid item xs={4}>
-                <Card>
+                <Card variant="outlined">
                   <CardContent>
                     <Grid container spacing={3}>
                       <Grid item xs={7}>
@@ -235,7 +238,7 @@ export default class payslip extends Component {
                 </Card>
               </Grid>
               <Grid item xs={4}>
-                <Card>
+                <Card variant="outlined">
                   <CardContent>
                     <Grid container spacing={3}>
                       <Grid item xs={7}>
@@ -262,7 +265,7 @@ export default class payslip extends Component {
                 </Card>
               </Grid>
               <Grid item xs={4}>
-                <Card>
+                <Card variant="outlined">
                   <CardContent>
                     <Grid container spacing={3}>
                       <Grid item xs={7}>
@@ -278,7 +281,7 @@ export default class payslip extends Component {
             </Grid>
             <Grid container spacing={3}>
               <Grid item xs={4}>
-                <Card>
+              <Card variant="outlined">
                   <CardHeader subheader="Attendance" />
                   <CardContent>
                     <Grid container spacing={3}>
@@ -330,7 +333,7 @@ export default class payslip extends Component {
                 </Card>
               </Grid>
               <Grid item xs={4}>
-                <Card>
+              <Card variant="outlined">
                   <CardHeader subheader="Details of Payment" />
                   <CardContent>
                     <Grid container spacing={3}>
@@ -356,7 +359,7 @@ export default class payslip extends Component {
                         Nursery:
                         <br></br>
                         Transportation:
-                        <br></br>
+                        <br></br> 
                         <hr></hr>
                         Total income:
                       </Grid>
@@ -391,7 +394,7 @@ export default class payslip extends Component {
                 </Card>
               </Grid>
               <Grid item xs={4}>
-                <Card>
+              <Card variant="outlined">
                   <CardHeader subheader="Deduction" />
                   <CardContent>
                     <Grid container spacing={3}>
