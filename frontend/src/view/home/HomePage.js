@@ -34,15 +34,15 @@ const styles = (theme) => ({
     overflow: 'hidden',
   },
 });
-let result =[]
+let result
 
 class HomePage extends PureComponent {
 
   async componentDidMount() {
     result = await barDataData.getData();
-    console.log(result[0].totalSalaries);
     this.setState({ result: result });
-   this.totalSalary = result[0].totalSalaries
+    console.log(this.state.result[0].totalSalaries);
+
   }
 
   render() {
@@ -90,7 +90,7 @@ class HomePage extends PureComponent {
                         Total Salaries
                       </TableCell>
                       <TableCell component="th" scope="row">
-                      <b>{ this.totalSalary }</b>  
+                      <b>{this.state.result[0].totalSalaries}</b>  
                       </TableCell>
                       <TableCell component="th" scope="row">
                         Total Deductions
