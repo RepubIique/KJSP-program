@@ -124,7 +124,10 @@ export default class payslip extends Component {
     let deductionCostStr = deductionCost.map((x) =>
       parseInt(x),
     );
-
+    let totalDeductionCost = deductionCostStr.reduce(
+      (a, b) => a + b,
+      0,
+    );
     return (
       <React.Fragment>
         <div>
@@ -205,7 +208,7 @@ export default class payslip extends Component {
           id="section-to-print"
           variant="outlined"
         >
-          <CardContent >
+          <CardContent>
             <Grid container spacing={3}>
               <Grid item xs={4}>
                 <Card variant="outlined">
@@ -281,7 +284,7 @@ export default class payslip extends Component {
             </Grid>
             <Grid container spacing={3}>
               <Grid item xs={4}>
-              <Card variant="outlined">
+                <Card variant="outlined">
                   <CardHeader subheader="Attendance" />
                   <CardContent>
                     <Grid container spacing={3}>
@@ -333,7 +336,7 @@ export default class payslip extends Component {
                 </Card>
               </Grid>
               <Grid item xs={4}>
-              <Card variant="outlined">
+                <Card variant="outlined">
                   <CardHeader subheader="Details of Payment" />
                   <CardContent>
                     <Grid container spacing={3}>
@@ -359,7 +362,7 @@ export default class payslip extends Component {
                         Nursery:
                         <br></br>
                         Transportation:
-                        <br></br> 
+                        <br></br>
                         <hr></hr>
                         Total income:
                       </Grid>
@@ -394,7 +397,7 @@ export default class payslip extends Component {
                 </Card>
               </Grid>
               <Grid item xs={4}>
-              <Card variant="outlined">
+                <Card variant="outlined">
                   <CardHeader subheader="Deduction" />
                   <CardContent>
                     <Grid container spacing={3}>
@@ -410,10 +413,7 @@ export default class payslip extends Component {
                           <p key={i}>{x}</p>
                         ))}
                         <hr></hr>
-                        {deductionCostStr.reduce(
-                          (a, b) => a + b,
-                          0,
-                        )}
+                        {totalDeductionCost}
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -432,7 +432,63 @@ export default class payslip extends Component {
           }}
         >
           <CardContent>
-            The contents above are currently dynamic :)
+            <Grid container spacing={3}>
+              <Grid item xs={4}>
+                Payout by:
+                <br></br>
+                <br></br>
+                <br></br>
+                <hr></hr>
+                Name:
+                <br></br>
+                Date:
+                <br></br>
+                All payments are made in Rinngit Malaysia
+                (RM)
+              </Grid>
+              <Grid item xs={4}>
+                <Card variant="outlined">
+                  <CardContent>
+                    <Grid container spacing={3}>
+                      <Grid item xs={7}>
+                        Total Gross Wages:
+                      </Grid>
+                      <Grid item xs={5}>
+                        {$.Gross}
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+                <br></br>% of Deduction:
+                <br></br>
+                {(
+                  (totalDeductionCost / $.Gross) *
+                  100
+                ).toFixed(2)}
+              </Grid>
+              <Grid item xs={4}>
+                <Card variant="outlined">
+                  <CardContent>
+                    <Grid container spacing={3}>
+                      <Grid item xs={7}>
+                        Total Net Payable:
+                      </Grid>
+                      <Grid item xs={5}>
+                        {$.netPayable}
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+                Received by:
+                <br></br>
+                <br></br>
+                <br></br>
+                <hr></hr>
+                Name:
+                <br></br>
+                Date:
+              </Grid>
+            </Grid>
           </CardContent>
         </Card>
       </React.Fragment>
