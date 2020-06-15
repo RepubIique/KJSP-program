@@ -56,6 +56,7 @@ export default class HomeMixChartOne extends Component {
             display: true,
             gridLines: {
               display: false,
+              display: true,
             },
           },
         ],
@@ -63,10 +64,12 @@ export default class HomeMixChartOne extends Component {
           {
             type: 'linear',
             display: false,
+            display: true,
             position: 'left',
             id: 'y-axis-1',
             gridLines: {
               display: false,
+              display: true,
             },
           },
           {
@@ -98,9 +101,27 @@ export default class HomeMixChartOne extends Component {
         //   yAxisID: 'y-axis-2',
         // },
         {
+          label: 'Fancy line',
+          type: 'line',
+          data: populateQuan(),
+          fill: false,
+          borderColor: '#EC932F',
+          backgroundColor: '#EC932F',
+          pointBorderColor: '#EC932F',
+          pointBackgroundColor: '#EC932F',
+          pointHoverBackgroundColor: '#EC932F',
+          pointHoverBorderColor: '#EC932F',
+          yAxisID: 'y-axis-2',
+        },
+        {
           type: 'bar',
+<<<<<<< HEAD
           label: 'Ringgit Earned for the month',
           data: populateQuan(), 
+=======
+          label: 'Ringgit Earned Per Worker Per Month',
+          data: populateQuan(),
+>>>>>>> aabbe910bcb8dcc6a16aa9b210e6c5af2e461058
           fill: false,
           backgroundColor: '#36A2EB',
           borderColor: '#36A2EB',
