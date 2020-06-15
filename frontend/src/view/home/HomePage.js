@@ -19,6 +19,14 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import barDataData from './data/barData.js';
+import randomWorkerData from './data/randomWorkerdata.js';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
 
 const styles = (theme) => ({
   chartWrapper: {
@@ -33,6 +41,7 @@ const styles = (theme) => ({
   },
 });
 let result = [];
+let resultRW = [];
 
 class HomePage extends PureComponent {
   constructor(props) {
@@ -40,15 +49,16 @@ class HomePage extends PureComponent {
     this.state = {
       //state is by default an object
       result: [result],
+      resultRW: [resultRW],
     };
   }
 
   async componentDidMount() {
     result = await barDataData.getData();
-
-
+    resultRW = await randomWorkerData.getData();
+    console.log(resultRW);
     this.setState({ result: result });
-    this.totalSalary = result[0].totalSalaries;
+    this.setState({ resultRW: resultRW });
   }
 
   render() {
@@ -62,76 +72,87 @@ class HomePage extends PureComponent {
           marginRight: '-12px',
         }}
       >
-
-          <Grid
-            style={{
-              paddingLeft: '12px',
-              paddingRight: '12px',
-              paddingBottom: '24px',
-            }}
-          >
-            <Card         >
-              <TableContainer component={Paper}     >
-                <Table
-                  size="small"
-                  aria-label="a dense table"
-
-                >
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>
-                        Summary for year 2020
-                      </TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell component="th" scope="row">
-                        Total Salaries
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        <b>{this.state.result[0].totalSalaries}</b>
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        Total Deductions
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        <b>{this.state.result[0].totalDeductions}</b>
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        Average Salary
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        <b>{this.state.result[0].averageWage}</b>
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        Total Employees
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        <b>{this.state.result[0].totalWorkers} </b>
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        Total Sick Days
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        <b>{this.state.result[0].totalSick} </b>
-                      </TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </Card>
-          </Grid>
-          <Grid container>
+        <Grid
+          style={{
+            paddingLeft: '12px',
+            paddingRight: '12px',
+            paddingBottom: '24px',
+          }}
+        >
+          <Card>
+            <TableContainer component={Paper}>
+              <Table
+                size="small"
+                aria-label="a dense table"
+              >
+                <TableHead>
+                  <TableRow>
+                    <TableCell>
+                      Summary for year 2020
+                    </TableCell>
+                    <TableCell></TableCell>
+                    <TableCell></TableCell>
+                    <TableCell></TableCell>
+                    <TableCell></TableCell>
+                    <TableCell></TableCell>
+                    <TableCell></TableCell>
+                    <TableCell></TableCell>
+                    <TableCell></TableCell>
+                    <TableCell></TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  <TableRow>
+                    <TableCell component="th" scope="row">
+                      Total Salaries
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      <b>
+                        {this.state.result[0].totalSalaries}
+                      </b>
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      Total Deductions
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      <b>
+                        {
+                          this.state.result[0]
+                            .totalDeductions
+                        }
+                      </b>
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      Average Salary
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      <b>
+                        {this.state.result[0].averageWage}
+                      </b>
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      Total Employees
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      <b>
+                        {this.state.result[0].totalWorkers}{' '}
+                      </b>
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      Total Sick Days
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      <b>
+                        {this.state.result[0].totalSick}{' '}
+                      </b>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Card>
+        </Grid>
+        <Grid container>
           {/* <Grid
             item
             style={{
@@ -185,7 +206,6 @@ class HomePage extends PureComponent {
           </Grid> */}
 
           <Grid
-          
             item
             style={{
               paddingLeft: '12px',
@@ -198,7 +218,6 @@ class HomePage extends PureComponent {
             sm={12}
             xs={12}
           >
-
             <div className={classes.chartWrapper}>
               <HomeMixChartOne />
             </div>
@@ -257,6 +276,59 @@ class HomePage extends PureComponent {
             </div>
           </Grid>
 
+          <Grid
+            style={{
+              paddingLeft: '12px',
+              paddingRight: '12px',
+              paddingBottom: '24px',
+            }}
+          >
+            <Card>
+              <CardContent>
+                <Typography
+                  variant="subtitle"
+                  color="textSecondary"
+                >
+                  Random Worker
+                </Typography>
+                <Typography component="h5" variant="h5">
+                {this.state.resultRW[0].workerName}
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  color="textSecondary"
+                >
+                  {this.state.resultRW[0].designation}
+                </Typography>
+                <Typography
+                  variant="subtitle"
+                  color="textSecondary"
+                >
+                  Average Hours Worked: {this.state.resultRW[0].avgtotalWorkingHours}
+                </Typography>
+                <br></br>
+                <Typography
+                  variant="subtitle"
+                  color="textSecondary"
+                >
+                  Average Days Absent: {this.state.resultRW[0].avgtotalAbsent}
+                </Typography>
+                <br></br>
+                <Typography
+                  variant="subtitle"
+                  color="textSecondary"
+                >
+                 Average Salary: {this.state.resultRW[0].avgnetPayable}
+                </Typography>
+                <CardMedia
+
+        image=  {this.state.resultRW[0].privateUrl}
+
+        title="Live from space album cover"
+      />
+              </CardContent>
+            </Card>
+          </Grid>
           {/* <Grid
             item
             style={{

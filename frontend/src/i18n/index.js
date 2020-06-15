@@ -16,14 +16,7 @@ const languages = {
     flag: '/images/flags/24/United-States.png',
     dictionary: en,
     dateFns: undefined,
-  },
-  'pt-BR': {
-    id: 'pt-BR',
-    label: 'Português',
-    flag: '/images/flags/24/Brazil.png',
-    dictionary: ptBR,
-    dateFns: dateFnsPtBr,
-  },
+  }
 };
 
 function init() {

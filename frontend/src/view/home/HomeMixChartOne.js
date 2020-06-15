@@ -100,7 +100,7 @@ export default class HomeMixChartOne extends Component {
         {
           type: 'bar',
           label: 'Ringgit Earned for the month',
-          data: populateQuan(),
+          data: populateQuan(), 
           fill: false,
           backgroundColor: '#36A2EB',
           borderColor: '#36A2EB',
