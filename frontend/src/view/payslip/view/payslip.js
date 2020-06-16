@@ -323,11 +323,11 @@ export default class payslip extends Component {
                           <br></br>
                           {$.totalOnLeave}
                           <br></br>
-                          {$.totalRestDay}
+                          {$.totalOvertimeHour}
                           <br></br>
                           {$.totalWorkingDay}
                           <br></br>
-                          {$.totalOvertimeHour}
+                          {$.totalWorkingHours}
                           <br></br>
                           {$.averageWorkingHour}
                         </Grid>
