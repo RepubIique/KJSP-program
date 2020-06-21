@@ -20,8 +20,10 @@ let resultDeductions = [];
 export default class payslip extends Component {
   constructor(props) {
     super(props); //since we are extending class Table so we have to use super in order to override Component class constructor
+
     this.state = {
       //state is by default an object
+
       result: [result],
       params: {
         year: '%',
@@ -30,6 +32,7 @@ export default class payslip extends Component {
       },
       resultDeductions: [resultDeductions],
     };
+
     this.handleSelectChangeYear = this.handleSelectChangeYear.bind(
       this,
     );
@@ -85,7 +88,18 @@ export default class payslip extends Component {
   }
 
   render() {
-    let $ = this.state.result[0];
+    let $;
+    if (
+      typeof this.state.result[0] !== 'undefined' ||
+      this.state.result[0] != null
+    ) {
+      console.log('Not Undefined or Not Null');
+      $ = this.state.result[0];
+    } else {
+      console.log('Undefined or Null');
+      $ = { workerName: ' ' };
+      
+    }
     let eliminateDuplicates = (arr) => {
       var i,
         len = arr.length,
