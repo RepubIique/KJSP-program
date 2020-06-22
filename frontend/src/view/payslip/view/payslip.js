@@ -16,7 +16,7 @@ import './css.css';
 let result = [];
 let resultDD = [];
 let resultDeductions = [];
-
+let allMonthsAndYearsForEmployee = [];
 export default class payslip extends Component {
   constructor(props) {
     super(props); //since we are extending class Table so we have to use super in order to override Component class constructor
@@ -50,6 +50,12 @@ export default class payslip extends Component {
 
   async fetchData() {
     result = await tableData.getData(this.state.params);
+    allMonthsAndYearsForEmployee = await tableData.getData({
+      year: '%',
+      month: '%',
+      sub: this.state.params.sub
+    });
+
     resultDD = await dropdownData.getData(
       this.state.params,
     );
@@ -120,12 +126,12 @@ export default class payslip extends Component {
     let nameMap = workerName.map((name) => (
       <option key={name}>{name}</option>
     ));
-    let months = result.map((x) => x.month);
+    let months = allMonthsAndYearsForEmployee.map((x) => x.month);
     let newMonths = eliminateDuplicates(months);
     let monthMap = newMonths.map((month) => (
       <option key={month}>{month}</option>
     ));
-    let year = result.map((x) => x.year);
+    let year = allMonthsAndYearsForEmployee.map((x) => x.year);
     let newYear = eliminateDuplicates(year);
     let yearMap = newYear.map((year) => (
       <option key={year}>{year}</option>
