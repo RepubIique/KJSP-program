@@ -32,9 +32,9 @@ export default class payslip extends Component {
         sub: '%',
       },
       resultDeductions: [resultDeductions],
-      employeeLoading: false,
-      monthLoading: false,
-      yearLoading: false
+      employeeLoading: true,
+      monthLoading: true,
+      yearLoading: true
     };
 
     this.handleSelectChangeYear = this.handleSelectChangeYear.bind(
@@ -49,7 +49,8 @@ export default class payslip extends Component {
   }
 
   async componentDidMount() {
-    this.fetchData();
+    await this.fetchData();
+    this.setState({ employeeLoading: false, monthLoading: false, yearLoading: false });
   }
 
   async fetchData() {
@@ -82,11 +83,9 @@ export default class payslip extends Component {
     this.setState({ employeeLoading: true, monthLoading: true });
     await this.fetchData();
     this.setState({ employeeLoading: false, monthLoading: false });
-    console.log(params);
   }
 
   async handleSelectChangeMonth(event) {
-    console.log(event.target.value);
     let params = this.state.params;
     params.month = event.target.value;
     this.setState({ params });
@@ -96,7 +95,6 @@ export default class payslip extends Component {
   }
 
   async handleSelectChangeEmp(event) {
-    console.log(event.target.value);
     let params = this.state.params;
     params.sub = event.target.value;
     this.setState({ params });
