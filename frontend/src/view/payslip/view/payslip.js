@@ -4,6 +4,7 @@ import {
   CardContent,
   Grid,
   CardHeader,
+  TextareaAutosize,
 } from '@material-ui/core';
 import tableData from '../data/data.js';
 import deductionData from '../data/deductionData.js';
@@ -31,6 +32,9 @@ export default class payslip extends Component {
         sub: '%',
       },
       resultDeductions: [resultDeductions],
+      employeeLoading: false,
+      monthLoading: false,
+      yearLoading: false
     };
 
     this.handleSelectChangeYear = this.handleSelectChangeYear.bind(
@@ -49,6 +53,7 @@ export default class payslip extends Component {
   }
 
   async fetchData() {
+    
     result = await tableData.getData(this.state.params);
     allMonthsAndYearsForEmployee = await tableData.getData({
       year: '%',
@@ -67,30 +72,37 @@ export default class payslip extends Component {
     );
     this.setState({ resultDeductions: resultDeductions });
     console.log(resultDeductions);
+    
   }
 
-  handleSelectChangeYear(event) {
+  async handleSelectChangeYear(event) {
     let params = this.state.params;
     params.year = event.target.value;
     this.setState({ params });
-    this.fetchData();
+    this.setState({ employeeLoading: true, monthLoading: true });
+    await this.fetchData();
+    this.setState({ employeeLoading: false, monthLoading: false });
     console.log(params);
   }
 
-  handleSelectChangeMonth(event) {
+  async handleSelectChangeMonth(event) {
     console.log(event.target.value);
     let params = this.state.params;
     params.month = event.target.value;
     this.setState({ params });
-    this.fetchData();
+    this.setState({ employeeLoading: true, yearLoading: true });
+    await this.fetchData();
+    this.setState({ employeeLoading: false, yearLoading: false });
   }
 
-  handleSelectChangeEmp(event) {
+  async handleSelectChangeEmp(event) {
     console.log(event.target.value);
     let params = this.state.params;
     params.sub = event.target.value;
     this.setState({ params });
-    this.fetchData();
+    this.setState({ monthLoading: true, yearLoading: true });
+    await this.fetchData();
+    this.setState({ monthLoading: false, yearLoading: false });
   }
 
   render() {
@@ -171,6 +183,7 @@ export default class payslip extends Component {
                   native
                   value={this.state.params.sub}
                   onChange={this.handleSelectChangeEmp}
+                  className={this.state.employeeLoading ? 'Mui-disabled' : '' }
                 >
                   id="grouped-native-select" >
                   <option aria-label="None" value="%">
@@ -188,6 +201,7 @@ export default class payslip extends Component {
                   native
                   value={this.state.params.month}
                   onChange={this.handleSelectChangeMonth}
+                  className={this.state.monthLoading ? 'Mui-disabled' : '' }
                 >
                   id="grouped-native-select" >
                   <option aria-label="None" value="%">
@@ -206,6 +220,7 @@ export default class payslip extends Component {
                   id="grouped-native-select"
                   value={this.state.params.year}
                   onChange={this.handleSelectChangeYear}
+                  className={this.state.yearLoading ? 'Mui-disabled' : '' }
                 >
                   >
                   <option aria-label="None" value="%">
