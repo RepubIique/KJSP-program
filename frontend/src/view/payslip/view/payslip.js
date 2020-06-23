@@ -54,26 +54,45 @@ export default class payslip extends Component {
   }
 
   async fetchData() {
+  
+    // duration timer start
+    let t0 = performance.now()
+
+    // fetch 1
+    let resultFetch = tableData.getData(this.state.params);
     
-    result = await tableData.getData(this.state.params);
-    allMonthsAndYearsForEmployee = await tableData.getData({
+    // fetch 2
+    let resultDDFetch = dropdownData.getData(
+      this.state.params,
+    );
+    
+    // fetch 3
+    let resultDeductionsFetch = deductionData.getData(
+      this.state.params,
+    );
+    
+    // fetch 4
+    let allMonthsAndYearsForEmployeeFetch = tableData.getData({
       year: '%',
       month: '%',
       sub: this.state.params.sub
     });
 
-    resultDD = await dropdownData.getData(
-      this.state.params,
-    );
-    console.log(result);
-    this.setState({ result: result });
 
-    resultDeductions = await deductionData.getData(
-      this.state.params,
-    );
-    this.setState({ resultDeductions: resultDeductions });
-    console.log(resultDeductions);
-    
+    const resultsArr = await Promise.all([resultFetch, resultDDFetch, resultDeductionsFetch, allMonthsAndYearsForEmployeeFetch]);
+    result = resultsArr[0];
+    resultDD = resultsArr[1];
+    resultDeductions = resultsArr[2];
+    allMonthsAndYearsForEmployee = resultsArr[3];
+
+    this.setState({
+      result: result, 
+      resultDeductions: resultDeductions
+    });
+
+    // duration timer end
+    let t1 = performance.now()
+    console.log("Total fetch duration: " + (t1 - t0) + " milliseconds.")
   }
 
   async handleSelectChangeYear(event) {
@@ -109,10 +128,10 @@ export default class payslip extends Component {
       typeof this.state.result[0] !== 'undefined' ||
       this.state.result[0] != null
     ) {
-      console.log('Not Undefined or Not Null');
+      // console.log('Not Undefined or Not Null');
       $ = this.state.result[0];
     } else {
-      console.log('Undefined or Null');
+      // console.log('Undefined or Null');
       $ = { workerName: ' ' };
       
     }
