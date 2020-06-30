@@ -24,7 +24,7 @@ const en = {
   },
 
   app: {
-    title: 'Payroll App',
+    title: 'Payroll App V1.38',
   },
 
   entities: {
