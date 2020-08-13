@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link
-      rel="shortcut icon"
-      href="%PUBLIC_URL%/favicon.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
     <meta charset="utf-8" />
-
-    <link rel="manifest" href="/site.webmanifest" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      content="width=device-width,initial-scale=1.0"
     />
-
-    <meta name="theme-color" content="#000000" />
-
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <link
-      rel="manifest"
-      href="%PUBLIC_URL%/manifest.json"
+      rel="stylesheet"
+      type="text/css"
+      href="<%= BASE_URL %>styles/css/index.css"
     />
 
     <title></title>
+
+    <!-- <script src="https://js.stripe.com/v3/"></script> -->
   </head>
   <body>
     <noscript>
-      You need to enable JavaScript to run this app.
+      <strong
+        >We're sorry but frontend doesn't work properly
+        without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
     </noscript>
-    <div id="root"></div>
-    <div id="modal-root"></div>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
   </body>
 </html>
-
