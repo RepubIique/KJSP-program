@@ -24,6 +24,11 @@ const en = {
 
   app: {
     title: 'Application',
+    adminP: 'Admin Setup',
+    expense: 'Expenses',
+    workersP: 'Workers Payroll',
+    analysis: 'Analysis',
+    revenue: 'Revenue'
   },
 
   entities: {
@@ -78,7 +83,7 @@ const en = {
     workerRegistration: {
         name: 'workerRegistration',
         label: 'WorkerRegistrations',
-        menu: 'WorkerRegistrations',
+        menu: 'Worker Registrations',
         exporterFileName: 'workerRegistration_export',
         list: {
           menu: 'WorkerRegistrations',
@@ -169,7 +174,7 @@ const en = {
     workCode: {
         name: 'workCode',
         label: 'WorkCodes',
-        menu: 'WorkCodes',
+        menu: 'Work Codes',
         exporterFileName: 'workCode_export',
         list: {
           menu: 'WorkCodes',
@@ -223,7 +228,7 @@ const en = {
     workDone: {
         name: 'workDone',
         label: 'WorkDones',
-        menu: 'WorkDones',
+        menu: 'Work Done',
         exporterFileName: 'workDone_export',
         list: {
           menu: 'WorkDones',

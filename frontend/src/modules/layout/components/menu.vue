@@ -53,19 +53,6 @@
       </el-menu-item>
 
       <el-menu-item
-        :class="classFor('/user')"
-        :route="{ path: '/user' }"
-        index="/user"
-        v-if="hasPermissionToUser || userLocked"
-        :disabled="userLocked"
-      >
-        <i class="el-icon-fa-user-plus"></i>
-        <span slot="title">
-          <app-i18n code="user.menu"></app-i18n>
-        </span>
-      </el-menu-item>
-
-      <el-menu-item
         :class="classFor('/audit-logs')"
         :route="{ path: '/audit-logs' }"
         index="/audit-logs"
@@ -75,19 +62,6 @@
         <i class="el-icon-fa-history"></i>
         <span slot="title">
           <app-i18n code="auditLog.menu"></app-i18n>
-        </span>
-      </el-menu-item>
-
-      <el-menu-item
-        :class="classFor('/settings')"
-        :route="{ path: '/settings' }"
-        index="/settings"
-        v-if="hasPermissionToSettings || settingsLocked"
-        :disabled="settingsLocked"
-      >
-        <i class="el-icon-fa-cog"></i>
-        <span slot="title">
-          <app-i18n code="settings.menu"></app-i18n>
         </span>
       </el-menu-item>
 
@@ -104,68 +78,9 @@
         </span>
       </el-menu-item>
 
-      <el-menu-item
-        :class="classFor('/worker-registration')"
-        :route="{ path: '/worker-registration' }"
-        index="/worker-registration"
-        v-if="hasPermissionToWorkerRegistration || workerRegistrationLocked"
-        :disabled="workerRegistrationLocked"
-      >
-        <i class="el-icon-fa-chevron-right"></i>
+      <el-menu-item>
         <span slot="title">
-          <app-i18n code="entities.workerRegistration.menu"></app-i18n>
-        </span>
-      </el-menu-item>
-
-      <el-menu-item
-        :class="classFor('/work-code')"
-        :route="{ path: '/work-code' }"
-        index="/work-code"
-        v-if="hasPermissionToWorkCode || workCodeLocked"
-        :disabled="workCodeLocked"
-      >
-        <i class="el-icon-fa-chevron-right"></i>
-        <span slot="title">
-          <app-i18n code="entities.workCode.menu"></app-i18n>
-        </span>
-      </el-menu-item>
-
-      <el-menu-item
-        :class="classFor('/work-done')"
-        :route="{ path: '/work-done' }"
-        index="/work-done"
-        v-if="hasPermissionToWorkDone || workDoneLocked"
-        :disabled="workDoneLocked"
-      >
-        <i class="el-icon-fa-chevron-right"></i>
-        <span slot="title">
-          <app-i18n code="entities.workDone.menu"></app-i18n>
-        </span>
-      </el-menu-item>
-
-      <el-menu-item
-        :class="classFor('/attendance')"
-        :route="{ path: '/attendance' }"
-        index="/attendance"
-        v-if="hasPermissionToAttendance || attendanceLocked"
-        :disabled="attendanceLocked"
-      >
-        <i class="el-icon-fa-chevron-right"></i>
-        <span slot="title">
-          <app-i18n code="entities.attendance.menu"></app-i18n>
-        </span>
-      </el-menu-item>
-
-      <el-menu-item
-        :class="classFor('/deduction')"
-        :route="{ path: '/deduction' }"
-        index="/deduction"
-        v-if="hasPermissionToDeduction || deductionLocked"
-        :disabled="deductionLocked"
-      >
-        <i class="el-icon-fa-chevron-right"></i>
-        <span slot="title">
-          <app-i18n code="entities.deduction.menu"></app-i18n>
+          <app-i18n code="app.revenue"></app-i18n>
         </span>
       </el-menu-item>
 
@@ -207,6 +122,110 @@
           <app-i18n code="entities.plantedArea.menu"></app-i18n>
         </span>
       </el-menu-item>
+
+      <el-menu-item>
+        <span slot="title">
+          <app-i18n code="app.workersP"></app-i18n>
+        </span>
+      </el-menu-item>
+
+       <el-menu-item
+        :class="classFor('/work-done')"
+        :route="{ path: '/work-done' }"
+        index="/work-done"
+        v-if="hasPermissionToWorkDone || workDoneLocked"
+        :disabled="workDoneLocked"
+      >
+        <i class="el-icon-fa-chevron-right"></i>
+        <span slot="title">
+          <app-i18n code="entities.workDone.menu"></app-i18n>
+        </span>
+      </el-menu-item>
+
+      <el-menu-item
+        :class="classFor('/attendance')"
+        :route="{ path: '/attendance' }"
+        index="/attendance"
+        v-if="hasPermissionToAttendance || attendanceLocked"
+        :disabled="attendanceLocked"
+      >
+        <i class="el-icon-fa-chevron-right"></i>
+        <span slot="title">
+          <app-i18n code="entities.attendance.menu"></app-i18n>
+        </span>
+      </el-menu-item>
+
+       <el-menu-item
+        :class="classFor('/deduction')"
+        :route="{ path: '/deduction' }"
+        index="/deduction"
+        v-if="hasPermissionToDeduction || deductionLocked"
+        :disabled="deductionLocked"
+      >
+        <i class="el-icon-fa-chevron-right"></i>
+        <span slot="title">
+          <app-i18n code="entities.deduction.menu"></app-i18n>
+        </span>
+      </el-menu-item>
+
+      <el-menu-item
+        :class="classFor('/worker-registration')"
+        :route="{ path: '/worker-registration' }"
+        index="/worker-registration"
+        v-if="hasPermissionToWorkerRegistration || workerRegistrationLocked"
+        :disabled="workerRegistrationLocked"
+      >
+        <i class="el-icon-fa-chevron-right"></i>
+        <span slot="title">
+          <app-i18n code="entities.workerRegistration.menu"></app-i18n>
+        </span>
+      </el-menu-item>
+
+      <el-menu-item>
+        <span slot="title">
+          <app-i18n code="app.adminP"></app-i18n>
+        </span>
+      </el-menu-item>
+
+      <el-menu-item
+        :class="classFor('/user')"
+        :route="{ path: '/user' }"
+        index="/user"
+        v-if="hasPermissionToUser || userLocked"
+        :disabled="userLocked"
+      >
+        <i class="el-icon-fa-user-plus"></i>
+        <span slot="title">
+          <app-i18n code="user.menu"></app-i18n>
+        </span>
+      </el-menu-item>
+
+      <el-menu-item
+        :class="classFor('/work-code')"
+        :route="{ path: '/work-code' }"
+        index="/work-code"
+        v-if="hasPermissionToWorkCode || workCodeLocked"
+        :disabled="workCodeLocked"
+      >
+        <i class="el-icon-fa-chevron-right"></i>
+        <span slot="title">
+          <app-i18n code="entities.workCode.menu"></app-i18n>
+        </span>
+      </el-menu-item>
+
+      <el-menu-item
+        :class="classFor('/settings')"
+        :route="{ path: '/settings' }"
+        index="/settings"
+        v-if="hasPermissionToSettings || settingsLocked"
+        :disabled="settingsLocked"
+      >
+        <i class="el-icon-fa-cog"></i>
+        <span slot="title">
+          <app-i18n code="settings.menu"></app-i18n>
+        </span>
+      </el-menu-item>
+
     </el-menu>
   </el-aside>
 </template>
