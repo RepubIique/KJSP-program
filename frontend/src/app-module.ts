@@ -20,6 +20,7 @@ import deduction from '@/modules/deduction/deduction-module';
 import ffb from '@/modules/ffb/ffb-module';
 import fFBproduction from '@/modules/f-f-bproduction/f-f-bproduction-module';
 import plantedArea from '@/modules/planted-area/planted-area-module';
+import payslip from '@/modules/payslip/payslip-module';
 
 const modules = {
   shared,
@@ -39,7 +40,8 @@ const modules = {
   deduction,
   ffb,
   fFBproduction,
-  plantedArea,  
+  plantedArea,
+  payslip,
 };
 
 // start - boilerplate code

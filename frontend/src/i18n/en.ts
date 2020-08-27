@@ -28,7 +28,8 @@ const en = {
     expense: 'Expenses',
     workersP: 'Workers Payroll',
     analysis: 'Analysis',
-    revenue: 'Revenue'
+    revenue: 'Revenue',
+    payslip:'Payslip'
   },
 
   entities: {

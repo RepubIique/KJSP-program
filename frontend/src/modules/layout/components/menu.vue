@@ -169,6 +169,17 @@
       </el-menu-item>
 
       <el-menu-item
+        :class="classFor('/payslip')"
+        :route="{ path: '/payslip' }"
+        index="/payslip"
+      >
+        <i class="el-icon-fa-chevron-right"></i>
+        <span slot="title">
+          <app-i18n code="app.payslip"></app-i18n>
+        </span>
+      </el-menu-item>
+
+      <el-menu-item
         :class="classFor('/worker-registration')"
         :route="{ path: '/worker-registration' }"
         index="/worker-registration"
