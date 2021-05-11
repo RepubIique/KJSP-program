@@ -20,7 +20,7 @@
     "formidable-serverless": "1.0.3",
     "helmet": "3.23.3",
     "jsonwebtoken": "8.5.1",
-    "lodash": "4.17.19",
+    "lodash": "4.17.21",
     "moment": "2.27.0",
     "mysql2": "2.1.0",
     "pg": "8.3.0",
